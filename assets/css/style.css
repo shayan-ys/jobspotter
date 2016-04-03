@@ -1,0 +1,37 @@
+.main-menu {
+  background-color: #3D454D;
+  border: 0;
+  border-radius: 0;
+}
+/* buttons */
+.main-menu .navbar-nav > li > a {
+  color: white;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+  background-color: #aaaaaa;
+  color: white;
+}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+  color: white;
+  background-color: #089e00;
+  -webkit-transition: background-color 200ms ease-out 0s;
+  -moz-transition: background-color 200ms ease-out 0s;
+  -o-transition: background-color 200ms ease-out 0s;
+  transition: background-color 200ms ease-out 0s;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+  background-color: #008232;
+  color: white;
+}
+/* dropdown-menu */
+.navbar-nav > li > .dropdown-menu {
+  background-color: #3D454D;
+  border-color: #292E33;
+}
+.navbar-nav > li > .dropdown-menu > li > a {
+  color: white;
+}
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+  background-color: #008232;
+}
