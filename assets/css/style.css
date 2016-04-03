@@ -7,6 +7,9 @@
 .main-menu .navbar-nav > li > a {
   color: white;
 }
+
+
+
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
   background-color: #aaaaaa;
   color: white;
@@ -34,4 +37,12 @@
 }
 .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
   background-color: #008232;
+}
+
+.searchToolbar{
+  margin-top:70px;
+}
+.greenItem{
+  background-color: #008232;
+  color:white;
 }
