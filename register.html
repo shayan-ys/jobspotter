@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Job Spotter</title>
+
+    <!-- Bootstrap -->
+    <!-- <link href="assets/css/bootstrap-combined.min.css" rel="stylesheet"> -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <!-- <link href="assets/css/style.css" rel="stylesheet"> -->
+    <!-- <link href="assets/css/show_more.css" rel="stylesheet"> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container">
+      <form class="form-horizontal register" id="pwd-container">
+        <div class="form-group">
+          <label for="username" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="username" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="col-sm-2 control-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+          <div class="col-sm-offset-2 col-sm-10" style="margin-top: 7px;">
+            <div class="pwstrength_viewport_progress"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password-re" class="col-sm-2 control-label">Re-Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password-re" placeholder="Repeat Password">
+            <ul class="match-error" style="display:none;"><li><span style="color: #d52929">Your passwords doesn't match</span></li></ul>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Remember me
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery-1.12.2.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/pwstrength.js"></script>
+    <script type="text/javascript">
+      function matchPasswords(){
+        if($('#password-re').val() !='' && $('#password').val() != $('#password-re').val()) {
+          $('#password-re').closest('div').removeClass('has-success');
+          $('#password-re').closest('div').addClass('has-error');
+          $('.match-error').show();
+        }
+        else {
+          $('#password-re').closest('div').removeClass('has-error');
+          if($('#password-re').val() !='')
+            $('#password-re').closest('div').addClass('has-success');
+          $('.match-error').hide();
+        }
+      }
+      jQuery(document).ready(function () {
+          "use strict";
+          var options = {};
+          options.ui = {
+              container: "#pwd-container",
+              showErrors: true,
+              verdicts: ["Very Weak2", "Weak2", "Normal2", "Medium2", "Strong2", "Very Strong2"],
+              errorMessages: {
+                wordLength: "Your password is too short",
+                wordNotEmail: "Do not use your email as your password",
+                wordSimilarToUsername: "Your password cannot contain your username",
+                wordTwoCharacterClasses: "Use different character classes",
+                wordRepetitions: "Too many repetitions",
+                wordSequences: "Your password contains sequences"
+              },
+              showVerdictsInsideProgressBar: true,
+              viewports: {
+                  progress: ".pwstrength_viewport_progress"
+              }
+          };
+          options.common = {
+              debug: true
+          };
+          $('#password').pwstrength(options);
+
+          $('.register').on('keyup', '#password', function(ku){
+            matchPasswords();
+          });
+          $('.register').on('keyup', '#password-re', function(ku){
+            matchPasswords();
+          });
+      });
+    </script>
+  </body>
+</html>
