@@ -1,294 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Job Spotter</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Job Spotter</title>
 
-    <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet">
 
-    <!-- Custom styles -->
-    <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Custom styles -->
+  <link href="assets/css/style.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
 
-    <!-- Modals -->
-    <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Modal title</h4>
-          </div>
-          <div class="modal-body">
-            <form class="form-horizontal">
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+  <!-- Modals -->
+  <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Remember me
+                  </label>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> Remember me
-                    </label>
-                  </div>
-                </div>
-              </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-success">Sign in</button>
           </div>
-          </form>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        </form>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
 
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <a href="#"><img src="assets/img/logo/js.png" width=110 /></a>
-        </div>
-
-        <div class="col-sm-4 pull-left searchToolbar" >
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="جستجو...">
-        <span class="input-group-btn">
-          <button class="btn btn-default greenItem" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-        </span>
-      </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
-
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <a href="#"><img src="assets/img/logo/js.png" width=110 /></a>
       </div>
+
+      <div class="col-sm-4 pull-left searchToolbar" >
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="جستجو...">
+          <span class="input-group-btn">
+            <button class="btn btn-default greenItem" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </span>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
 
     </div>
 
-
-
-    <nav class="navbar navbar-default main-menu">
-
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">JobSpotter</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="#">خانه</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات کارفرمایان <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">درج آگهی استخدام</a></li>
-                <li><a href="#">درج آگهی برون‌سپاری</a></li>
-                <li><a href="#">جستجو در رزومه‌ها</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات کارجویان <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">جستجوی کار</a></li>
-                <li><a href="#">ثبت رزومه</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات تیم های کاری <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">جستجوی پروژه</a></li>
-                <li><a href="#">ثبت رزومه</a></li>
-              </ul>
-            </li>
-            <li><a href="#">اخبار موفقیت <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">تماس با ما</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a style="cursor:pointer;" data-toggle="modal" data-target="#loginModal">ورود</a></li>
-            <li><a href="../navbar/">ثبت نام</a></li>
-          </ul>
-
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+  </div>
 
 
 
-	<!--form-->
+  <nav class="navbar navbar-default main-menu">
+
     <div class="container">
-      <h1 class="pageHeader">ثبت رزومه</h1>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">JobSpotter</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">خانه</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات کارفرمایان <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">درج آگهی استخدام</a></li>
+              <li><a href="#">درج آگهی برون‌سپاری</a></li>
+              <li><a href="#">جستجو در رزومه‌ها</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات کارجویان <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">جستجوی کار</a></li>
+              <li><a href="#">ثبت رزومه</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات تیم های کاری <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">جستجوی پروژه</a></li>
+              <li><a href="#">ثبت رزومه</a></li>
+            </ul>
+          </li>
+          <li><a href="#">اخبار موفقیت <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-left">
+          <li class="active"><a style="cursor:pointer;" data-toggle="modal" data-target="#loginModal">ورود</a></li>
+          <li><a href="../navbar/">ثبت نام</a></li>
+        </ul>
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+
+  <!--form-->
+  <div class="container">
+    <h1 class="pageHeader">ثبت رزومه</h1>
 
 
 
     <div class="row" id="tenant_content">
-				<div class="col-md-8 col-sm-8 main-col">
-	<div class="content-well">
+      <div class="col-md-8 col-sm-8 main-col">
+        <div class="content-well">
+          <form class="form-job form-horizontal" role="form" id="new_job" enctype="multipart/form-data" action="/jobs" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uVDUUAo13Ms1qadbA8IXvd099SZgtjxMtHhkgYuc0DsrSrRvQ6byO8fLWfISChumtbqxNlFB2+PyAjb/eFd/lA==" /><div id="a_comment_body_hp_1459844241"><style type="text/css" media="screen" scoped="scoped">#a_comment_body_hp_1459844241 { display:none; }</style><label for="a_comment_body">Do not fill in this field</label><input type="text" name="a_comment_body" id="a_comment_body" /></div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="name">نام و نام‌خانوادگی</label>
+              <div class="col-sm-9">
+                <input class="form-control" type="text" name="name" id="name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="job_title">عنوان شغلی</label>
+              <div class="col-sm-9">
+                <input class="form-control" autocomplete="off" type="text" name="job[title]" id="job_title" />
+              </div>
+            </div>
 
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="phone_number">شماره همراه</label>
+              <div class="col-sm-9">
+                <input class="form-control" autocomplete="off" type="text" name="phone_number" id="phone_number" />
+              </div>
+            </div>
 
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="email">پست الکترونیک</label>
+              <div class="col-sm-9">
+                <input class="form-control" autocomplete="off" type="text" name="email" id="email" />
+              </div>
+            </div>
 
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="HowDidYouMeetUs">نحوه آشنایی با ما</label>
+              <div class="col-sm-9">
+                <input class="form-control" autocomplete="off" type="text" name="HowDidYouMeetUs" id="HowDidYouMeetUs" />
+              </div>
+            </div>
 
-   <form class="form-job form-horizontal" role="form" id="new_job" enctype="multipart/form-data" action="/jobs" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uVDUUAo13Ms1qadbA8IXvd099SZgtjxMtHhkgYuc0DsrSrRvQ6byO8fLWfISChumtbqxNlFB2+PyAjb/eFd/lA==" /><div id="a_comment_body_hp_1459844241"><style type="text/css" media="screen" scoped="scoped">#a_comment_body_hp_1459844241 { display:none; }</style><label for="a_comment_body">Do not fill in this field</label><input type="text" name="a_comment_body" id="a_comment_body" /></div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="description">توضیحات</label>
+              <div class="col-sm-9">
+                <textarea class="form-control"rows="10" cols="89" class="redactor" name="description" id="description">
+                </textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label"></label>
+              <div class="col-sm-9">
+                <div class="container-fluid groupItem">
+                  <div class="col-md-8">
+                    <h5>   در صورتی که رزومه آماده دارید از دکمه آپلود رزومه استفاده نمایید.</h5>
+                  </div>
+                  <div class="col-md-4 left">
+                    <input type="file" id="fileUpload" style="display: none;">
+                    <label for="fileUpload" class="btn btn-success">آپلود رزومه</label>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <!-- <div class="form-group">
+              <div class="col-md-3"></div>
+              <div class="col-md-9 ourBtn">
+                <button type="submit" class="btn btn-primary btn-lg">ثبت رزومه</button>
+              </div>
+            </div> -->
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for=""></label>
+              <div class="col-sm-9">
+                <button type="submit" class="btn btn-primary btn-lg">ثبت رزومه</button>
+              </div>
+            </div>
 
-
-
-
-
-
-
-    <script>
-      $( document ).ready(function() {
-           $("#location_other").css("display", "none");
-      });
-
-    </script>
-
-
-  <div class="form-group">
-    <label class="col-sm-3 control-label" for="name">نام و نام‌خانوادگی</label>
-		<div class="col-sm-9">
-	    	<input class="form-control" type="text" name="name" id="name" />
-		</div>
-  </div>
-
-
-  <div class="form-group">
-    <label class="col-sm-3 control-label" for="job_title">عنوان شغلی</label>
-		<div class="col-sm-9">
-          <input class="form-control" autocomplete="off" type="text" name="job[title]" id="job_title" />
-		</div>
-  </div>
-
-  <div class="form-group">
-    <label class="col-sm-3 control-label" for="phone_number">شماره همراه</label>
-		<div class="col-sm-9">
-          <input class="form-control" autocomplete="off" type="text" name="phone_number" id="phone_number" />
-		</div>
-  </div>
-
-  <div class="form-group">
-    <label class="col-sm-3 control-label" for="email">پست الکترونیک</label>
-		<div class="col-sm-9">
-          <input class="form-control" autocomplete="off" type="text" name="email" id="email" />
-		</div>
-  </div>
-
-  <div class="form-group">
-    <label class="col-sm-3 control-label" for="HowDidYouMeetUs">نحوه آشنایی با ما</label>
-		<div class="col-sm-9">
-          <input class="form-control" autocomplete="off" type="text" name="HowDidYouMeetUs" id="HowDidYouMeetUs" />
-		</div>
-  </div>
-
-  <div class="form-group">
-    <label class="col-sm-3 control-label" for="description">توضیحات</label>
-		<div class="col-sm-9">
-	     	<textarea class="form-control"rows="10" cols="89" class="redactor" name="description" id="description">
-</textarea>
-		</div>
-  </div>
-
-
-
-  <div class=" groupItem">
-
-  <h5 class="container">   در صورتی که رزومه آماده دارید از دکمه آپلود رزومه استفاده نمایید.</h5>
-  <div class="left">
-
-  <input type="file" id="test" style="display: none;">
-   <label for="test" class="btn btn-success">آپلود رزومه</label>
-
-</div>
-
-  </div>
-  <div class="ourBtn">
-  <button type="button" class="btn greenItem">ثبت رزومه</button>
-</div>
-
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="assets/js/jquery-1.12.2.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="assets/js/bootstrap.min.js"></script>
-	<script>
-	function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#image_upload_preview').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-	$(document).ready(function(){
-		$("#inputFile").change(function () {
-			readURL(this);
-		});
-	});
-     </script>
-
-</div>
+            <!-- <div class="ourBtn offset-md-3">
+              <button type="button" class="btn btn-primary btn-lg">ثبت رزومه</button>
+            </div> -->
+          </div>
+          <!-- content-well -->
+        </div>
+        <!-- main-col -->
+      </div>
+      <!-- content -->
     </div>
-    <footer class="footer">
-
-      <div class="col-sm-3 ">
-      <h4 class="greenText" > دسترسی سریع </h4>
-      <a class="footerlinks" href="#">درج آگهی استخدام</a><br>
-      <a class="footerlinks" href="#">درج آگهی برون‌سپاری</a><br>
-      <a class="footerlinks" href="#">جستجو در رزومه‌ها</a><br>
-      <a class="footerlinks" href="#">جستجوی کار</a><br>
-      <a class="footerlinks" href="#">ثبت رزومه</a><br>
-      <a class="footerlinks" href="#">جستجوی پروژه</a><br>
-      <a class="footerlinks" href="#">ثبت رزومه تیم</a>
-
-
-
+    <!-- container -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 ">
+            <h4 class="greenText" > دسترسی سریع </h4>
+            <a class="footerlinks" href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>درج آگهی استخدام</a>
+            <a class="footerlinks" href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>درج آگهی برون‌سپاری</a>
+            <a class="footerlinks" href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>جستجو در رزومه‌ها</a>
+            <a class="footerlinks" href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>جستجوی کار</a>
+            <a class="footerlinks" href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>ثبت رزومه</a>
+            <a class="footerlinks" href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>جستجوی پروژه</a>
+            <a class="footerlinks" href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>ثبت رزومه تیم</a>
+          </div>
+          <div class="col-sm-4">
+            <h4 class="greenText" >تماس با ما</h4>
+            <h5><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> نشانی: تهران، ولنجک، دانشگاه شهید بهشتی، دانشکده مهندسی برق و کامپیوتر </h5>
+            <h5><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> ۰۲۱-۸۸۵۷۶۵۶۴</h5>
+            <h5><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> support@jobspotter.com</h5>
+          </div>
+          <div class="col-sm-5 ">
+            <!-- map holder -->
+          </div>
+        </div>
       </div>
-
-      <div class="col-sm-3 ">
-        <h4 class="greenText" >تماس با ما</h4>
-        <h5> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> نشانی: تهران، ولنجک، دانشگاه شهید بهشتی، دانشکده مهندسی برق و کامپیوتر </h5>
-        <h5><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> ۰۲۱-۸۸۵۷۶۵۶۴</h5>
-        <h5><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> support@jobspotter.com</h5>
+      <div class="copyright">
+        <center>
+          &copy;&nbsp;
+          تمامی حقوق مادی و معنوی این وب سایت به نویسندگان آن تعلق دارد. ۱۳۹۵
+        </center>
       </div>
-
-      <div class="col-sm-6 ">
-        <!-- map holder -->
-      </div>
-</div>
-
-
     </footer>
-  </body>
-</html>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="assets/js/jquery-1.12.2.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="assets/js/bootstrap.min.js"></script>
+      <script>
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $('#image_upload_preview').attr('src', e.target.result);
+          }
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      $(document).ready(function(){
+        $("#location_other").css("display", "none");
+        $("#inputFile").change(function () {
+          readURL(this);
+        });
+      });
+      </script>
+    </body>
+    </html>
