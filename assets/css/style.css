@@ -1,3 +1,36 @@
+
+@media screen and (max-width: 970px) {
+
+    .logoPic{
+      text-align: center;
+
+    }
+    .searchToolbar{
+      margin-top:40px;
+      margin-bottom: 5px;
+    }
+    .navbar-brand{
+      display: none;
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+  .searchToolbar{
+    margin-top:10px;
+    margin-bottom: 5px;
+  }
+
+
+}
+
+@media screen and (min-width: 970px) {
+
+  .searchToolbar{
+    margin-top:40px;
+  }
+}
+
 .main-menu {
   background-color: #3D454D;
   border: 0;
@@ -39,10 +72,22 @@
   background-color: #008232;
 }
 
-.searchToolbar{
-  margin-top:70px;
-}
 .greenItem{
   background-color: #008232;
   color:white;
+}
+
+.greenText{
+  color: #008232;
+}
+.footerlinks{
+  color: black;
+}
+
+.footer {
+  position: relative;
+  height: 200px;
+  clear:both;
+  padding-top:20px;
+  background-color:#F8F8F8 	;
 }
