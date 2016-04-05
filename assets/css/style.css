@@ -90,8 +90,26 @@
   clear:both;
   padding-top:20px;
   background-color:#F8F8F8 	;
+  width: 100%;
 }
 .pageHeader{
   color: #008232;
 
+}
+.groupItem{
+box-shadow: none !important;
+border: 1px solid transparent;
+border-color: #e0e0e0;
+margin-bottom: 10px;
+border-radius: 4px;
+}
+.left{
+  text-align: left;
+  margin-left: 3px;
+  margin-bottom: 3px;
+}
+.ourBtn{
+  margin-right: 3px;
+  margin-bottom: 5px;
+  text-align: center;
 }
