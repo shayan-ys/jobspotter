@@ -1,35 +1,6 @@
+@import url('fonts.css');
 
-@media screen and (max-width: 970px) {
-
-    .logoPic{
-      text-align: center;
-
-    }
-    .searchToolbar{
-      margin-top:40px;
-      margin-bottom: 5px;
-    }
-    .navbar-brand{
-      display: none;
-    }
-
-}
-
-@media screen and (max-width: 750px) {
-  .searchToolbar{
-    margin-top:10px;
-    margin-bottom: 5px;
-  }
-
-
-}
-
-@media screen and (min-width: 970px) {
-
-  .searchToolbar{
-    margin-top:40px;
-  }
-}
+.content { background-color: #F2F4F5; }
 
 .main-menu {
   background-color: #3D454D;
@@ -39,15 +10,14 @@
 /* buttons */
 .main-menu .navbar-nav > li > a {
   color: white;
+  font-family: BNazanin;
 }
 
-
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+.main-menu .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
   background-color: #aaaaaa;
   color: white;
 }
-.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+.main-menu .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
   color: white;
   background-color: #089e00;
   -webkit-transition: background-color 200ms ease-out 0s;
@@ -56,34 +26,43 @@
   transition: background-color 200ms ease-out 0s;
 }
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+.main-menu .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
   background-color: #008232;
   color: white;
 }
 /* dropdown-menu */
-.navbar-nav > li > .dropdown-menu {
+.main-menu .navbar-nav > li > .dropdown-menu {
   background-color: #3D454D;
   border-color: #292E33;
 }
-.navbar-nav > li > .dropdown-menu > li > a {
-  color: white;
-}
-.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+.main-menu .navbar-nav > li > .dropdown-menu > li > a {color: white;}
+.main-menu .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
   background-color: #008232;
 }
 
-.greenItem{
-  background-color: #008232;
-  color:white;
-}
+.greenItem{background-color: #008232;color:white;}
+.greenText{color: #008232;}
+.pageHeader{color: #008232;}
 
-.greenText{
-  color: #008232;
+.parallex {
+  /*height: 600px;*/
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
-.footerlinks{
-  color: black;
+.whyus {
+  background-image: url('../img/bg/sales-team.jpg');
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding-bottom: 30px;
+  border-bottom: 7px solid #089E00;
 }
+.whyus h1 { font-size: 65px; line-height: 150px; }
+.whyus p { font-size: 25px; }
 
+/***************************** FOOTER ******************************/
+.footerlinks{color: black;}
 .footer {
   position: relative;
   height: 200px;
@@ -91,7 +70,28 @@
   padding-top:20px;
   background-color:#F8F8F8 	;
 }
-.pageHeader{
-  color: #008232;
 
+/***************************** MEDIAS *******************************/
+@media screen and (max-width: 970px) {
+    .logoPic{
+      text-align: center;
+    }
+    .searchToolbar{
+      margin-top:40px;
+      margin-bottom: 5px;
+    }
+    .navbar-brand{
+      display: none;
+    }
+}
+@media screen and (max-width: 750px) {
+  .searchToolbar{
+    margin-top:10px;
+    margin-bottom: 5px;
+  }
+}
+@media screen and (min-width: 970px) {
+  .searchToolbar{
+    margin-top:40px;
+  }
 }
