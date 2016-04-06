@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Job Spotter</title>
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!-- Modals -->
+    <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Remember me
+                    </label>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </div>
+          </form>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <a href="#"><img src="assets/img/logo/js.png" width=110 /></a>
+        </div>
+
+        <div class="col-sm-4 pull-left searchToolbar" >
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="جستجو...">
+        <span class="input-group-btn">
+          <button class="btn btn-default greenItem" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+
+      </div>
+
+    </div>
+
+
+
+    <nav class="navbar navbar-default main-menu">
+
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">JobSpotter</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#">خانه</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات کارفرمایان <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">درج آگهی استخدام</a></li>
+                <li><a href="#">درج آگهی برون‌سپاری</a></li>
+                <li><a href="#">جستجو در رزومه‌ها</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات کارجویان <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">جستجوی کار</a></li>
+                <li><a href="#">ثبت رزومه</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات تیم های کاری <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">جستجوی پروژه</a></li>
+                <li><a href="#">ثبت رزومه</a></li>
+              </ul>
+            </li>
+            <li><a href="#">اخبار موفقیت <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">تماس با ما</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-left">
+            <li class="active"><a style="cursor:pointer;" data-toggle="modal" data-target="#loginModal">ورود</a></li>
+            <li><a href="../navbar/">ثبت نام</a></li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+	<!--form-->
+    <div class="container">
+
+
+
+    <div class="row" id="tenant_content">
+				<div class="col-md-8 col-sm-8 main-col">
+	<div class="content-well">
+   <ul class="breadcrumb">
+    <li class="active">خدمات کارفرمایان</li>
+  <span class="divider"> > </span>
+  <li>درج آگهی برون‌سپاری</li>
+</ul>
+
+
+
+   <form class="form-job form-horizontal" role="form" id="new_job" enctype="multipart/form-data" action="/jobs" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uVDUUAo13Ms1qadbA8IXvd099SZgtjxMtHhkgYuc0DsrSrRvQ6byO8fLWfISChumtbqxNlFB2+PyAjb/eFd/lA==" /><div id="a_comment_body_hp_1459844241"><style type="text/css" media="screen" scoped="scoped">#a_comment_body_hp_1459844241 { display:none; }</style><label for="a_comment_body">Do not fill in this field</label><input type="text" name="a_comment_body" id="a_comment_body" /></div>
+
+      
+      
+
+        
+  
+
+
+    
+
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="outsource_project_title">عنوان پروژه</label>
+		<div class="col-sm-9">
+	    	<input class="form-control" type="text" name="outsource[project_title]" id="outsource_project_title" />
+		</div>
+  </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="inlineRadiobuttons">
+        دسته بندی
+      </label>
+      <div class="col-sm-9 col-md-6">
+          <input class="form-control" placeholder="دسته بندی کار را انتخاب کنید..." list="browsers" name="browser">
+			<datalist id="browsers">
+			<option value="برنامه نویسی وب">
+    <option value="برنامه نویسی اندروید">
+    <option value="سخت افزاری">
+    <option value="شبکه">
+    <option value="تحلیل و طراحی">
+	<option value="سایر">
+  </datalist>
+      </div>
+    </div>
+	
+	<div class="form-group">
+    <label class="col-sm-3 control-label" for="outsource_proficiency">تخصص لازم</label>
+		<div class="col-sm-9">
+	    	<input class="form-control" type="text" name="outsource[proficiency]" id="outsource_proficiency" />
+		</div>
+  </div>
+	
+	<div class="form-group">
+    <label class="col-sm-3 control-label" for="outsource_deadline">زمان تحویل پروژه به شرکت</label>
+		<div class="col-sm-9">
+	    	<input class="form-control" type="date" name="outsource[deadline]" id="outsource_deadline" />
+		</div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="job_description">شرح آگهی</label>
+		<div class="col-sm-9">
+	     	<textarea class="form-control" rows="10" cols="89" class="redactor" name="job[description]" id="job_description">
+</textarea>
+		</div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="job_company">نام شرکت</label>
+		<div class="col-sm-9">
+	    	<input class="form-control" type="text" name="job[company]" id="job_company" />
+		</div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="job_company_url">سایت شرکت</label>
+		<div class="col-sm-9">
+	    	<input class="form-control" type="text" name="job[company_url]" id="job_company_url" />
+		</div>
+  </div>
+
+  <div class="form-group optional">
+    <label class="col-sm-3 control-label" for="outsource_company_logo">لوگوی شرکت</label>
+    <div class="col-sm-9">
+		<div class="row">
+			<div class="col-sm-6" style="width: 310px;">
+				<input type="file" id="uploadBtn" style="display: none;">
+                <label for="uploadBtn" class="btn btn-success">آپلود لوگو</label>
+				<div style="margin-top:3px;">
+					<input id="uploadFile" placeholder="فایل مورد نظر" disabled="disabled" style="width: 212px; border-radius:5px;" />
+				</div>
+			</div>
+			<div class="col-sm-3" >
+				<img id="image_upload_preview" src="assets/img/choosefile.png" alt="your image" style="width:79px;height:73px;" />
+			</div>
+			
+			
+		</div>
+	</div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="outsource_apply_email">ایمیل برای دریافت درخواست ها</label>
+    <div class="col-sm-9">
+        <div class="form-group optional apply-email">
+		<div class="col-sm-12">
+	     	<input class="form-control" placeholder="you@example.com" type="text" name="outsource[apply_email]" id="outsource_apply_email" />
+        <span id="helpBlock" class="help-block"><small>درخواست های کارجویان به این ایمیل ارسال می گردد.</small></span>
+		</div>
+  </div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="outsource_company_address">آدرس شرکت</label>
+    <div class="col-sm-9">
+        <div class="form-group optional company_address">
+		<div class="col-sm-12">
+	     	<input class="form-control" type="text" name="outsource[company_address]" id="outsource_company_address" />
+		</div>
+  </div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="outsource_company_phone">تلفن تماس</label>
+    <div class="col-sm-9">
+        <div class="form-group optional company_phone">
+		<div class="col-sm-12">
+	     	<input class="form-control" placeholder="021-44444444" type="text" name="outsource[company_phone]" id="outsource_company_phone" />
+		</div>
+  </div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="outsource_salary">حقوق پیشنهادی به تومان</label>
+    <div class="col-sm-9">
+        <div class="form-group optional salary">
+		<div class="col-sm-12">
+	     	<input class="form-control" type="text" name="outsource[salary]" id="outsource_salary" />
+		</div>
+  </div>
+    </div>
+  </div>
+			
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery-1.12.2.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/myscript.js"></script>
+	<script>
+	function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#image_upload_preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+	$(document).ready(function(){
+		$("#uploadBtn").change(function () {
+			readURL(this);
+		});
+	});
+	
+     </script>
+	 <script>
+      document.getElementById("uploadBtn").onchange = function () {
+		document.getElementById("uploadFile").value = this.value;
+		};
+      </script>
+  </body>
+</html>
