@@ -179,6 +179,42 @@
             </div>
 
             <div class="form-group">
+              <label class="col-sm-3 control-label" for="degree">میزان تحصیلات</label>
+              <div class="col-sm-9">
+                <input class="form-control" autocomplete="off" type="text" name="degree" id="degree" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="reshteTahsili">رشته تحصیلی</label>
+              <div class="col-sm-9">
+                <input class="form-control" autocomplete="off" type="text" name="reshteTahsili" id="reshteTahsili" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="sabeghe">میزان سابقه کار</label>
+              <div class="col-sm-9">
+                <input class="form-control" autocomplete="off" type="text" name="sabeghe" id="sabeghe" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="takhasos">تخصص</label>
+              <div class="col-sm-9">
+                <input class="form-control" autocomplete="off" type="text" name="takhasos" id="takhasos" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="zamineKari">زمینه کاری</label>
+              <div class="col-sm-9">
+                <input class="form-control" autocomplete="off" type="text" name="zamineKari" id="zamineKari" />
+              </div>
+            </div>
+
+
+            <div class="form-group">
               <label class="col-sm-3 control-label" for="HowDidYouMeetUs">نحوه آشنایی با ما</label>
               <div class="col-sm-9">
                 <input class="form-control" autocomplete="off" type="text" name="HowDidYouMeetUs" id="HowDidYouMeetUs" />
@@ -196,13 +232,19 @@
               <label class="col-sm-3 control-label"></label>
               <div class="col-sm-9">
                 <div class="container-fluid groupItem">
-                  <div class="col-md-8">
+                  <div class="col-md-6" style="margin-top:7px;">
                     <h5>   در صورتی که رزومه آماده دارید از دکمه آپلود رزومه استفاده نمایید.</h5>
                   </div>
-                  <div class="col-md-4 left">
-                    <input type="file" id="fileUpload" style="display: none;">
-                    <label for="fileUpload" class="btn btn-success">آپلود رزومه</label>
-                  </div>
+                  <div class="col-md-6 left">
+                   <!-- <input type="file" id="fileUpload" style="display: none;">
+                    <label for="fileUpload" class="btn btn-success fileUpload">آپلود رزومه</label>-->
+
+					<input type="file" id="uploadBtn" style="display: none;">
+                    <label for="uploadBtn" class="btn btn-success">آپلود رزومه</label>
+					<div class="row" style="margin-left:1px; margin-top:2px;">
+					<input id="uploadFile" placeholder="فایل مورد نظر" disabled="disabled" style="width: 212px; border-radius:5px;" />
+					</div>
+				  </div>
                 </div>
               </div>
             </div>
@@ -216,7 +258,7 @@
             <div class="form-group">
               <label class="col-sm-3 control-label" for=""></label>
               <div class="col-sm-9">
-                <button type="submit" class="btn btn-primary btn-lg">ثبت رزومه</button>
+                <button type="submit" class="greenItem btn btn-primary btn-lg">ثبت رزومه</button>
               </div>
             </div>
 
@@ -267,23 +309,9 @@
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="assets/js/bootstrap.min.js"></script>
       <script>
-      function readURL(input) {
-        if (input.files && input.files[0]) {
-          var reader = new FileReader();
-
-          reader.onload = function (e) {
-            $('#image_upload_preview').attr('src', e.target.result);
-          }
-
-          reader.readAsDataURL(input.files[0]);
-        }
-      }
-      $(document).ready(function(){
-        $("#location_other").css("display", "none");
-        $("#inputFile").change(function () {
-          readURL(this);
-        });
-      });
+      document.getElementById("uploadBtn").onchange = function () {
+		document.getElementById("uploadFile").value = this.value;
+		};
       </script>
     </body>
     </html>
