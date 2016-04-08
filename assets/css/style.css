@@ -70,9 +70,23 @@ body {
 .pageHeader {color: #008232;}
 
 /*************************** SEARCH BOX ****************************/
-.search-wrapper { position: relative; }
-.search-wrapper .search-desc { position: absolute; width: 100%; font-size: 16px; line-height: 32px;}
-.search-wrapper .search-box {border: 1px solid #dddddd; border-radius: 7px; background-color: white; margin-top: 150px!important;}
+.search-wrapper {position: relative;}
+.search-wrapper .search-desc { position: absolute; width: 100%; font-size: 16px; line-height: 32px;
+  /* transitions */
+  -webkit-transition: all 300ms ease-out 0s;
+  -moz-transition: all 300ms ease-out 0s;
+  -o-transition: all 300ms ease-out 0s;
+  transition: all 300ms ease-out 0s;
+}
+.search-wrapper .search-box {border: 1px solid #dddddd; border-radius: 7px; background-color: white; margin-top: 150px!important;
+  /* transitions */
+  -webkit-transition: all 300ms ease-out 0s;
+  -moz-transition: all 300ms ease-out 0s;
+  -o-transition: all 300ms ease-out 0s;
+  transition: all 300ms ease-out 0s;
+}
+.search-wrapper.result .search-desc {opacity: 0;}
+.search-wrapper.result .search-box {margin-top: 25px!important;}
 .search-wrapper .city{width: 95px;}
 .search-wrapper .row {margin-top: 25px;}
 .search-wrapper .province-cities {background-image: linear-gradient(0deg, #fff 0, #fff 15px, #aaa 16px, #fff 17px, #fff 500px);}
@@ -80,13 +94,23 @@ body {
 .search-wrapper .province-cities .form-group:last-child { padding-left: 0; padding-right: 7px; }
 .search-wrapper .btn-search {margin-top: 20px; margin-bottom: 20px;}
 
-.search-wrapper .search-result {margin-bottom: 30px;}
+.search-wrapper .search-result { margin-bottom: 30px; position: relative; height: 0; overflow: hidden;}
+.search-wrapper.result .search-result {height: auto;
+  /* transitions */
+  -webkit-transition: all 300ms ease-out 0s;
+  -moz-transition: all 300ms ease-out 0s;
+  -o-transition: all 300ms ease-out 0s;
+  transition: all 300ms ease-out 0s;
+}
 .search-wrapper .search-result .job {
     background: white none repeat scroll 0 0;
     box-shadow: 0 -1px 0 0 #dddddd inset;
     padding: 27px 54px;
 }
 .search-wrapper .search-result .job.featured { border-right: 20px solid #f9da64; padding: 27px 34px 27px 54px; }
+.search-wrapper .search-result .loading { display: none; position: absolute; top: 0; width: 100%; height: 100%; background: #ddd; text-align: center;}
+.search-wrapper.loading .search-result .loading { display: block; }
+.search-wrapper .search-result .loading .loading-icon { position: absolute; top: 50%; margin: -13px -17px 0 0; }
 
 /***************************** FOOTER ******************************/
 footer {

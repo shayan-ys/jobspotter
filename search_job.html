@@ -16,6 +16,7 @@
 
     <!-- Custom styles -->
     <link href="assets/css/bouncing.css" rel="stylesheet">
+    <link href="assets/css/spinning.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -71,22 +72,19 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-sm-3 logoPic ">
+            <div class="col-sm-3 logoPic">
               <a href="#"><img src="assets/img/logo/js.png" width=110 /></a>
             </div>
-
             <div class="col-sm-4 pull-left searchToolbar" >
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="جستجو...">
-            <span class="input-group-btn">
-              <button class="btn btn-default greenItem" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-            </span>
-          </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-
-      </div>
-
-    </div>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="جستجو...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default greenItem" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </span>
+              </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+          </div>
+        </div>
 
 
 
@@ -211,9 +209,8 @@
               </div>
             </div>
             <div class="row search-result">
-              <div id="jobs-table-container">
-                <div class="jobs-list jobs-list-margin" id="jobs-table">
-                  <div class="job featured logo">
+                <div class="jobs-list">
+                  <div class="job featured">
                     <div class="row">
                       <div class="details col-sm-10 col-xs-8">
                         <div class="pull-left hidden-xs logo">
@@ -232,7 +229,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="job ">
+                  <div class="job">
                     <div class="row">
                       <div class="details col-sm-10 col-xs-8">
                         <div class="details">
@@ -250,7 +247,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="job  logo">
+                  <div class="job">
                     <div class="row">
                       <div class="details col-sm-10 col-xs-8">
                         <div class="pull-left hidden-xs logo">
@@ -270,13 +267,28 @@
                     </div>
                   </div>
                 </div>
+                <div class="loading">
+                  <span class="loading-icon">
+                    درحال بارگزاری
+                  </br>
+                    <i class="glyphicon glyphicon-refresh gly-spin"></i>
+                  </span>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-warning" style="margin-top: 25px;">
+              <div class="panel-heading">
+                <p class="panel-title">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
+
     <footer style="position: relative; width:100%;">
       <div class="container">
         <div class="row">
@@ -333,6 +345,15 @@
         $(this).closest('.hover').removeClass('open');
         else
         $(this).closest('.hover').addClass('open');
+      });
+
+      $(".btn-search").on("click", function(e){
+        e.preventDefault();
+        $('.search-wrapper').addClass('result');
+        $('.search-wrapper').addClass('loading');
+        // load search result
+        // alert("clicked");
+        $('.search-wrapper').find('.loading').delay(1500).fadeOut(500);
       });
     });
     </script>
