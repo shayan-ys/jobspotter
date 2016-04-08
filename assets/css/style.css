@@ -1,6 +1,8 @@
 @import url('fonts.css');
 
 .content { background-color: #F2F4F5; }
+/*.content .row {background-color: #fff;}*/
+.content .row .well {background-color: #fff;}
 
 .main-menu {
   background-color: #3D454D;

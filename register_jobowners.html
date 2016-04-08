@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Job Spotter | Search Jobs</title>
+    <title>Job Spotter | Register</title>
 
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -83,15 +83,10 @@
             </span>
           </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
-
       </div>
-
     </div>
 
-
-
     <nav class="navbar navbar-default main-menu">
-
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -144,139 +139,70 @@
 
     <div class="content">
       <div class="container">
+        <div class="row well">
+          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+        </div>
         <div class="row">
-          <div class="col-md-8 search-wrapper">
-            <div class="row search-desc">
-              <div class="well">
-                برای جستجو میان کارهای موجود در بازار
-              </br>
-                مقادیر زیر را پر کنید و جستجو کنید تا کار مورد نظر خود را توسط سامانه ما بیابید.
+          <form class="form-horizontal register" id="pwd-container">
+            <div class="form-group">
+              <label for="username" class="col-sm-2 control-label">ایمیل</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="username" placeholder="ایمیل">
               </div>
             </div>
-            <div class="row search-box">
-              <div class="col-md-12">
-                <form method="get" accept-charset="UTF-8" action="jobs-search" id="jobs-search" role="form">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <input type="text" placeholder="عبارت جستجو" class="form-control search-input input-stacked" id="q" name="q">
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-inline province-cities">
-                        <div class="form-group">
-                          <label for="provinces">استان</label>
-                          <select id="provinces" class="province form-control"></select>
-                        </div>
-                        <div class="form-group pull-left">
-                          <label for="cities">شهر</label>
-                          <select id="cities" class="city form-control"></select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <input class="form-control" placeholder="دسته بندی کار را انتخاب کنید..." list="browsers" name="browser">
-                      <datalist id="browsers">
-                        <option value="مهندسی نرم افزار یا سخت افزار"></option>
-                        <option value="برنامه نویس"></option>
-                        <option value="مدیریتی"></option>
-                        <option value="تحلیل و طراحی"></option>
-                        <option value="موبایل"></option>
-                        <option value="شبکه"></option>
-                        <option value="سایر"></option>
-                      </datalist>
-                    </div>
-                    <div class="col-lg-4 col-md-3 col-sm-4">
-                      <select class="form-control" name="job-type">
-                        <option value="">تمامی زمان های کاری</option>
-                        <option value="1">تمام وقت</option>
-                        <option value="2">پاره وقت</option>
-                        <option value="3">آزاد</option>
-                        <option value="4">موقت</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-2" style="margin-top: 7px; text-align: left;">
-                      <input type="radio" name="jobAvailablity" id="job-availablity" value="available"> موجود
-                      &nbsp;
-                      <input type="radio" name="jobAvailablity" id="job-all" value="all"> همه
-                    </div>
-                    <div class="col-sm-12">
-                      <button type="submit" class="btn btn-primary btn-search form-control">
-                        <span class="glyphicon glyphicon-search"></span>
-                        جستجو کار
-                      </button>
-                    </div>
-                  </div>
-                </form>
+            <div class="form-group">
+              <label for="password" class="col-sm-2 control-label">کلمه عبور</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="password" placeholder="کلمه عبور">
+              </div>
+              <div class="col-sm-offset-2 col-sm-10" style="margin-top: 7px;">
+                <div class="pwstrength_viewport_progress"></div>
               </div>
             </div>
-            <div class="row search-result">
-              <div id="jobs-table-container">
-                <div class="jobs-list jobs-list-margin" id="jobs-table">
-                  <div class="job featured logo">
-                    <div class="row">
-                      <div class="details col-sm-10 col-xs-8">
-                        <div class="pull-left hidden-xs logo">
-                          <a href="/jobs/255562-senior-devops-engineer-at-symphony-communication-services-llc">
-                            <img border="0" src="https://d6dyoorq84mou.cloudfront.net/uploads/job/logo/255562/thumb_Symphony_Logo_12.16.2015.png" alt="SmartBear" class="img-responsive">
-                          </a>
-                        </div>
-                        <div class="details">
-                          <div class="title"><a href="/jobs/255562-senior-devops-engineer-at-symphony-communication-services-llc">مهندس شبکه</a></div>
-                          <div class="company">داده پردازان آینده</div>
-                          <div class="location">ایران٫ تهران٫ بلوار کشاورز</div>
-                        </div>
-                      </div>
-                      <div class="date col-sm-2 col-xs-4">
-                        <div> 4 آذر</div>
-                      </div>
-                    </div>
+            <div class="form-group">
+              <label for="password-re" class="col-sm-2 control-label">تکرار کلمه عبور</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="password-re" placeholder="تکرار کلمه عبور">
+                <ul class="match-error" style="display:none;"><li><span style="color: #d52929">Your passwords doesn't match</span></li></ul>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="provinces" class="col-sm-2 control-label">محل شرکت</label>
+              <div class="col-sm-10">
+                <div class="form-inline province-cities">
+                  <div class="form-group">
+                    <label for="provinces">استان</label>
+                    <select id="provinces" class="province form-control"></select>
                   </div>
-                  <div class="job ">
-                    <div class="row">
-                      <div class="details col-sm-10 col-xs-8">
-                        <div class="details">
-                          <div class="title">
-                            <a href="/jobs/260403-senior-java-software-engineer-at-icrossing">
-                              مهندس صنایع
-                          </a>
-                        </div>
-                          <div class="company">آریا پویان</div>
-                          <div class="location">ایران٫ اصفهان٫ شهرک صنعتی مخابرات</div>
-                        </div>
-                      </div>
-                      <div class="date col-sm-2 col-xs-4">
-                        <div> 7 آذر</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="job  logo">
-                    <div class="row">
-                      <div class="details col-sm-10 col-xs-8">
-                        <div class="pull-left hidden-xs logo">
-                          <a href="/jobs/260387-ux-designer-at-smartbear">
-                            <img border="0" src="http://logok.org/wp-content/uploads/2014/04/Apple-Logo-rainbow.png" alt="apple" width="50" class="img-responsive">
-                          </a>
-                        </div>
-                        <div class="details">
-                          <div class="title"><a href="/jobs/260387-ux-designer-at-smartbear">برنامه نویس آی او اس</a></div>
-                          <div class="company">اپل</div>
-                          <div class="location">ایالات متحده٫ کالیفرنیا</div>
-                        </div>
-                      </div>
-                      <div class="date col-sm-2 col-xs-4">
-                        <div> 7 آذر</div>
-                      </div>
-                    </div>
+                  <div class="form-group pull-left">
+                    <label for="cities">شهر</label>
+                    <select id="cities" class="city form-control"></select>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+            <div class="form-group">
+              <label for="company" class="col-sm-2 control-label">نام شرکت</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="company" placeholder="نام شرکت">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="category" class="col-sm-2 control-label">زمینه فعالیت</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="category" placeholder="زمینه فعالیت">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">ثبت نام</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-    
+
     <footer style="position: relative; width:100%;">
       <div class="container">
         <div class="row">
@@ -324,15 +250,60 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/province-cities.js"></script>
+    <script src="assets/js/pwstrength.js"></script>
     <script src="assets/js/maps.js"></script>
-    <!-- google map API settings -->
-    <script>
+    <script type="text/javascript">
+    function matchPasswords(){
+      if($('#password-re').val() !='' && $('#password').val() != $('#password-re').val()) {
+        $('#password-re').closest('div').removeClass('has-success');
+        $('#password-re').closest('div').addClass('has-error');
+        $('.match-error').show();
+      }
+      else {
+        $('#password-re').closest('div').removeClass('has-error');
+        if($('#password-re').val() !='')
+          $('#password-re').closest('div').addClass('has-success');
+        $('.match-error').hide();
+      }
+    }
+
     $(document).ready(function(){
       $("#menuToggle").on("click", function(){
         if($(this).closest('.hover').hasClass('open'))
         $(this).closest('.hover').removeClass('open');
         else
         $(this).closest('.hover').addClass('open');
+      });
+
+      /* Form options */
+      var options = {};
+      options.ui = {
+          container: "#pwd-container",
+          showErrors: true,
+          verdicts: ["بسیار ضعیف", "ضعیف", "معمولی", "خوب", "قوی", "بسیار قوی"],
+          errorMessages: {
+            wordLength: "کلمه عبور کوتاه است",
+            // wordNotEmail: "ایمیل تان را به عنوان کلمه عبور نگذارید",
+            wordSimilarToUsername: "کلمه عبور نمی تواند حاوی نام کاربری باشد",
+            // wordTwoCharacterClasses: "Use different character classes",
+            wordRepetitions: "تکرار های زیاد",
+            wordSequences: "کلمه عبور شما حاوی حلقه است"
+          },
+          showVerdictsInsideProgressBar: true,
+          viewports: {
+              progress: ".pwstrength_viewport_progress"
+          }
+      };
+      options.common = {
+          debug: true
+      };
+      $('#password').pwstrength(options);
+
+      $('.register').on('keyup', '#password', function(ku){
+        matchPasswords();
+      });
+      $('.register').on('keyup', '#password-re', function(ku){
+        matchPasswords();
       });
     });
     </script>
