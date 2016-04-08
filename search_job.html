@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Job Spotter</title>
+    <title>Job Spotter | Search Jobs</title>
 
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -142,20 +142,137 @@
     </nav>
 <!--end header-->
 
-    <div class="parallex whyus">
-      <div class="container">
-        <h1>
-          JobSpotter
-        </h1>
-        <p>
-          چرا ما بهترین سامانه کارجویی هستیم؟
-        </p>
-      </div>
-    </div>
-
     <div class="content">
       <div class="container">
         <div class="row">
+          <div class="col-md-8 search-wrapper">
+            <div class="row search-desc">
+              <div class="well">
+                برای جستجو میان کارهای موجود در بازار
+              </br>
+                مقادیر زیر را پر کنید و جستجو کنید تا کار مورد نظر خود را توسط سامانه ما بیابید.
+              </div>
+            </div>
+            <div class="row search-box">
+              <div class="col-md-12">
+                <form method="get" accept-charset="UTF-8" action="jobs-search" id="jobs-search" role="form">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input type="text" placeholder="عبارت جستجو" class="form-control search-input input-stacked" id="q" name="q">
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-inline province-cities">
+                        <div class="form-group">
+                          <label for="provinces">استان</label>
+                          <select id="provinces" class="province form-control"></select>
+                        </div>
+                        <div class="form-group pull-left">
+                          <label for="cities">شهر</label>
+                          <select id="cities" class="city form-control"></select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input class="form-control" placeholder="دسته بندی کار را انتخاب کنید..." list="browsers" name="browser">
+                      <datalist id="browsers">
+                        <option value="مهندسی نرم افزار یا سخت افزار"></option>
+                        <option value="برنامه نویس"></option>
+                        <option value="مدیریتی"></option>
+                        <option value="تحلیل و طراحی"></option>
+                        <option value="موبایل"></option>
+                        <option value="شبکه"></option>
+                        <option value="سایر"></option>
+                      </datalist>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-4">
+                      <select class="form-control" name="job-type">
+                        <option value="">تمامی زمان های کاری</option>
+                        <option value="1">تمام وقت</option>
+                        <option value="2">پاره وقت</option>
+                        <option value="3">آزاد</option>
+                        <option value="4">موقت</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-2" style="margin-top: 7px; text-align: left;">
+                      <input type="radio" name="jobAvailablity" id="job-availablity" value="available"> موجود
+                      &nbsp;
+                      <input type="radio" name="jobAvailablity" id="job-all" value="all"> همه
+                    </div>
+                    <div class="col-sm-12">
+                      <button type="submit" class="btn btn-primary btn-search form-control">
+                        <span class="glyphicon glyphicon-search"></span>
+                        جستجو کار
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row search-result">
+              <div id="jobs-table-container">
+                <div class="jobs-list jobs-list-margin" id="jobs-table">
+                  <div class="job featured logo">
+                    <div class="row">
+                      <div class="details col-sm-10 col-xs-8">
+                        <div class="pull-left hidden-xs logo">
+                          <a href="/jobs/255562-senior-devops-engineer-at-symphony-communication-services-llc">
+                            <img border="0" src="https://d6dyoorq84mou.cloudfront.net/uploads/job/logo/255562/thumb_Symphony_Logo_12.16.2015.png" alt="SmartBear" class="img-responsive">
+                          </a>
+                        </div>
+                        <div class="details">
+                          <div class="title"><a href="/jobs/255562-senior-devops-engineer-at-symphony-communication-services-llc">مهندس شبکه</a></div>
+                          <div class="company">داده پردازان آینده</div>
+                          <div class="location">ایران٫ تهران٫ بلوار کشاورز</div>
+                        </div>
+                      </div>
+                      <div class="date col-sm-2 col-xs-4">
+                        <div> 4 آذر</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="job ">
+                    <div class="row">
+                      <div class="details col-sm-10 col-xs-8">
+                        <div class="details">
+                          <div class="title">
+                            <a href="/jobs/260403-senior-java-software-engineer-at-icrossing">
+                              مهندس صنایع
+                          </a>
+                        </div>
+                          <div class="company">آریا پویان</div>
+                          <div class="location">ایران٫ اصفهان٫ شهرک صنعتی مخابرات</div>
+                        </div>
+                      </div>
+                      <div class="date col-sm-2 col-xs-4">
+                        <div> 7 آذر</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="job  logo">
+                    <div class="row">
+                      <div class="details col-sm-10 col-xs-8">
+                        <div class="pull-left hidden-xs logo">
+                          <a href="/jobs/260387-ux-designer-at-smartbear">
+                            <img border="0" src="http://logok.org/wp-content/uploads/2014/04/Apple-Logo-rainbow.png" alt="apple" width="50" class="img-responsive">
+                          </a>
+                        </div>
+                        <div class="details">
+                          <div class="title"><a href="/jobs/260387-ux-designer-at-smartbear">برنامه نویس آی او اس</a></div>
+                          <div class="company">اپل</div>
+                          <div class="location">ایالات متحده٫ کالیفرنیا</div>
+                        </div>
+                      </div>
+                      <div class="date col-sm-2 col-xs-4">
+                        <div> 7 آذر</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -211,45 +328,19 @@
     <script src="assets/js/jquery-1.12.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/province-cities.js"></script>
+    <script src="assets/js/maps.js"></script>
     <!-- google map API settings -->
     <script>
     $(document).ready(function(){
       $("#menuToggle").on("click", function(){
         if($(this).closest('.hover').hasClass('open'))
-          $(this).closest('.hover').removeClass('open');
+        $(this).closest('.hover').removeClass('open');
         else
-          $(this).closest('.hover').addClass('open');
+        $(this).closest('.hover').addClass('open');
       });
     });
-    function initMap() {
-        var faculty = {lat: 35.802270, lng: 51.393872};
-        var velenjak = {lat: 35.779043, lng: 51.522369};
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          scaleControl: true,
-          center: velenjak,
-          zoom: 12
-        });
-
-        var infowindow = new google.maps.InfoWindow;
-        infowindow.setContent('<b>دانشکده علوم و مهندسی کامپیوتر</b>');
-
-        // var trafficLayer = new google.maps.TrafficLayer();
-        // trafficLayer.setMap(map);
-
-        var marker = new google.maps.Marker({map: map, position: faculty});
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
-
-        var customMapType = new google.maps.StyledMapType([{"featureType":"all","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"administrative.country","elementType":"all","stylers":[{"color":"#328120"},{"weight":"1"}]},{"featureType":"administrative.country","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"administrative.locality","elementType":"labels.text.fill","stylers":[{"color":"#c4c4c4"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"color":"#328120"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21},{"visibility":"on"}]},{"featureType":"poi.business","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"lightness":"0"},{"color":"#328120"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"labels.text.stroke","stylers":[{"color":"#1c9d00"},{"weight":"1"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#575757"}]},{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"labels.text.stroke","stylers":[{"color":"#2c2c2c"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"color":"#999999"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}], {
-            name: 'Custom Style'
-        });
-        var customMapTypeId = 'custom_style';
-        map.mapTypes.set(customMapTypeId, customMapType);
-        map.setMapTypeId(customMapTypeId);
-      }
-      </script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNTMndy93H2Bp-AWM_pvxhnbaBxrGYmKY&language=fa&callback=initMap"></script>
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNTMndy93H2Bp-AWM_pvxhnbaBxrGYmKY&language=fa&callback=initFooterMap"></script>
   </body>
 </html>

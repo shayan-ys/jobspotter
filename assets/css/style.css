@@ -67,6 +67,25 @@ body {
 
 .pageHeader {color: #008232;}
 
+/*************************** SEARCH BOX ****************************/
+.search-wrapper { position: relative; }
+.search-wrapper .search-desc { position: absolute; width: 100%; font-size: 16px; line-height: 32px;}
+.search-wrapper .search-box {border: 1px solid #dddddd; border-radius: 7px; background-color: white; margin-top: 150px!important;}
+.search-wrapper .city{width: 95px;}
+.search-wrapper .row {margin-top: 25px;}
+.search-wrapper .province-cities {background-image: linear-gradient(0deg, #fff 0, #fff 15px, #aaa 16px, #fff 17px, #fff 500px);}
+.search-wrapper .province-cities .form-group {background-color: white; padding-left: 7px;}
+.search-wrapper .province-cities .form-group:last-child { padding-left: 0; padding-right: 7px; }
+.search-wrapper .btn-search {margin-top: 20px; margin-bottom: 20px;}
+
+.search-wrapper .search-result {margin-bottom: 30px;}
+.search-wrapper .search-result .job {
+    background: white none repeat scroll 0 0;
+    box-shadow: 0 -1px 0 0 #dddddd inset;
+    padding: 27px 54px;
+}
+.search-wrapper .search-result .job.featured { border-right: 20px solid #f9da64; padding: 27px 34px 27px 54px; }
+
 /***************************** FOOTER ******************************/
 footer {
   border-top: 7px solid #089E00;
