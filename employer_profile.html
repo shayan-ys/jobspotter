@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Job Spotter</title>
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Modals -->
+    <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Remember me
+                    </label>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </div>
+          </form>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <a href="#"><img src="assets/img/logo/js.png" width=110 /></a>
+        </div>
+        <div class="col-sm-4 pull-left searchToolbar" >
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="جستجو...">
+        <span class="input-group-btn">
+          <button class="btn btn-default greenItem" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+    </div>
+    </div>
+
+
+
+    <nav class="navbar navbar-default main-menu">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">JobSpotter</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#">خانه</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات کارفرمایان <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">درج آگهی استخدام</a></li>
+                <li><a href="#">درج آگهی برون‌سپاری</a></li>
+                <li><a href="#">جستجو در رزومه‌ها</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات کارجویان <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">جستجوی کار</a></li>
+                <li><a href="#">ثبت رزومه</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات تیم های کاری <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">جستجوی پروژه</a></li>
+                <li><a href="#">ثبت رزومه</a></li>
+              </ul>
+            </li>
+            <li><a href="#">اخبار موفقیت <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">تماس با ما</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-left">
+            <li class="active"><a style="cursor:pointer;" data-toggle="modal" data-target="#loginModal">ورود</a></li>
+            <li><a href="../navbar/">ثبت نام</a></li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+	<!--form-->
+
+
+	<div class="container">
+	<h1 class="pageHeader">پروفایل کارفرما</h1><br>
+	<div class="row" id="tenant_content">
+	<div class="col-sm-3 pull-left">
+	   <img id="profileimage" src="assets/img/profileimg.png" alt="your image" style="width:170px;height:187px;" />
+	   <br><br>
+
+	   <div class="row">
+	   <div class="col-sm-4" style="padding-right: 13px; padding-left: 12px;">
+	   <input id="ImageUpload" type="file" placeholder="AddLogoPic" style="display: none; width: 100px; height: 47px; padding-top: 6px"/>
+		<label for="ImageUpload" class="btn btn-success bt">آپلود لوگو</label>
+		</div>
+		<div class="col-sm-4 offset-sm-4" style="padding-right: 10px;">
+		<button type="button" onclick="removeImage()" class="btn btn-success">حذف لوگو</button>
+		</div>
+		</div>
+
+
+	</div>
+	<div class="col-md-8 col-sm-8 main-col">
+	<div class="content-well">
+
+   <form class="form-job form-horizontal" role="form" id="new_job" enctype="multipart/form-data" action="/jobs" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uVDUUAo13Ms1qadbA8IXvd099SZgtjxMtHhkgYuc0DsrSrRvQ6byO8fLWfISChumtbqxNlFB2+PyAjb/eFd/lA==" /><div id="a_comment_body_hp_1459844241"><style type="text/css" media="screen" scoped="scoped">#a_comment_body_hp_1459844241 { display:none; }</style><label for="a_comment_body">Do not fill in this field</label><input type="text" name="a_comment_body" id="a_comment_body" /></div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="profile_name">نام شرکت</label>
+		<div class="col-sm-9">
+	    	<input class="form-control" type="text" name="profile[name]" id="profile_name" />
+		</div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="site_address">سایت</label>
+		<div class="col-sm-9">
+	    	<input class="form-control" type="text" name="site_address" id="site_address" />
+		</div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="profile_Email">ایمیل</label>
+		<div class="col-sm-9">
+	    	<input class="form-control" type="email" name="profile[Email]" id="profile_Email" />
+		</div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="profile_tel">شماره تماس</label>
+    <div class="col-sm-9">
+        <input class="form-control" type="email" name="profile[tel]" id="profile_tel" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="profile_location"> </label>
+    <div class="col-sm-9">
+          <div class="row">
+      <div class="col-sm-1">
+            <label>استان</label>
+      </div>
+      <div class="col-sm-5">
+            <select class="form-control province" >
+            </select>
+      </div>
+      <div class="col-sm-1">
+            <label>شهر</label>
+      </div>
+      <div class="col-sm-5">
+            <select class="city form-control">
+            </select>
+      </div>
+       </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="profile_tel">آدرس</label>
+    <div class="col-sm-9">
+        <input class="form-control" type="email" name="profile[tel]" id="profile_tel" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="zamineKari">زمینه کاری</label>
+    <div class="col-sm-9">
+      <input class="form-control" autocomplete="off" type="text" name="zamineKari" id="zamineKari" />
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="profile_description">توضیحات</label>
+		<div class="col-sm-9">
+	     	<textarea class="form-control" rows="10" cols="89" class="redactor" name="profile[description]" id="profile_description">
+</textarea>
+		</div>
+  </div>
+
+	<!-- <div class="form-group">
+              <label class="col-sm-3 control-label"></label>
+              <div class="col-sm-9">
+                <div class="container-fluid groupItem">
+                  <div class="col-md-6" style="margin-top:7px;">
+                    <h5>   در صورتی که رزومه آماده دارید از دکمه آپلود رزومه استفاده نمایید.</h5>
+                  </div>
+                  <div class="col-md-6 left">
+					<input type="file" id="uploadBtn" style="display: none;">
+                    <label for="uploadBtn" class="btn btn-success">آپلود رزومه</label>
+					<div class="row" style="margin-left:1px; margin-top:2px;">
+					<input id="uploadFile" placeholder="فایل مورد نظر" disabled="disabled" style="width: 212px; border-radius:5px;" />
+					</div>
+				  </div>
+                </div>
+              </div>
+            </div> -->
+
+	<div class="form-group">
+              <label class="col-sm-3 control-label"></label>
+              <div class="col-sm-9">
+                  <div class="col-md-6" style="margin-top:7px; margin-right: -15px;">
+                    <label class="control-label" style="text-align: right;">   از کدام آگهی ها می خواهید باخبر شوید؟اخبار مربوطه به ایمیل شما ارسال می گردد.</label>
+                  </div>
+                  <div class="col-md-6 left" style="margin-top:15px;">
+					<input class="form-control" placeholder="موضوع خود را انتخاب نمایید..." list="categories" name="categories" multiple>
+			<datalist id="categories">
+			<option value="تمایل ندارم" selected>
+			<option value="مهندسی نرم افزار یا سخت افزار">
+    <option value="برنامه نویس">
+    <option value="مدیریتی">
+    <option value="تحلیل و طراحی">
+    <option value="موبایل">
+	<option value="شبکه">
+	<option value="همه">
+  </datalist>
+					</div>
+                </div>
+              </div>
+    </div>
+
+  <div class="form-group">
+  <label class="col-sm-3 control-label"></label>
+  <div class="col-sm-4" style="margin-right: -10px;" >
+  <input type="submit" class="btn btn-success" value="ذخیره">
+  </div>
+  </div>
+  </div>
+  </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery-1.12.2.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/myscript.js"></script>
+	<script>
+	function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#profileimage').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+	$(document).ready(function(){
+		$("#ImageUpload").change(function () {
+			readURL(this);
+		});
+	});
+	function removeImage(){
+		var image=document.getElementById('profileimage');
+		image.src="assets/img/profileimg.png";
+		}
+     </script>
+	 <script>
+	 <script>
+      document.getElementById("uploadBtn").onchange = function () {
+		document.getElementById("uploadFile").value = this.value;
+		};
+      </script>
+  </body>
+</html>
