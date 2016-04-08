@@ -126,8 +126,8 @@
     </nav>
 
 	<!--form-->
-    
-	
+
+
 	<div class="container">
 	<h1 class="pageHeader">پروفایل کارجو</h1><br>
 	<div class="row" id="tenant_content">
@@ -143,14 +143,14 @@
 		<button type="button" onclick="removeImage()" class="btn btn-success">حذف عکس</button>
 		</div>
 		</div>
-				
-			
+
+
 	</div>
 	<div class="col-md-8 col-sm-8 main-col">
 	<div class="content-well">
 
    <form class="form-job form-horizontal" role="form" id="new_job" enctype="multipart/form-data" action="/jobs" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uVDUUAo13Ms1qadbA8IXvd099SZgtjxMtHhkgYuc0DsrSrRvQ6byO8fLWfISChumtbqxNlFB2+PyAjb/eFd/lA==" /><div id="a_comment_body_hp_1459844241"><style type="text/css" media="screen" scoped="scoped">#a_comment_body_hp_1459844241 { display:none; }</style><label for="a_comment_body">Do not fill in this field</label><input type="text" name="a_comment_body" id="a_comment_body" /></div>
-	
+
   <div class="form-group">
     <label class="col-sm-3 control-label" for="profile_fname">نام</label>
 		<div class="col-sm-9">
@@ -165,14 +165,23 @@
 	    	<input class="form-control" type="text" name="profile[lname]" id="profile_lname" />
 		</div>
   </div>
-	
-	<div class="form-group">
-    <label class="col-sm-3 control-label" for="profile_major">رشته و مقطع تحصیلی</label>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" for="profile_major">رشته تحصیلی</label>
 		<div class="col-sm-9">
 	    	<input class="form-control" type="text" name="profile[major]" id="profile_major" />
 		</div>
   </div>
-  
+
+	<div class="form-group">
+    <label class="col-sm-3 control-label" for="profile_major"> مقطع تحصیلی</label>
+		<div class="col-sm-9">
+	    	<input class="form-control" type="text" name="profile[major]" id="profile_major" />
+		</div>
+  </div>
+
+
+
   <div class="form-group">
       <label class="col-sm-3 control-label" for="inlineRadiobuttons">
         جنسیت
@@ -188,7 +197,7 @@
 				</label>
       </div>
     </div>
-	
+
 	<div class="form-group">
     <label class="col-sm-3 control-label" for="profile_Email">ایمیل</label>
 		<div class="col-sm-9">
@@ -202,7 +211,7 @@
 	    	<input class="form-control" type="email" name="profile[tel]" id="profile_tel" />
 		</div>
   </div>
-  
+
   <div class="form-group">
     <label class="col-sm-3 control-label" for="profile_location">آدرس</label>
 		<div class="col-sm-9">
@@ -224,7 +233,7 @@
 		   </div>
 		</div>
   </div>
-  
+
   <div class="form-group">
     <label class="col-sm-3 control-label" for="profile_description">توضیحات</label>
 		<div class="col-sm-9">
@@ -232,7 +241,7 @@
 </textarea>
 		</div>
   </div>
-  
+
 	<div class="form-group">
               <label class="col-sm-3 control-label"></label>
               <div class="col-sm-9">
@@ -250,7 +259,7 @@
                 </div>
               </div>
             </div>
-			
+
 	<div class="form-group">
               <label class="col-sm-3 control-label"></label>
               <div class="col-sm-9">
@@ -273,16 +282,16 @@
                 </div>
               </div>
     </div>
-	
+
   <div class="form-group">
   <label class="col-sm-3 control-label"></label>
   <div class="col-sm-4" style="margin-right: -10px;" >
-  <input type="submit" class="btn btn-success" value="ذخیره"> 
+  <input type="submit" class="btn btn-success" value="ذخیره">
   </div>
   </div>
   </div>
   </div>
-			
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="assets/js/jquery-1.12.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
