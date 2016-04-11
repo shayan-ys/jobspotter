@@ -12,65 +12,100 @@
     <link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet">
 
     <!-- Custom styles -->
+	<link href="assets/css/bouncing.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
   </head>
   <body>
 
     <!-- Modals -->
     <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Modal title</h4>
-          </div>
-          <div class="modal-body">
-            <form class="form-horizontal">
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                </div>
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">ورود</h4>
               </div>
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> Remember me
-                    </label>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">ایمیل</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
                   </div>
-                </div>
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">رمز عبور</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> مرا به خاطر بسپار
+                        </label>
+                      </div>
+                    </div>
+                  </div>
               </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </div>
-          </form>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <a href="#"><img src="assets/img/logo/js.png" width=110 /></a>
-        </div>
-        <div class="col-sm-4 pull-left searchToolbar" >
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="جستجو...">
-        <span class="input-group-btn">
-          <button class="btn btn-default greenItem" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-        </span>
-      </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">انصراف</button>
+                <button type="submit" class="btn btn-success">وارد شدن</button>
+              </div>
+              </form>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div id="registerModal" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">ثبت نام</h4>
+              </div>
+              <div class="modal-body">
+                <a href="register_jobseeker.html" class="btn btn-success">کار جویان</a>
+                <a href="register_jobowners.html" class="btn btn-success">صاحبان کار</a>
+                <a href="register_teams.html" class="btn btn-success">تیم های کاری</a>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3 logoPic ">
+              <a href="#"><img src="assets/img/logo/js.png" width=110 /></a>
+            </div>
+
+            <div class="col-sm-4 pull-left searchToolbar" >
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="جستجو...">
+            <span class="input-group-btn">
+              <button class="btn btn-default greenItem" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+
+      </div>
+
     </div>
-    </div>
+	<div id="registerModal" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">ثبت نام</h4>
+              </div>
+              <div class="modal-body">
+                <a href="register_jobseeker.html" class="btn btn-success">کار جویان</a>
+                <a href="register_jobowners.html" class="btn btn-success">صاحبان کار</a>
+                <a href="register_teams.html" class="btn btn-success">تیم های کاری</a>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
 
 
@@ -110,16 +145,16 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات تیم های کاری <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="search_job.html">جستجوی پروژه</a></li>
+                <li><a href="search_project.html">جستجوی پروژه</a></li>
                 <li><a href="applyTeamResume.html">ثبت رزومه</a></li>
               </ul>
             </li>
             <li><a href="contactus.html">تماس با ما</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-left">
-            <li><a style="cursor:pointer;" data-toggle="modal" data-target="#loginModal">ورود</a></li>
-            <li><a style="cursor:pointer;" data-toggle="modal" data-target="#registerModal">ثبت نام</a></li>
-          </ul>
+                <li><a href="team_profile.html">پروفایل&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+                <li><a href="index.html">خروج</a></li>
+              </ul>
 
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -280,6 +315,7 @@
   </div>
   </div>
   </div>
+  </div>
   <footer style="position: relative; width:100%;">
     <div class="container">
       <div class="row">
@@ -325,6 +361,46 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/myscript.js"></script>
+	 <script>
+    $(document).ready(function(){
+      $("#menuToggle").on("click", function(){
+        if($(this).closest('.hover').hasClass('open'))
+          $(this).closest('.hover').removeClass('open');
+        else
+          $(this).closest('.hover').addClass('open');
+      });
+    });
+    function initMap() {
+        var faculty = {lat: 35.802270, lng: 51.393872};
+        var velenjak = {lat: 35.779043, lng: 51.522369};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          scaleControl: true,
+          center: velenjak,
+          zoom: 12
+        });
+
+        var infowindow = new google.maps.InfoWindow;
+        infowindow.setContent('<b>دانشکده علوم و مهندسی کامپیوتر</b>');
+
+        // var trafficLayer = new google.maps.TrafficLayer();
+        // trafficLayer.setMap(map);
+
+        var marker = new google.maps.Marker({map: map, position: faculty});
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+
+        var customMapType = new google.maps.StyledMapType([{"featureType":"all","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"administrative.country","elementType":"all","stylers":[{"color":"#328120"},{"weight":"1"}]},{"featureType":"administrative.country","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"administrative.locality","elementType":"labels.text.fill","stylers":[{"color":"#c4c4c4"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"color":"#328120"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21},{"visibility":"on"}]},{"featureType":"poi.business","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"lightness":"0"},{"color":"#328120"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"labels.text.stroke","stylers":[{"color":"#1c9d00"},{"weight":"1"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#575757"}]},{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"labels.text.stroke","stylers":[{"color":"#2c2c2c"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"color":"#999999"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}], {
+            name: 'Custom Style'
+        });
+        var customMapTypeId = 'custom_style';
+        map.mapTypes.set(customMapTypeId, customMapType);
+        map.setMapTypeId(customMapTypeId);
+      }
+      </script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNTMndy93H2Bp-AWM_pvxhnbaBxrGYmKY&language=fa&callback=initMap"></script>
+
 	<script>
 	function readURL(input) {
         if (input.files && input.files[0]) {

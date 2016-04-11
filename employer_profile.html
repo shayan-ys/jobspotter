@@ -12,50 +12,66 @@
     <link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet">
 
     <!-- Custom styles -->
+	<link href="assets/css/bouncing.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
   </head>
   <body>
 
     <!-- Modals -->
     <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Modal title</h4>
-          </div>
-          <div class="modal-body">
-            <form class="form-horizontal">
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                </div>
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">ورود</h4>
               </div>
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> Remember me
-                    </label>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">ایمیل</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
                   </div>
-                </div>
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">رمز عبور</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> مرا به خاطر بسپار
+                        </label>
+                      </div>
+                    </div>
+                  </div>
               </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </div>
-          </form>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">انصراف</button>
+                <button type="submit" class="btn btn-success">وارد شدن</button>
+              </div>
+              </form>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+	<div id="registerModal" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">ثبت نام</h4>
+              </div>
+              <div class="modal-body">
+                <a href="register_jobseeker.html" class="btn btn-success">کار جویان</a>
+                <a href="register_jobowners.html" class="btn btn-success">صاحبان کار</a>
+                <a href="register_teams.html" class="btn btn-success">تیم های کاری</a>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
     <div class="container">
       <div class="row">
         <div class="col-sm-3">
@@ -76,7 +92,7 @@
 
     <nav class="navbar navbar-default main-menu">
 
-      <div class="container">
+      <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -110,16 +126,16 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات تیم های کاری <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="search_job.html">جستجوی پروژه</a></li>
+                <li><a href="search_project.html">جستجوی پروژه</a></li>
                 <li><a href="applyTeamResume.html">ثبت رزومه</a></li>
               </ul>
             </li>
             <li><a href="contactus.html">تماس با ما</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-left">
-            <li><a style="cursor:pointer;" data-toggle="modal" data-target="#loginModal">ورود</a></li>
-            <li><a style="cursor:pointer;" data-toggle="modal" data-target="#registerModal">ثبت نام</a></li>
-          </ul>
+                <li><a href="employer_profile.html">پروفایل&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+                <li><a href="index.html">خروج</a></li>
+              </ul>
 
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -280,6 +296,7 @@
   </div>
   </div>
   </div>
+  </div>
 
   <footer style="position: relative; width:100%;">
     <div class="container">
@@ -327,6 +344,65 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/myscript.js"></script>
+	<script src="assets/js/province-cities.js"></script>
+    <script src="assets/js/pwstrength.js"></script>
+    <script src="assets/js/maps.js"></script>
+    <script type="text/javascript">
+    function matchPasswords(){
+      if($('#password-re').val() !='' && $('#password').val() != $('#password-re').val()) {
+        $('#password-re').closest('div').removeClass('has-success');
+        $('#password-re').closest('div').addClass('has-error');
+        $('.match-error').show();
+      }
+      else {
+        $('#password-re').closest('div').removeClass('has-error');
+        if($('#password-re').val() !='')
+          $('#password-re').closest('div').addClass('has-success');
+        $('.match-error').hide();
+      }
+    }
+
+    $(document).ready(function(){
+      $("#menuToggle").on("click", function(){
+        if($(this).closest('.hover').hasClass('open'))
+        $(this).closest('.hover').removeClass('open');
+        else
+        $(this).closest('.hover').addClass('open');
+      });
+
+      /* Form options */
+      var options = {};
+      options.ui = {
+          container: "#pwd-container",
+          showErrors: true,
+          verdicts: ["بسیار ضعیف", "ضعیف", "معمولی", "خوب", "قوی", "بسیار قوی"],
+          errorMessages: {
+            wordLength: "کلمه عبور کوتاه است",
+            // wordNotEmail: "ایمیل تان را به عنوان کلمه عبور نگذارید",
+            wordSimilarToUsername: "کلمه عبور نمی تواند حاوی نام کاربری باشد",
+            // wordTwoCharacterClasses: "Use different character classes",
+            wordRepetitions: "تکرار های زیاد",
+            wordSequences: "کلمه عبور شما حاوی حلقه است"
+          },
+          showVerdictsInsideProgressBar: true,
+          viewports: {
+              progress: ".pwstrength_viewport_progress"
+          }
+      };
+      options.common = {
+          debug: true
+      };
+      $('#password').pwstrength(options);
+
+      $('.register').on('keyup', '#password', function(ku){
+        matchPasswords();
+      });
+      $('.register').on('keyup', '#password-re', function(ku){
+        matchPasswords();
+      });
+    });
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNTMndy93H2Bp-AWM_pvxhnbaBxrGYmKY&language=fa&callback=initFooterMap"></script>
 	<script>
 	function readURL(input) {
         if (input.files && input.files[0]) {
