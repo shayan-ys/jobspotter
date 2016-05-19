@@ -29,15 +29,51 @@ public class User {
   
   // The user's email
   @NotNull
-  private String email;
+  public String email;
   
   // The user's name
-  @NotNull
-  private String name;
 
+  public String name;
+
+  public String reshte;
+  
+  public String phone;
+  
+  public String gender;
+  
+  public String ostan;
+  
+  public String city;
+  
+  public String tozihat;
+  
+  public String resume;
+  
+  public String picture;
+  
+  public String mozooKhabar;
+  
+  // team profile
+  public String site;
+  
+  public String address;
+  
+  public String zamineKari;
+  
+  //karfarma profile hichi ezafe tar azina nadasht!
+  
+  
+  
+  
+  
   // ------------------------
   // PUBLIC METHODS
   // ------------------------
+  
+  @NotNull
+  public String password;
+  
+  
   
   public User() { }
 
@@ -45,10 +81,23 @@ public class User {
     this.id = id;
   }
   
-  public User(String email, String name) {
+  public User(String email, String password , String ostan , String city) {
     this.email = email;
-    this.name = name;
+    this.password = password;
+    this.ostan = ostan;
+    this.city = city;
+
   }
+  
+  public User(String email, String password , String ostan , String city,String name,String zamineKari) {
+	    this.email = email;
+	    this.password = password;
+	    this.ostan = ostan;
+	    this.city = city;
+	    this.name=name;
+	    this.zamineKari = zamineKari;
+
+	  }
 
   // Getter and setter methods
 
@@ -76,4 +125,5 @@ public class User {
     this.name = value;
   }
   
+
 } // class User

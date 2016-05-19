@@ -41,11 +41,6 @@
    		<artifactId>tomcat-embed-jasper</artifactId>
    		<scope>provided</scope>
 	</dependency>
-	<dependency>
-		<groupId>org.springframework.session</groupId>
-		<artifactId>spring-session</artifactId>
-		<version>1.2.0.RELEASE</version>
-	</dependency>
   </dependencies>
 
   <properties>

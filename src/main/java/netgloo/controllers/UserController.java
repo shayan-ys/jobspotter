@@ -16,24 +16,45 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class UserController {
+	
+	
 
-	@RequestMapping(value="/register", method=RequestMethod.POST)
+	@RequestMapping(value="/registerJobseeker", method=RequestMethod.POST)
 	@ResponseBody
-	public String register(String email, String name) {
+	public String registerPerson(String email, String password,String ostan,String city) {
 		System.out.println("email="+ email);
-		System.out.println("name="+ name);
+		System.out.println("password="+ password);
 
 		User user = null;
     	try {
-    		user = new User(email, name);
+    		user = new User(email, password,ostan,city);
       		userDao.save(user);
     	}
     	catch (Exception ex) {
     		return "Error creating the user: " + ex.toString();
     	}
+    	System.out.println(user.phone);
     	return "User succesfully created! (id = " + user.getId() + ")";
 	}
 	
+	
+	@RequestMapping(value="/registerJobowners", method=RequestMethod.POST)
+	@ResponseBody
+	public String registerOwner(String email, String password,String ostan,String city,String name,String zamineKari) {
+		System.out.println("email="+ email);
+		System.out.println("password="+ password);
+
+		User user = null;
+    	try {
+    		user = new User(email, password,ostan,city,name,zamineKari);
+      		userDao.save(user);
+    	}
+    	catch (Exception ex) {
+    		return "Error creating the user: " + ex.toString();
+    	}
+    	System.out.println(user.phone);
+    	return "User succesfully created! (id = " + user.getId() + ")";
+	}
 	
   // ------------------------
   // PUBLIC METHODS
@@ -48,10 +69,10 @@ public class UserController {
    */
   @RequestMapping("/create")
   @ResponseBody
-  public String create(String email, String name) {
+  public String create(String email, String name, String ostan, String city) {
     User user = null;
     try {
-      user = new User(email, name);
+      user = new User(email, name, ostan,city);
       userDao.save(user);
     }
     catch (Exception ex) {
