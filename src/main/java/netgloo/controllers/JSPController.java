@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class JSPController {
 
-	@RequestMapping("/jsptest")
+	@RequestMapping("/")
 	public String test(ModelAndView modelAndView) {
 	    System.out.println("came here");
 	    return "index";

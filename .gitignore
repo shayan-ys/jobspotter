@@ -36,3 +36,4 @@ overridedb.*
 .DS_Store
 .factorypath
 dump.rdb
+application.properties

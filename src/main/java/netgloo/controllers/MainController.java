@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Controller
 public class MainController extends WebMvcConfigurerAdapter {
 
-  @RequestMapping("/")
+  @RequestMapping("/test")
   @ResponseBody
   public String index() {
     return "Proudly handcrafted by " +
