@@ -84,11 +84,21 @@ public class UserController {
 	
 	@RequestMapping(value="/registerJobowners", method=RequestMethod.POST)
 	@ResponseBody
-	public String registerOwner(String email, String password,String ostan,String city,String name,String zamineKari) {
+	public String registerOwner(HttpSession session, String email, String password,String ostan,String city,String name,String zamineKari) {
 		System.out.println("email="+ email);
 		System.out.println("password="+ password);
 
-		User user = null;
+		 User user = userDao.findByEmail(email);
+	      if(user!=null)
+	      {
+	    	  session.setAttribute("registerError", "email is taken");
+	    	 return "registerJobseeker";
+	    	  
+	      }
+	      else
+	      {
+	    	  session.setAttribute("registerError", "email is Free");
+	      }
     	try {
     		user = new User(email, password,ostan,city,name,zamineKari);
       		userDao.save(user);
@@ -102,11 +112,21 @@ public class UserController {
 	
 	@RequestMapping(value="/registerTeams", method=RequestMethod.POST)
 	@ResponseBody
-	public String registerTeams(String email, String password,String ostan,String city,String name,String zamineKari) {
+	public String registerTeams(HttpSession session, String email, String password,String ostan,String city,String name,String zamineKari) {
 		System.out.println("email="+ email);
 		System.out.println("password="+ password);
 
-		User user = null;
+		 User user = userDao.findByEmail(email);
+	      if(user!=null)
+	      {
+	    	  session.setAttribute("registerError", "email is taken");
+	    	 return "registerJobseeker";
+	    	  
+	      }
+	      else
+	      {
+	    	  session.setAttribute("registerError", "email is Free");
+	      }
     	try {
     		user = new User(email, password,ostan,city,name,zamineKari);
       		userDao.save(user);
