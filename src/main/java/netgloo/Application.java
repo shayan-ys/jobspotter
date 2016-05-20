@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Application {
 
-    public static String ROOT = "upload-dir";
+    public static String ROOT = "src/main/resources/static/upload-dir";
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

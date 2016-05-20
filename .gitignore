@@ -37,3 +37,4 @@ overridedb.*
 .factorypath
 dump.rdb
 application.properties
+src/main/resources/static/upload-dir
