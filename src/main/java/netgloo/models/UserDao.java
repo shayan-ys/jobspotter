@@ -1,8 +1,13 @@
 package netgloo.models;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 /**
  * A DAO for the entity User is simply created by extending the CrudRepository
@@ -23,5 +28,9 @@ public interface UserDao extends CrudRepository<User, Long> {
    */
   public User findByEmail(String email);
   public User findById(Long id);
+  
+  @Modifying
+  @Query("SELECT p FROM User p WHERE p.city = :city")
+  public List<User> search(@Param("city") String city);
 
 } // class UserDao
