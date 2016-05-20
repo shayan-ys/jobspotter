@@ -166,25 +166,26 @@
             </li>
             <li><a href="contactus.html">تماس با ما</a></li>
           </ul>
+     <c:choose>
+    <c:when test="${userId!='false'}">
+        
           
-          <c:choose>
-    		<c:when test="${userId=='false'}">
           <ul class="nav navbar-nav navbar-left">
+            <li><a href="employee_profile.html">پروفایل&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+            <li><a href="logOut">خروج</a></li>
+          </ul>
+         
+           </c:when>    
+	
+  <c:otherwise>
+     <ul class="nav navbar-nav navbar-left">
             <li><a style="cursor:pointer;" data-toggle="modal" data-target="#loginModal">ورود</a></li>
             <li><a style="cursor:pointer;" data-toggle="modal" data-target="#registerModal">ثبت نام</a></li>
           </ul>
-		</c:when>    
-
-		<c:otherwise>
-     
-     <ul class="nav navbar-nav navbar-left">
-            <li><a href="employee_profile.html">پروفایل&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-            <li><a href="index.html">خروج</a></li>
-          </ul>
-     
-    	</c:otherwise>
-	</c:choose>
-			
+           
+       </c:otherwise>
+</c:choose>
+    
 		
 
 

@@ -33,7 +33,7 @@ public class UserController {
 			    	  System.out.println("email="+ email);
 			    	  System.out.println("password="+ password);
 			    	  System.out.println("login success");
-			    	  session.setAttribute("testSession", "TestSessionValue");
+			    	  session.setAttribute("userId", user.getId());
 			    	  return "success";
 			      
 			      }
