@@ -56,6 +56,24 @@ public class UserController {
     	return "User succesfully created! (id = " + user.getId() + ")";
 	}
 	
+	@RequestMapping(value="/registerTeams", method=RequestMethod.POST)
+	@ResponseBody
+	public String registerTeams(String email, String password,String ostan,String city,String name,String zamineKari) {
+		System.out.println("email="+ email);
+		System.out.println("password="+ password);
+
+		User user = null;
+    	try {
+    		user = new User(email, password,ostan,city,name,zamineKari);
+      		userDao.save(user);
+    	}
+    	catch (Exception ex) {
+    		return "Error creating the user: " + ex.toString();
+    	}
+    	System.out.println(user.phone);
+    	return "User succesfully created! (id = " + user.getId() + ")";
+	}
+	
   // ------------------------
   // PUBLIC METHODS
   // ------------------------

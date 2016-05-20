@@ -9,20 +9,26 @@ public class JSPController {
 
 	@RequestMapping("/")
 	public String test(ModelAndView modelAndView) {
-	    System.out.println("came here");
+	   // System.out.println("came here");
 	    return "index";
 	}
 	
 	@RequestMapping("/registerJobseeker")
 	public String viewRegisterJobseeker(ModelAndView modelAndView) {
-	    System.out.println("came here");
+	   // System.out.println("came here");
 	    return "registerJobseeker";
 	}
 	
 	@RequestMapping("/registerJobowners")
 	public String viewRegisterJobowners(ModelAndView modelAndView) {
-	    System.out.println("came here");
+	    //System.out.println("came here");
 	    return "registerJobowners";
+	}
+	
+	@RequestMapping("/registerTeams")
+	public String viewRegisterTeams(ModelAndView modelAndView) {
+	   // System.out.println("came here");
+	    return "registerTeams";
 	}
     
 }
