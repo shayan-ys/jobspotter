@@ -45,7 +45,7 @@
     <![endif]-->
     </head>
     <body>
-
+<p> error = ${ registerError} </p>
         <!--header-->
         <!-- Modals -->
         <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">

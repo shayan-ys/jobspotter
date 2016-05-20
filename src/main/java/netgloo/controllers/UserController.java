@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * A class to test interactions with the MySQL database using the UserDao class.
@@ -52,14 +53,24 @@ public class UserController {
 		   
 	}
 
-	@RequestMapping(value="/registerJobseeker", method=RequestMethod.POST)
-	@ResponseBody
-	public String registerPerson(String email, String password,String ostan,String city) {
+	@RequestMapping(value="/registerJobseeker", method=RequestMethod.POST )
+	public String registerPerson(ModelAndView modelandview, String email, String password,String ostan,String city, HttpSession session) {
 		System.out.println("email="+ email);
 		System.out.println("password="+ password);
 
-		User user = null;
-    	try {
+		 User user = userDao.findByEmail(email);
+	      if(user!=null)
+	      {
+	    	  session.setAttribute("registerError", "email is taken");
+	    	 return "registerJobseeker";
+	    	  
+	      }
+	      else
+	      {
+	    	  session.setAttribute("registerError", "email is Free");
+	      }
+	      
+	      try {
     		user = new User(email, password,ostan,city);
       		userDao.save(user);
     	}
@@ -67,7 +78,7 @@ public class UserController {
     		return "Error creating the user: " + ex.toString();
     	}
     	System.out.println(user.phone);
-    	return "User succesfully created! (id = " + user.getId() + ")";
+    	return "index";
 	}
 	
 	
