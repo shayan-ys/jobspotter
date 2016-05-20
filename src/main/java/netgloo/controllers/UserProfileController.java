@@ -1,5 +1,7 @@
 package netgloo.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,9 +17,20 @@ import netgloo.models.UserDao;
 public class UserProfileController {
 	
 	@RequestMapping(value = "/employee/edit", method = RequestMethod.GET)
-	public String EmployeeEdit(ModelAndView modelAndView, Model model) {
+	public String EmployeeEdit(ModelAndView modelAndView, Model model, HttpSession session) {
+		int id = 1;
+		String id_str = "1";
+		if(session.getAttribute("userId") != null)
+			id_str = session.getAttribute("userId").toString();
+		
+		System.out.println("id_str:"+ id_str);
+		id = Integer.parseInt(id_str);
+		
+//		id = Integer.parseInt(id_str);
+		System.out.println("id_int:"+ id);
+		
 		modelAndView.addObject("User");
-		User user = userDao.findById((long) 1);
+		User user = userDao.findById((long) id);
 		model.addAttribute("user", user);
 		return "profileEmployeeEdit";
 	}

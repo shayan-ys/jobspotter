@@ -5,6 +5,7 @@ import netgloo.models.UserDao;
 
 import javax.servlet.http.HttpSession;
 
+import org.neo4j.cypher.internal.compiler.v2_1.perty.docbuilders.toStringDocBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +35,10 @@ public class UserController {
 			    	  System.out.println("email="+ email);
 			    	  System.out.println("password="+ password);
 			    	  System.out.println("login success");
-			    	  session.setAttribute("userId", user.getId());
+			    	  String userId = "";
+			    	  userId += user.getId();
+			    	  System.out.println("get attribute: "+ userId.toString());
+			    	  session.setAttribute("userId", userId.toString());
 			    	  return "success";
 			      
 			      }

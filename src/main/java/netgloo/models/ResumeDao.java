@@ -2,7 +2,6 @@ package netgloo.models;
 
 import javax.transaction.Transactional;
 
-import org.neo4j.cypher.internal.compiler.v2_1.planner.logical.findShortestPaths;
 import org.springframework.data.repository.CrudRepository;
 
 /**

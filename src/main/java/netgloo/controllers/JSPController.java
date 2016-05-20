@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -55,18 +54,6 @@ public class JSPController {
 	   // System.out.println("came here");
 		  model = this.checkLogin(session, model);
 	    return "registerTeams";
-	}
-	
-	@RequestMapping(value="/apply", method=RequestMethod.GET)
-	public String viewApply(ModelAndView modelAndView) {
-	   // System.out.println("came here");
-	    return "apply";
-	}
-	
-	@RequestMapping(value="/applyTeamResume", method=RequestMethod.GET)
-	public String viewApplyTeam(ModelAndView modelAndView) {
-	   // System.out.println("came here");
-	    return "applyTeamResume";
 	}
     
 }
