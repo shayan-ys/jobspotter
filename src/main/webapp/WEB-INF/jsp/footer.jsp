@@ -53,12 +53,37 @@
     <script src="/js/bootstrap.min.js"></script>
     <!-- google map API settings -->
     <script>
+    
+    function ajaxLogin(email, password) {
+  	  $.ajax({
+  	    url: "/login",
+  	    type: "POST",
+  	    data: {
+  	    	email: email,
+  	    	password: password
+  	    },
+  	    cache: false,
+  	    success: function (response) {
+  	      alert("ajax worked response: "+ response);
+  	    },
+  	    error: function (xhr) {
+  	      alert("communication error"+ xhr.responseText);
+  	    }
+  	  });
+  	} // function uploadFile
     $(document).ready(function(){
       $("#menuToggle").on("click", function(){
         if($(this).closest('.hover').hasClass('open'))
           $(this).closest('.hover').removeClass('open');
         else
           $(this).closest('.hover').addClass('open');
+      });
+      
+      $("#loginModal").on("submit", "#loginForm", function(){
+    	  var email = $(this).find("#loginEmail").val();
+    	  var password = $(this).find("#loginPassword").val();
+    	  alert("email= "+ email+ ", password= "+ password);
+    	  ajaxLogin(email, password);
       });
     });
     function initMap() {
