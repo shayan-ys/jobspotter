@@ -3,6 +3,8 @@ package netgloo.controllers;
 import netgloo.models.User;
 import netgloo.models.UserDao;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +19,38 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class UserController {
 	
-	
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	@ResponseBody
+	public String login(String email, String password, HttpSession session) {
+		System.out.println("email="+ email);
+		System.out.println("password="+ password);
+
+		   try {
+			      User user = userDao.findByEmail(email);
+			     
+			      if( password.equals(user.password) )
+			      {
+			    	  System.out.println("email="+ email);
+			    	  System.out.println("password="+ password);
+			    	  System.out.println("login success");
+			    	  session.setAttribute("testSession", "TestSessionValue");
+			    	  return "success";
+			      
+			      }
+			      else
+			      {
+			    	  System.out.println("email="+ email);
+			    	  System.out.println("password entered="+ password);
+			    	  System.out.println("password real="+ user.password);
+			    	  System.out.println("login failed");
+			    	  return "password or email is incorrect";
+			      }
+			    }
+			    catch (Exception ex) {
+			      return "User not found";
+			    }
+		   
+	}
 
 	@RequestMapping(value="/registerJobseeker", method=RequestMethod.POST)
 	@ResponseBody
