@@ -70,14 +70,15 @@ public class UserController {
 	    	  session.setAttribute("registerError", "email is Free");
 	      }
 	      
-	      try {
-    		user = new User(email, password,ostan,city);
+	    try {
+    		user = new User(email, password,ostan,city,"jobSeeker");
       		userDao.save(user);
     	}
     	catch (Exception ex) {
     		return "Error creating the user: " + ex.toString();
     	}
     	System.out.println(user.phone);
+    	
     	return "index";
 	}
 	
@@ -100,7 +101,7 @@ public class UserController {
 	    	  session.setAttribute("registerError", "email is Free");
 	      }
     	try {
-    		user = new User(email, password,ostan,city,name,zamineKari);
+    		user = new User(email, password,ostan,city,name,zamineKari,"jobOwner");
       		userDao.save(user);
     	}
     	catch (Exception ex) {
@@ -128,7 +129,7 @@ public class UserController {
 	    	  session.setAttribute("registerError", "email is Free");
 	      }
     	try {
-    		user = new User(email, password,ostan,city,name,zamineKari);
+    		user = new User(email, password,ostan,city,name,zamineKari,"team");
       		userDao.save(user);
     	}
     	catch (Exception ex) {

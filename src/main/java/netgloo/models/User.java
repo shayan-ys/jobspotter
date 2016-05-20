@@ -60,6 +60,9 @@ public class User {
   
   public String zamineKari;
   
+  
+  public String type; //jobSeeker , jobOwner , team
+   
   //karfarma profile hichi ezafe tar azina nadasht!
   
   
@@ -81,21 +84,23 @@ public class User {
     this.id = id;
   }
   
-  public User(String email, String password , String ostan , String city) {
+  public User(String email, String password , String ostan , String city, String type) {
     this.email = email;
     this.password = password;
     this.ostan = ostan;
     this.city = city;
+    this.type = type;
 
   }
   
-  public User(String email, String password , String ostan , String city,String name,String zamineKari) {
+  public User(String email, String password , String ostan , String city,String name,String zamineKari,String type) {
 	    this.email = email;
 	    this.password = password;
 	    this.ostan = ostan;
 	    this.city = city;
 	    this.name=name;
 	    this.zamineKari = zamineKari;
+	    this.type = type;
 
 	  }
 
