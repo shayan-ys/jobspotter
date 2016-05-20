@@ -4,6 +4,7 @@
     Author     : POONEH
 --%>
 
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +45,7 @@
     <![endif]-->
     </head>
     <body>
-
+<p> error = ${ registerError} </p>
         <!--header-->
         <!-- Modals -->
         <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
@@ -55,17 +56,17 @@
                 <h4 class="modal-title">ورود</h4>
               </div>
               <div class="modal-body">
-                <form class="form-horizontal">
+                <form id="loginForm" action="/" method="post" class="form-horizontal">
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">ایمیل</label>
+                    <label for="loginEmail" class="col-sm-2 control-label">ایمیل</label>
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                      <input name="email" type="email" class="form-control" id="loginEmail" placeholder="Email">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">رمز عبور</label>
+                    <label for="loginPassword" class="col-sm-2 control-label">رمز عبور</label>
                     <div class="col-sm-10">
-                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                      <input name="password" type="password" class="form-control" id="loginPassword" placeholder="Password">
                     </div>
                   </div>
                   <div class="form-group">
@@ -165,10 +166,28 @@
             </li>
             <li><a href="contactus.html">تماس با ما</a></li>
           </ul>
+     <c:choose>
+    <c:when test="${userId!='false'}">
+        
+          
           <ul class="nav navbar-nav navbar-left">
+            <li><a href="employee_profile.html">پروفایل&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+            <li><a href="logOut">خروج</a></li>
+          </ul>
+         
+           </c:when>    
+	
+  <c:otherwise>
+     <ul class="nav navbar-nav navbar-left">
             <li><a style="cursor:pointer;" data-toggle="modal" data-target="#loginModal">ورود</a></li>
             <li><a style="cursor:pointer;" data-toggle="modal" data-target="#registerModal">ثبت نام</a></li>
           </ul>
+           
+       </c:otherwise>
+</c:choose>
+    
+		
+
 
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

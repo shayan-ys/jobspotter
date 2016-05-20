@@ -48,17 +48,42 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-1.12.2.min.js"></script>
+    <script src="/js/jquery-1.12.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <!-- google map API settings -->
     <script>
+    
+    function ajaxLogin(email, password) {
+  	  $.ajax({
+  	    url: "/login",
+  	    type: "POST",
+  	    data: {
+  	    	email: email,
+  	    	password: password
+  	    },
+  	    cache: false,
+  	    success: function (response) {
+  	      alert("ajax worked response: "+ response);
+  	    },
+  	    error: function (xhr) {
+  	      alert("communication error"+ xhr.responseText);
+  	    }
+  	  });
+  	} // function uploadFile
     $(document).ready(function(){
       $("#menuToggle").on("click", function(){
         if($(this).closest('.hover').hasClass('open'))
           $(this).closest('.hover').removeClass('open');
         else
           $(this).closest('.hover').addClass('open');
+      });
+      
+      $("#loginModal").on("submit", "#loginForm", function(){
+    	  var email = $(this).find("#loginEmail").val();
+    	  var password = $(this).find("#loginPassword").val();
+    	  alert("email= "+ email+ ", password= "+ password);
+    	  ajaxLogin(email, password);
       });
     });
     function initMap() {
@@ -93,4 +118,3 @@
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNTMndy93H2Bp-AWM_pvxhnbaBxrGYmKY&language=fa&callback=initMap"></script>
   </body>
 </html>
-
