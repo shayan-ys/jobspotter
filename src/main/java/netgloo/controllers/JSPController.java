@@ -2,6 +2,7 @@ package netgloo.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -29,6 +30,18 @@ public class JSPController {
 	public String viewRegisterTeams(ModelAndView modelAndView) {
 	   // System.out.println("came here");
 	    return "registerTeams";
+	}
+	
+	@RequestMapping(value="/apply", method=RequestMethod.GET)
+	public String viewApply(ModelAndView modelAndView) {
+	   // System.out.println("came here");
+	    return "apply";
+	}
+	
+	@RequestMapping(value="/applyTeamResume", method=RequestMethod.GET)
+	public String viewApplyTeam(ModelAndView modelAndView) {
+	   // System.out.println("came here");
+	    return "applyTeamResume";
 	}
     
 }
