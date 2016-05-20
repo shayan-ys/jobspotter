@@ -70,27 +70,38 @@ public class UserController {
 	    	  session.setAttribute("registerError", "email is Free");
 	      }
 	      
-	      try {
-    		user = new User(email, password,ostan,city);
+	    try {
+    		user = new User(email, password,ostan,city,"jobSeeker");
       		userDao.save(user);
     	}
     	catch (Exception ex) {
     		return "Error creating the user: " + ex.toString();
     	}
     	System.out.println(user.phone);
+    	
     	return "index";
 	}
 	
 	
 	@RequestMapping(value="/registerJobowners", method=RequestMethod.POST)
 	@ResponseBody
-	public String registerOwner(String email, String password,String ostan,String city,String name,String zamineKari) {
+	public String registerOwner(HttpSession session, String email, String password,String ostan,String city,String name,String zamineKari) {
 		System.out.println("email="+ email);
 		System.out.println("password="+ password);
 
-		User user = null;
+		 User user = userDao.findByEmail(email);
+	      if(user!=null)
+	      {
+	    	  session.setAttribute("registerError", "email is taken");
+	    	 return "registerJobseeker";
+	    	  
+	      }
+	      else
+	      {
+	    	  session.setAttribute("registerError", "email is Free");
+	      }
     	try {
-    		user = new User(email, password,ostan,city,name,zamineKari);
+    		user = new User(email, password,ostan,city,name,zamineKari,"jobOwner");
       		userDao.save(user);
     	}
     	catch (Exception ex) {
@@ -102,13 +113,23 @@ public class UserController {
 	
 	@RequestMapping(value="/registerTeams", method=RequestMethod.POST)
 	@ResponseBody
-	public String registerTeams(String email, String password,String ostan,String city,String name,String zamineKari) {
+	public String registerTeams(HttpSession session, String email, String password,String ostan,String city,String name,String zamineKari) {
 		System.out.println("email="+ email);
 		System.out.println("password="+ password);
 
-		User user = null;
+		 User user = userDao.findByEmail(email);
+	      if(user!=null)
+	      {
+	    	  session.setAttribute("registerError", "email is taken");
+	    	 return "registerJobseeker";
+	    	  
+	      }
+	      else
+	      {
+	    	  session.setAttribute("registerError", "email is Free");
+	      }
     	try {
-    		user = new User(email, password,ostan,city,name,zamineKari);
+    		user = new User(email, password,ostan,city,name,zamineKari,"team");
       		userDao.save(user);
     	}
     	catch (Exception ex) {
