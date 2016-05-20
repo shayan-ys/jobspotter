@@ -28,13 +28,8 @@
     <link href="<c:url value='/jsp/css/bootstrap-rtl.min.css' />" rel="stylesheet">--%>
 
     <!-- Custom styles -->
-    <link 
-        rel="stylesheet"
-        type="text/css"
-        href="/css/bouncing.css" />
-
-    <%--<link href="css/style.css" rel="stylesheet">--%>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bouncing.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +39,6 @@
     <![endif]-->
     </head>
     <body>
-
         <!--header-->
         <!-- Modals -->
         <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
@@ -105,7 +99,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-3 logoPic ">
-              <a href="#"><img src="img/logo/js.png" width=110 /></a>
+              <a href="#"><img src="/img/logo/js.png" width=110 /></a>
             </div>
 
             <div class="col-sm-4 pull-left searchToolbar" >

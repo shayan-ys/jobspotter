@@ -125,5 +125,28 @@ public class User {
     this.name = value;
   }
   
+  public String getReshte() {
+	  return reshte;
+  }
+  
+  public String getPhone() {
+	  return phone;
+  }
+  
+  public String getOstan() {
+	  return ostan;
+  }
+  
+  public String getCity() {
+	  return city;
+  }
+  
+  public String getTozihat() {
+	  return tozihat;
+  }
+  
+  public String getMozoo_khabar() {
+	  return mozooKhabar;
+  }
 
 } // class User

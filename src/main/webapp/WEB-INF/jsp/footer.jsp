@@ -48,9 +48,9 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-1.12.2.min.js"></script>
+    <script src="/js/jquery-1.12.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <!-- google map API settings -->
     <script>
     $(document).ready(function(){
@@ -93,4 +93,3 @@
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNTMndy93H2Bp-AWM_pvxhnbaBxrGYmKY&language=fa&callback=initMap"></script>
   </body>
 </html>
-
