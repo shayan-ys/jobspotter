@@ -8,20 +8,20 @@
     <div class="row" id="tenant_content">
       <div class="col-md-8 col-sm-8 main-col">
         <div class="content-well">
-          <form class="form-job form-horizontal" role="form" id="new_job" enctype="multipart/form-data" action="/apply" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uVDUUAo13Ms1qadbA8IXvd099SZgtjxMtHhkgYuc0DsrSrRvQ6byO8fLWfISChumtbqxNlFB2+PyAjb/eFd/lA==" /><div id="a_comment_body_hp_1459844241"><style type="text/css" media="screen" scoped="scoped">#a_comment_body_hp_1459844241 { display:none; }</style><label for="a_comment_body">Do not fill in this field</label><input type="text" name="a_comment_body" id="a_comment_body" /></div>
-            <!--<div class="form-group">
+          <form class="form-job form-horizontal" role="form" id="new_job" enctype="multipart/form-data" action="/apply/edit" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uVDUUAo13Ms1qadbA8IXvd099SZgtjxMtHhkgYuc0DsrSrRvQ6byO8fLWfISChumtbqxNlFB2+PyAjb/eFd/lA==" /><div id="a_comment_body_hp_1459844241"><style type="text/css" media="screen" scoped="scoped">#a_comment_body_hp_1459844241 { display:none; }</style><label for="a_comment_body">Do not fill in this field</label><input type="text" name="a_comment_body" id="a_comment_body" /></div>
+            <div class="form-group">
               <label class="col-sm-3 control-label" for="name">نام و نام‌خانوادگی</label>
               <div class="col-sm-9">
-                <input class="form-control" type="text" name="name" id="name" required />
+                <input class="form-control" type="text" name="name" id="name" value="${resume.name}" required />
               </div>
             </div>
 
             <div class="form-group">
               <label class="col-sm-3 control-label" for="birthDate">تاریخ تولد</label>
               <div class="col-sm-9">
-                <input class="form-control" type="text" name="birthDate" id="birthDate" required/>
+                <input class="form-control" type="text" name="birthDate" id="birthDate" value="${ resume.birthDate }" required/>
               </div>
-            </div>   <!-- beshe dateTimePickers 
+            </div>   <!-- beshe dateTimePickers -->
 
             <div class="form-group job-types">
               <label class="col-sm-3 control-label" for="inlineRadiobuttons">جنسیت</label>
@@ -36,70 +36,76 @@
                   </label>
 
               </div>
-            </div>-->
+            </div>
 
             <div class="form-group">
               <label class="col-sm-3 control-label" for="job_title">عنوان شغلی</label>
               <div class="col-sm-9">
-                <input class="form-control" autocomplete="off" type="text" name="jobTitle" id="job_title" required/>
+                <input class="form-control" autocomplete="off" type="text" name="jobTitle" id="job_title" value="${ resume.jobTitle }" required/>
               </div>
             </div>
 
 
-           <!--  <div class="form-group">
+            <div class="form-group">
               <label class="col-sm-3 control-label" for="degree">میزان تحصیلات</label>
               <div class="col-sm-9">
-                <input class="form-control" autocomplete="off" type="text" name="degree" id="degree" required/>
+                <input class="form-control" autocomplete="off" type="text" name="degree" id="degree" value="${ resume.degree }" required/>
               </div>
             </div>
 
             <div class="form-group">
               <label class="col-sm-3 control-label" for="reshteTahsili">رشته تحصیلی</label>
               <div class="col-sm-9">
-                <input class="form-control" autocomplete="off" type="text" name="reshteTahsili" id="reshteTahsili" />
+                <input class="form-control" autocomplete="off" type="text" name="reshteTahsili" id="reshteTahsili" value="${ resume.reshteTahsili }" />
               </div>
-            </div>-->
+            </div>
 
             <div class="form-group">
               <label class="col-sm-3 control-label" for="sabeghe">میزان سابقه کار</label>
               <div class="col-sm-9">
-                <input class="form-control" autocomplete="off" type="text" name="sabeghe" id="sabeghe" />
+                <input class="form-control" autocomplete="off" type="text" name="sabeghe" id="sabeghe" value="${ resume.sabeghe }"/>
               </div>
             </div>
 
             <div class="form-group">
               <label class="col-sm-3 control-label" for="takhasos">تخصص</label>
               <div class="col-sm-9">
-                <input class="form-control" autocomplete="off" type="text" name="takhasos" id="takhasos" />
+                <input class="form-control" autocomplete="off" type="text" name="takhasos" id="takhasos" value="${ resume.takhasos }"/>
               </div>
             </div>
 
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="zamineKari">زمینه کاری</label>
+              <div class="col-sm-9">
+                <input class="form-control" autocomplete="off" type="text" name="zamineKari" id="zamineKari" value="${ resume.zamineKari }" required/>
+              </div>
+            </div>
 
-            <!-- <div class="form-group">
+            <div class="form-group">
               <label class="col-sm-3 control-label" for="phone_number">شماره همراه</label>
               <div class="col-sm-9">
-                <input class="form-control" autocomplete="off" type="text" name="phone_number" id="phone_number" required/>
+                <input class="form-control" autocomplete="off" type="text" name="phone_number" id="phone_number" value="${ resume.phone_number }" required/>
               </div>
             </div>
 
             <div class="form-group">
               <label class="col-sm-3 control-label" for="email">پست الکترونیک</label>
               <div class="col-sm-9">
-                <input class="form-control" autocomplete="off" type="text" name="email" id="email" required/>
+                <input class="form-control" autocomplete="off" type="text" name="email" id="email" value="${ resume.email }" required/>
               </div>
             </div>
 
             <div class="form-group">
               <label class="col-sm-3 control-label" for="HowDidYouMeetUs">نحوه آشنایی با ما</label>
               <div class="col-sm-9">
-                <input class="form-control" autocomplete="off" type="text" name="HowDidYouMeetUs" id="HowDidYouMeetUs" />
+                <input class="form-control" autocomplete="off" type="text" name="HowDidYouMeetUs" id="HowDidYouMeetUs" value="${ resume.HowDidYouMeetUs }"/>
               </div>
-            </div>-->
+            </div>
 
             <div class="form-group">
               <label class="col-sm-3 control-label" for="description">توضیحات</label>
               <div class="col-sm-9">
-                <textarea class="form-control"rows="10" cols="89" class="redactor" name="description" id="description">
+                <textarea class="form-control"rows="10" cols="89" class="redactor" name="description" id="description" value="${ resume.description }">
                 </textarea>
               </div>
             </div>

@@ -55,5 +55,19 @@ public class JSPController {
 		  model = this.checkLogin(session, model);
 	    return "registerTeams";
 	}
+	
+	@RequestMapping("/apply")
+	public String viewApply(ModelAndView modelAndView, Model model, HttpSession session) {
+	   // System.out.println("came here");
+		  model = this.checkLogin(session, model);
+	    return "apply";
+	}
+	
+	@RequestMapping("/applyTeamResume")
+	public String viewApplyTeam(ModelAndView modelAndView, Model model, HttpSession session) {
+	   // System.out.println("came here");
+		  model = this.checkLogin(session, model);
+	    return "applyTeamResume";
+	}
     
 }
