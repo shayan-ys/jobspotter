@@ -90,6 +90,27 @@ public class Resume {
     this.id = id;
   }
   
+  public String getTakhasos(){
+	  return this.takhasos;
+  }
   
+  public String getSabeghe(){
+	  return this.sabeghe;
+  }
+  
+  public String getDescription(){
+	  return this.description;
+  }
+  
+  public String getResumeFile(){
+	  return this.resume_file;
+  }
 
+  public String getJobTitle(){
+	  return this.jobTitle;
+  }
+  
+  public int getTeamNumber(){
+	  return this.teamNumber;
+  }
 } // class Resume
