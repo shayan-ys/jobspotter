@@ -72,7 +72,7 @@ public class UserProfileController {
 	}
 	
 	@RequestMapping(value = "/employee/edit", method = RequestMethod.POST)
-	public String EmployeeEditPost(HttpSession session, Model model, String name, String reshte,String gender, String email, String phone, String ostan, String city, String tozihat,String resume, String mozooKhabar) {
+	public String EmployeeEditPost(HttpSession session, Model model, String name, String reshte, String degree,String gender, String email, String phone, String ostan, String city, String tozihat, String mozooKhabar) {
 		
 		
 		int id = 1;
@@ -90,7 +90,7 @@ public class UserProfileController {
 		user.ostan = ostan;
 		user.city = city;
 		user.tozihat = tozihat;
-		user.resume = resume;
+		user.degree = degree;
 		user.mozooKhabar = mozooKhabar;
 		userDao.save(user);
 		

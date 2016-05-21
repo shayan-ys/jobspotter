@@ -39,6 +39,7 @@ public class UserController {
 			    	  userId += user.getId();
 			    	  System.out.println("get attribute: "+ userId.toString());
 			    	  session.setAttribute("userId", userId.toString());
+			    	  session.setAttribute("userType", user.type);
 			    	  return "success";
 			      
 			      }
@@ -77,18 +78,22 @@ public class UserController {
 	    try {
     		user = new User(email, password,ostan,city,"jobSeeker");
       		userDao.save(user);
+      	  String userId = "";
+    	  userId += user.getId();
+    	  System.out.println("get attribute: "+ userId.toString());
+    	  session.setAttribute("userId", userId.toString());
     	}
     	catch (Exception ex) {
     		return "Error creating the user: " + ex.toString();
     	}
     	System.out.println(user.phone);
     	
-    	return "index";
+    	return "redirect:/";
 	}
 	
 	
 	@RequestMapping(value="/registerJobowners", method=RequestMethod.POST)
-	@ResponseBody
+
 	public String registerOwner(HttpSession session, String email, String password,String ostan,String city,String name,String zamineKari) {
 		System.out.println("email="+ email);
 		System.out.println("password="+ password);
@@ -107,12 +112,17 @@ public class UserController {
     	try {
     		user = new User(email, password,ostan,city,name,zamineKari,"jobOwner");
       		userDao.save(user);
+      	  String userId = "";
+    	  userId += user.getId();
+    	  System.out.println("get attribute: "+ userId.toString());
+    	  session.setAttribute("userId", userId.toString());
     	}
     	catch (Exception ex) {
     		return "Error creating the user: " + ex.toString();
     	}
     	System.out.println(user.phone);
-    	return "User succesfully created! (id = " + user.getId() + ")";
+    //	return "User succesfully created! (id = " + user.getId() + ")";
+    	return "redirect:/";
 	}
 	
 	@RequestMapping(value="/registerTeams", method=RequestMethod.POST)
@@ -135,12 +145,17 @@ public class UserController {
     	try {
     		user = new User(email, password,ostan,city,name,zamineKari,"team");
       		userDao.save(user);
+      	  String userId = "";
+    	  userId += user.getId();
+    	  System.out.println("get attribute: "+ userId.toString());
+    	  session.setAttribute("userId", userId.toString());
     	}
     	catch (Exception ex) {
     		return "Error creating the user: " + ex.toString();
     	}
     	System.out.println(user.phone);
-    	return "User succesfully created! (id = " + user.getId() + ")";
+    	//return "User succesfully created! (id = " + user.getId() + ")";
+    	return "redirect:/";
 	}
 	
   // ------------------------

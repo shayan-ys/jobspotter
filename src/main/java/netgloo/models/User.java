@@ -47,7 +47,7 @@ public class User {
   
   public String tozihat;
   
-  public String resume;
+  public String degree;
   
   public String picture;
   
@@ -60,6 +60,8 @@ public class User {
   public String zamineKari;
   
   public String site;
+  
+  public String team_id;
   
   
   public String type; //jobSeeker , jobOwner , team
@@ -165,8 +167,16 @@ public class User {
 	  return address;
   }
   
+  public String getDegree() {
+	  return degree;
+  }
+  
   public String getMozooKhabar() {
 	  return mozooKhabar;
   }
+  public String getTeam_id(){
+	  return team_id;
+  }
+  
 
 } // class User
