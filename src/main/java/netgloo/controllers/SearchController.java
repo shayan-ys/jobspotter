@@ -16,10 +16,10 @@ public class SearchController {
 	@RequestMapping("/job")
 	
 	public String searchJob(String city) {
-		List<User> users = userDao.search("teh");
-		for(User user : users) {
-			System.out.println("found user: "+ user.email);
-		}
+//		List<User> users = userDao.search("teh");
+//		for(User user : users) {
+//			System.out.println("found user: "+ user.email);
+//		}
 		return "";
 	}
 	  // ------------------------
