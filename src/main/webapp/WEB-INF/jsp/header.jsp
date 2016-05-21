@@ -111,7 +111,7 @@
                 <h4 class="modal-title">ورود</h4>
               </div>
               <div class="modal-body">
-                <form id="loginForm" action="/" method="post" class="form-horizontal">
+                <form id="loginForm" action="/login" method="post" class="form-horizontal">
                   <div class="form-group">
                     <label for="loginEmail" class="col-sm-2 control-label">ایمیل</label>
                     <div class="col-sm-10">
@@ -161,7 +161,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-3 logoPic ">
-              <a href="#"><img src="img/logo/js.png" width=110 /></a>
+              <a href="#"><img src="/img/logo/js.png" width=110 /></a>
             </div>
 
             <div class="col-sm-4 pull-left searchToolbar" >
@@ -202,24 +202,29 @@
               <ul class="dropdown-menu">
                 <li><a href="/employersHiringAdverts">درج آگهی استخدام</a></li>
                 <li><a href="/employersOutsourceAdverts">درج آگهی برون‌سپاری</a></li>
-                <li><a href="search_resume.html">جستجو در رزومه‌ها</a></li>
+                <li><a href="/search/resume">جستجو در رزومه‌ها</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات کارجویان <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="search_job.html">جستجوی کار</a></li>
-                <li><a href="apply.html">ثبت رزومه</a></li>
+                <li><a href="/search/job">جستجوی کار</a></li>
+                 <c:if test="${userType=='jobSeeker'}">
+                <li><a href="/apply">ثبت رزومه</a></li>  
+                 </c:if>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات تیم های کاری <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="search_project.html">جستجوی پروژه</a></li>
-                <li><a href="applyTeamResume.html">ثبت رزومه</a></li>
+                <li><a href="/search/project">جستجوی پروژه</a></li>
+                
+                  <c:if test="${userType=='team'}">
+                <li><a href="/applyTeamResume">ثبت رزومه</a></li>
+                </c:if>
               </ul>
             </li>
-            <li><a href="contactus.html">تماس با ما</a></li>
+            <li><a href="/contactUs">تماس با ما</a></li>
           </ul>
      <c:choose>
     <c:when test="${userId!='false'}">

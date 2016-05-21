@@ -23,7 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class UserController {
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	@ResponseBody
+
 	public String login(String email, String password, HttpSession session) {
 		System.out.println("email="+ email);
 		System.out.println("password="+ password);
@@ -32,7 +32,7 @@ public class UserController {
 			      User user = userDao.findByEmail(email);
 			     if(user==null)
 			     {
-			    	 session.setAttribute("errorMessage", "ایمیل رو ثبت نکردی گاگول .");
+			    	 session.setAttribute("errorMessage", "این ایمیل ثبت نشده است.");
 			     }
 			    	 
 			    	 
@@ -46,7 +46,8 @@ public class UserController {
 			    	  System.out.println("get attribute: "+ userId.toString());
 			    	  session.setAttribute("userId", userId.toString());
 			    	  session.setAttribute("userType", user.type);
-			    	  return "success";
+			    	  session.setAttribute("successMessage", "شما با موفقیت وارد شدید.");
+			    	
 			      
 			      }
 			      else
@@ -55,13 +56,14 @@ public class UserController {
 			    	  System.out.println("password entered="+ password);
 			    	  System.out.println("password real="+ user.password);
 			    	  System.out.println("login failed");
-			    	  session.setAttribute("errorMessage", "پسورد غلطه خاک بر سر .");
-			    	  return "password or email is incorrect";
+			    	  session.setAttribute("errorMessage", "پسورد ورودی اشتباه است .");
+			    	  
 			      }
 			    }
 			    catch (Exception ex) {
 			      return "User not found";
 			    }
+		   return "redirect:/";
 		   
 	}
 

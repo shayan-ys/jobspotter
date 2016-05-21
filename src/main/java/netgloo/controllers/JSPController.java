@@ -35,6 +35,13 @@ public class JSPController {
 	    return "index";
 	}
 	
+	@RequestMapping("/contactUs")
+	public String viewContact(ModelAndView modelAndView, HttpSession session,Model model) {
+	   // System.out.println("came here");
+		 // model = this.checkLogin(session, model);
+	    return "contactUs";
+	}
+	
 	@RequestMapping("/logOut")
 	public String logOut(ModelAndView modelAndView , HttpSession session) {
 	  
@@ -45,51 +52,78 @@ public class JSPController {
 	
 	@RequestMapping("/registerJobseeker")
 	public String viewRegisterJobseeker(ModelAndView modelAndView, HttpSession session,Model model) {
-		  model = this.checkLogin(session, model);
-		  
-	   // System.out.println("came here");
+		model = this.checkLogin(session, model);  
+		  String userId = session.getAttribute("userId").toString();
+		  if(userId.equals("false"))
+		  {
+			  session.setAttribute("errorMessage", "لطفاً برای دسترسی به این بخش ابتدا وارد اکانت کاربری خود شوید."); 
+			  return "redirect:/";
+		  }
+		  else
 	    return "registerJobseeker";
 	}
 	
 	@RequestMapping("/registerJobowners")
 	public String viewRegisterJobowners(ModelAndView modelAndView, Model model, HttpSession session) {
-		  model = this.checkLogin(session, model);
-	    //System.out.println("came here");
+		model = this.checkLogin(session, model);  
+		  String userId = session.getAttribute("userId").toString();
+		  if(userId.equals("false"))
+		  {
+			  session.setAttribute("errorMessage", "لطفاً برای دسترسی به این بخش ابتدا وارد اکانت کاربری خود شوید."); 
+			  return "redirect:/";
+		  }
+		  else
 	    return "registerJobowners";
 	}
 	
 	@RequestMapping("/registerTeams")
 	public String viewRegisterTeams(ModelAndView modelAndView, Model model, HttpSession session) {
-	   // System.out.println("came here");
-		  model = this.checkLogin(session, model);
+		model = this.checkLogin(session, model);  
+		  String userId = session.getAttribute("userId").toString();
+		  if(userId.equals("false"))
+		  {
+			  session.setAttribute("errorMessage", "لطفاً برای دسترسی به این بخش ابتدا وارد اکانت کاربری خود شوید."); 
+			  return "redirect:/";
+		  }
+		  else
 	    return "registerTeams";
 	}
 	
 	@RequestMapping("/apply")
 	public String viewApply(ModelAndView modelAndView, Model model, HttpSession session) {
-	   // System.out.println("came here");
-		  model = this.checkLogin(session, model);
+		model = this.checkLogin(session, model);  
+		  String userId = session.getAttribute("userId").toString();
+		  if(userId.equals("false"))
+		  {
+			  session.setAttribute("errorMessage", "لطفاً برای دسترسی به این بخش ابتدا وارد اکانت کاربری خود شوید."); 
+			  return "redirect:/";
+		  }
+		  else
 	    return "apply";
 	}
 	
 	@RequestMapping("/applyTeamResume")
 	public String viewApplyTeam(ModelAndView modelAndView, Model model, HttpSession session) {
-	   // System.out.println("came here");
-		  model = this.checkLogin(session, model);
+		model = this.checkLogin(session, model);  
+		  String userId = session.getAttribute("userId").toString();
+		  if(userId.equals("false"))
+		  {
+			  session.setAttribute("errorMessage", "لطفاً برای دسترسی به این بخش ابتدا وارد اکانت کاربری خود شوید."); 
+			  return "redirect:/";
+		  }
+		  else
 	    return "applyTeamResume";
 	}
     
 	@RequestMapping("/employersOutsourceAdverts")
 	public String viewOutsourceAd(ModelAndView modelAndView, Model model, HttpSession session) {
-		  model = this.checkLogin(session, model);
-			 
-			//	  if(session.getAttribute("userId") == null)
-				//	  session.setAttribute("userId" , "false");
-				  
+		 
+		
+					model = this.checkLogin(session, model);  
 				  String userId = session.getAttribute("userId").toString();
 				  if(userId.equals("false"))
 				  {
-					  session.setAttribute("errorMessage", "اول لاگین کن احمق"); 
+					  session.setAttribute("errorMessage", "لطفاً برای دسترسی به این بخش ابتدا وارد اکانت کاربری خود شوید."); 
 					  return "redirect:/";
 				  }
 				  else
@@ -98,8 +132,14 @@ public class JSPController {
 	
 	@RequestMapping("/employersHiringAdverts")
 	public String viewHiringAd(ModelAndView modelAndView, Model model, HttpSession session) {
-	   // System.out.println("came here");
-		  model = this.checkLogin(session, model);
+		model = this.checkLogin(session, model);  
+		  String userId = session.getAttribute("userId").toString();
+		  if(userId.equals("false"))
+		  {
+			  session.setAttribute("errorMessage", "لطفاً برای دسترسی به این بخش ابتدا وارد اکانت کاربری خود شوید."); 
+			  return "redirect:/";
+		  }
+		  else
 	    return "employersHiringAdverts";
 	}
 }
