@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
 <jsp:include page="header.jsp" />
 <div class="content">
       <div class="container">
@@ -45,7 +46,7 @@
                       </datalist>
                     </div>
                     <div class="col-lg-4 col-md-3 col-sm-4">
-                      <select class="form-control" name="type">
+                      <select class="form-control" name="time_type">
                         <option value="">تمامی زمان های کاری</option>
                         <option value="1">تمام وقت</option>
                         <option value="2">پاره وقت</option>
@@ -83,6 +84,7 @@
             </div>
             <div class="row search-result">
                 <div class="jobs-list">
+                  <c:forEach var="found_resume" items="${found_resumes}">
                   <div class="job featured">
                     <div class="row">
                       <div class="details col-sm-10 col-xs-8">
@@ -105,6 +107,7 @@
                       </div>
                     </div>
                   </div>
+                  </c:forEach>
                   <div class="job">
                     <div class="row">
                       <div class="details col-sm-10 col-xs-8">

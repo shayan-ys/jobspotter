@@ -33,10 +33,10 @@ public interface UserDao extends CrudRepository<User, Long> {
 //  @Query("SELECT p FROM User p WHERE p.team_id = :teamId")
 //  public List<User> findByTeamId(@Param("teamId") String teamId);
   
-  @Query(value = "SELECT u.name FROM Users as t WHERE "
-	         + "    t.city LIKE CONCAT('%',:city,'%'"
-	         + "AND u.ostan LIKE CONCAT('%',:ostan,'%')"
-	         + "AND u.type LIKE CONCAT('%',:userType,'%')"
+  @Query(value = "SELECT * FROM Users as t WHERE "
+	         + "    t.city LIKE CONCAT('%',:city,'%')"
+	         + "AND t.ostan LIKE CONCAT('%',:ostan,'%')"
+	         + "AND t.type LIKE CONCAT('%',:userType,'%')"
 	         + "AND t.reshte LIKE CONCAT('%',:reshte_fardi,'%')"
 	         + "AND t.zamine_kari LIKE CONCAT('%',:zamine_kari_team,'%')"
 	         , nativeQuery= true)

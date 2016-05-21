@@ -27,11 +27,11 @@ public interface ResumeDao extends CrudRepository<Resume, Long> {
    */
   public Resume findById(long id);
 
-  @Query(value = "SELECT u.name FROM Resumes as t WHERE "
+  @Query(value = "SELECT * FROM Resumes as t WHERE "
 	         + "(t.description LIKE CONCAT('%',:desc,'%')"
-	         + " OR t.job_title LIKE CONCAT('%',:job_title,'%')"
-	         + "AND u.takhasos LIKE CONCAT('%',:takhasos,'%')"
-	         + "AND u.type LIKE CONCAT('%',:type,'%')"
+	         + " OR t.job_title LIKE CONCAT('%',:job_title,'%'))"
+	         + "AND t.takhasos LIKE CONCAT('%',:takhasos,'%')"
+	         + "AND t.type LIKE CONCAT('%',:type,'%')"
 	         + "AND t.sabeghe LIKE CONCAT('%',:sabeghe,'%')"
 	         + "AND t.time_type LIKE CONCAT('%',:time_type,'%')"
 	         + "AND t.availability LIKE CONCAT('%',:availability,'%')"
