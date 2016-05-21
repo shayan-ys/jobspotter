@@ -174,8 +174,21 @@
         
           
           <ul class="nav navbar-nav navbar-left">
-            <li><a href="employee_profile.html">پروفایل&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-            <li><a href="logOut">خروج</a></li>
+          
+          <c:if test="${userType=='jobSeeker'}">
+          <li><a href="/profile/employee/edit">پروفایل&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+       
+          </c:if>
+          
+          <c:if test="${userType=='jobOwner'}">
+          <li><a href="/profile/employer/edit">پروفایل&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+  
+          </c:if>
+          
+          <c:if test="${userType=='team'}">
+          <li><a href="/profile/team/edit">پروفایل&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+          </c:if>
+            <li><a href="/logOut">خروج</a></li>
           </ul>
          
            </c:when>    

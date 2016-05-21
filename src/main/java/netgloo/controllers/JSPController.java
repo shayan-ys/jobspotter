@@ -12,10 +12,17 @@ public class JSPController {
 
 	public Model checkLogin(HttpSession session, Model model){
 		String userId="false";
+		String userType="false";
 		  if( session.getAttribute("userId") != null )
+		  {
+			  
 			  userId = session.getAttribute("userId").toString();
-		  System.out.println("userId= "+ userId);
+			  userType = session.getAttribute("userType").toString();
+			  
+		  }
+		  System.out.println("userId= "+ userType);
 		  model.addAttribute("userId", userId);
+		  model.addAttribute("userType", userType);
 		return model;
 	}
 	
@@ -31,7 +38,7 @@ public class JSPController {
 	  
 		session.setAttribute("userId","false");
 		System.out.println(session.getAttribute("userId") );
-	    return "index";
+	    return "redirect:/";
 	}
 	
 	@RequestMapping("/registerJobseeker")

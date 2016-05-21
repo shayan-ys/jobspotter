@@ -34,11 +34,19 @@
 		</div>
 
 		<div class="form-group">
-			<label class="col-sm-3 control-label" for="profile_major">رشته و مقطع تحصیلی</label>
+			<label class="col-sm-3 control-label" for="profile_major">رشته </label>
 			<div class="col-sm-9">
 				<input class="form-control" type="text" name="reshte" id="profile_major" value="${user.reshte}" />
 			</div>
 		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3 control-label" for="profile_major">سطح تحصیلات </label>
+			<div class="col-sm-9">
+				<input class="form-control" type="text" name="degree" id="profile_major" value="${user.degree}" />
+			</div>
+		</div>
+
 
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="inlineRadiobuttons">
@@ -101,23 +109,7 @@
 				</div>
 		  </div>
 
-		<div class="form-group">
-			<label class="col-sm-3 control-label"></label>
-			<div class="col-sm-9">
-				<div class="container-fluid groupItem">
-					<div class="col-md-6" style="margin-top:7px;">
-						<h5>   در صورتی که رزومه آماده دارید از دکمه آپلود رزومه استفاده نمایید.</h5>
-					</div>
-					<div class="col-md-6 left">
-						<input name="resume" type="file" id="uploadBtn" style="display: none;">
-						<label for="uploadBtn" class="btn btn-success">آپلود رزومه</label>
-						<div class="row" style="margin-left:1px; margin-top:2px;">
-							<input id="uploadFile" placeholder="فایل مورد نظر" disabled="disabled" style="width: 212px; border-radius:5px;" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 		<div class="form-group">
 			<label class="col-sm-3 control-label"></label>
 			<div class="col-sm-9">
