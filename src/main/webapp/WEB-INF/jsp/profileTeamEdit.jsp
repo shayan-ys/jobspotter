@@ -28,12 +28,12 @@
 	<div class="col-md-8 col-sm-8 main-col">
 	<div class="content-well">
 
-   <form action="profile/team/edit" method="POST"  class="form-job form-horizontal" role="form" id="new_job" enctype="multipart/form-data" action="/jobs" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uVDUUAo13Ms1qadbA8IXvd099SZgtjxMtHhkgYuc0DsrSrRvQ6byO8fLWfISChumtbqxNlFB2+PyAjb/eFd/lA==" /><div id="a_comment_body_hp_1459844241"><style type="text/css" media="screen" scoped="scoped">#a_comment_body_hp_1459844241 { display:none; }</style><label for="a_comment_body">Do not fill in this field</label><input type="text" name="a_comment_body" id="a_comment_body" /></div>
+   <form action="/profile/team/edit" method="POST"  class="form-job form-horizontal" role="form" id="new_job" enctype="multipart/form-data" action="/jobs" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uVDUUAo13Ms1qadbA8IXvd099SZgtjxMtHhkgYuc0DsrSrRvQ6byO8fLWfISChumtbqxNlFB2+PyAjb/eFd/lA==" /><div id="a_comment_body_hp_1459844241"><style type="text/css" media="screen" scoped="scoped">#a_comment_body_hp_1459844241 { display:none; }</style><label for="a_comment_body">Do not fill in this field</label><input type="text" name="a_comment_body" id="a_comment_body" /></div>
 
   <div class="form-group">
     <label class="col-sm-3 control-label" for="profile_name">نام تیم</label>
 		<div class="col-sm-9">
-	    	<input class="form-control" type="text" name="name" id="profile_name" />
+	    	<input class="form-control" type="text" name="name" id="profile_name" value="${user.name}" />
 		</div>
   </div>
 
@@ -41,26 +41,26 @@
   <div class="form-group">
     <label class="col-sm-3 control-label" for="site_address">سایت</label>
 		<div class="col-sm-9">
-	    	<input class="form-control" type="text" name="site" id="site_address" />
+	    	<input class="form-control" type="text" name="site" id="site_address"  value="${user.site}" />
 		</div>
   </div>
 
   <div class="form-group">
     <label class="col-sm-3 control-label" for="profile_Email">ایمیل</label>
 		<div class="col-sm-9">
-	    	<input class="form-control" type="email" name="email" id="profile_Email" />
+	    	<input class="form-control" type="email" name="email" id="profile_Email" value="${user.email}" />
 		</div>
   </div>
 
   <div class="form-group">
     <label class="col-sm-3 control-label" for="profile_tel">شماره تماس</label>
     <div class="col-sm-9">
-        <input class="form-control" type="email" name="phone" id="profile_tel" />
+        <input class="form-control" type="email" name="phone" id="profile_tel" value="${user.phone}" />
     </div>
   </div>
 
 <div class="form-group">
-			<label class="col-sm-3 control-label" for="profile_location">آدرس</label>
+			<label class="col-sm-3 control-label" for="profile_location"></label>
 			<div class="col-sm-9">
 				<div class="row">
 					<div class="col-sm-1">
@@ -82,14 +82,14 @@
   <div class="form-group">
     <label class="col-sm-3 control-label" for="profile_tel">آدرس</label>
     <div class="col-sm-9">
-        <input class="form-control" type="email" name="address" id="profile_tel" />
+        <input class="form-control" type="text" name="address" id="profile_tel" value="${user.address}" />
     </div>
   </div>
 
   <div class="form-group">
     <label class="col-sm-3 control-label" for="zamineKari">زمینه کاری</label>
     <div class="col-sm-9">
-      <input class="form-control" autocomplete="off" type="text" name="zamineKari" id="zamineKari" />
+      <input class="form-control" autocomplete="off" type="text" name="zamineKari" id="zamineKari" value="${user.zamineKari}" />
     </div>
   </div>
 
@@ -103,7 +103,7 @@
   <div class="form-group">
     <label class="col-sm-3 control-label" for="profile_description">توضیحات</label>
 		<div class="col-sm-9">
-	     	<textarea class="form-control" rows="10" cols="89" class="redactor" name="tozihat" id="profile_description">
+	     	<textarea class="form-control" rows="10" cols="89" class="redactor" name="tozihat" value="${user.tozihat}"  id="profile_description">
 </textarea>
 		</div>
   </div>
@@ -133,7 +133,7 @@
                     <label class="control-label" style="text-align: right;">   از کدام آگهی ها می خواهید باخبر شوید؟اخبار مربوطه به ایمیل شما ارسال می گردد.</label>
                   </div>
                   <div class="col-md-6 left" style="margin-top:15px;">
-					<input name="mozooKhabar" class="form-control" placeholder="موضوع خود را انتخاب نمایید..." list="categories" name="categories" multiple>
+					<input value="${user.mozooKhabar}" name="mozooKhabar" class="form-control" placeholder="موضوع خود را انتخاب نمایید..." list="categories" name="categories" multiple>
 			<datalist id="categories">
 			<option value="تمایل ندارم" selected>
 			<option value="مهندسی نرم افزار یا سخت افزار">

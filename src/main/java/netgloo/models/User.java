@@ -161,5 +161,12 @@ public class User {
   public String getZamineKari() {
 	  return zamineKari;
   }
+  public String getAddress() {
+	  return address;
+  }
+  
+  public String getMozooKhabar() {
+	  return mozooKhabar;
+  }
 
 } // class User

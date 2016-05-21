@@ -1,0 +1,173 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:include page="header.jsp" />
+<div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 search-wrapper">
+            <div class="row search-desc">
+              <div class="well">
+                برای جستجو میان کارهای موجود در بازار
+              </br>
+                مقادیر زیر را پر کنید و جستجو کنید تا کار مورد نظر خود را توسط سامانه ما بیابید.
+              </div>
+            </div>
+            <div class="row search-box">
+              <div class="col-md-12">
+                <form method="get" accept-charset="UTF-8" action="/search/resume" id="jobs-search" role="form">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input type="text" placeholder="عبارت جستجو" class="form-control search-input input-stacked" name="keyword">
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-inline province-cities">
+                        <div class="form-group">
+                          <label for="provinces">استان</label>
+                          <select name="ostan" id="provinces" class="province form-control"></select>
+                        </div>
+                        <div class="form-group pull-left">
+                          <label for="cities">شهر</label>
+                          <select name="city" id="cities" class="city form-control"></select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input class="form-control" placeholder="دسته بندی کار را انتخاب کنید..." list="browsers" name="zamine_kari">
+                      <datalist id="browsers">
+                        <option value="مهندسی نرم افزار یا سخت افزار"></option>
+                        <option value="برنامه نویس"></option>
+                        <option value="مدیریتی"></option>
+                        <option value="تحلیل و طراحی"></option>
+                        <option value="موبایل"></option>
+                        <option value="شبکه"></option>
+                        <option value="سایر"></option>
+                      </datalist>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-4">
+                      <select class="form-control" name="type">
+                        <option value="">تمامی زمان های کاری</option>
+                        <option value="1">تمام وقت</option>
+                        <option value="2">پاره وقت</option>
+                        <option value="3">آزاد</option>
+                        <option value="4">موقت</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-2" style="margin-top: 7px; text-align: left;">
+                      <input type="radio" name="jobAvailablity" id="job-availablity" value="available"> موجود
+                      &nbsp;
+                      <input type="radio" name="jobAvailablity" id="job-all" value="all"> همه
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <label>جنسیت:</label>
+                      <div class="block" style="margin-top: 7px;">
+                        <input type="radio" name="gender" value="male"> آقا
+                        <input type="radio" name="gender" value="female"> خانم
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <label>سابقه کار</label>
+                      <input type="number" class="form-control" name="sabeghe" placeholder="سابقه کار" />
+                    </div>
+                    <div class="col-sm-12">
+                      <button type="submit" class="btn btn-primary btn-search form-control">
+                        <span class="glyphicon glyphicon-search"></span>
+                         جستجوی رزومه
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row search-result">
+                <div class="jobs-list">
+                  <div class="job featured">
+                    <div class="row">
+                      <div class="details col-sm-10 col-xs-8">
+                        <div class="pull-left hidden-xs logo">
+                          <a href="/jobs/255562-senior-devops-engineer-at-symphony-communication-services-llc">
+                            <img border="0" src="https://d6dyoorq84mou.cloudfront.net/uploads/job/logo/255562/thumb_Symphony_Logo_12.16.2015.png" alt="SmartBear" class="img-responsive">
+                          </a>
+                        </div>
+                        <div class="details">
+                          <div class="title"><a href="/jobs/255562-senior-devops-engineer-at-symphony-communication-services-llc">الهام فاطمی</a></div>
+                          <div class="company">کارشناس گرافیک</div>
+                          <div class="location">ایران٫ تهران٫ بلوار کشاورز</div>
+                        </div>
+                      </div>
+                      <div class="date col-sm-2 col-xs-4">
+                        <div>4 آذر</div>
+						<div style="margin-top: 25px;">
+							<a href="viewResume.html" class="btn btn-success">مشاهده رزومه</a>
+						</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="job">
+                    <div class="row">
+                      <div class="details col-sm-10 col-xs-8">
+                        <div class="details">
+                          <div class="title">
+                            <a href="/jobs/260403-senior-java-software-engineer-at-icrossing">
+                              علی احمدی
+                          </a>
+                        </div>
+                          <div class="company">متخصص شبکه</div>
+                          <div class="location">صنعتی مخابرات</div>
+                        </div>
+                      </div>
+                      <div class="date col-sm-2 col-xs-4">
+                        <div> 7 آذر</div>
+						<div style="margin-top: 25px;">
+							<a href="viewResume.html" class="btn btn-success">مشاهده رزومه</a>
+						</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="job">
+                    <div class="row">
+                      <div class="details col-sm-10 col-xs-8">
+                        <div class="pull-left hidden-xs logo">
+                          <a href="/jobs/260387-ux-designer-at-smartbear">
+                            <img border="0" src="http://logok.org/wp-content/uploads/2014/04/Apple-Logo-rainbow.png" alt="apple" width="50" class="img-responsive">
+                          </a>
+                        </div>
+                        <div class="details">
+                          <div class="title"><a href="/jobs/260387-ux-designer-at-smartbear">بهرام کریمی</a></div>
+                          <div class="company">مهندس صنعتی</div>
+                          <div class="location">ایالات متحده٫ کالیفرنیا</div>
+                        </div>
+                      </div>
+                      <div class="date col-sm-2 col-xs-4">
+                        <div> 7 آذر</div>
+						<div style="margin-top: 25px;">
+							<a href="viewResume.html" class="btn btn-success">مشاهده رزومه</a>
+						</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="loading">
+                  <span class="loading-icon">
+                    درحال بارگزاری
+                  </br>
+                    <i class="glyphicon glyphicon-refresh gly-spin"></i>
+                  </span>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-warning" style="margin-top: 25px;">
+              <div class="panel-heading">
+                <p class="panel-title">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<jsp:include page="footer.jsp" />
