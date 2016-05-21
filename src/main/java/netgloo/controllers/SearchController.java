@@ -6,10 +6,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import netgloo.models.UserDao;
 import netgloo.models.Resume;
@@ -21,15 +24,20 @@ import netgloo.models.User;
 @RequestMapping("/search")
 public class SearchController {
 
+
 	@RequestMapping("/job")
-	public String searchJob(String city) {
-//		List<User> users = userDao.search("teh");
-//		for(User user : users) {
-//			System.out.println("found user: "+ user.email);
-//		}
-		return "";
+	public String jobview(ModelAndView modelAndView, HttpSession session,Model model) {
+	   
+		  session.setAttribute("errorMessage", "این بخش در حال ساخت میباشد. لطفا ترم بعد مراجعه فرمایید :دی"); 
+		  return "redirect:/";
 	}
 	
+	@RequestMapping("/project")
+	public String projectview(ModelAndView modelAndView, HttpSession session,Model model) {
+	  
+		  session.setAttribute("errorMessage", "این بخش در حال ساخت میباشد. لطفا ترم بعد مراجعه فرمایید :دی"); 
+		  return "redirect:/";
+	}
 	@RequestMapping("/resume")
 	public String searchResume(Model model, String keyword, String ostan, String city, String zamine_kari, String time_type, String jobAvailablity, String gender, String sabeghe) {
 //		Search ser = new Search();

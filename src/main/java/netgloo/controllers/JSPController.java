@@ -35,6 +35,7 @@ public class JSPController {
 	    return "index";
 	}
 	
+
 	@RequestMapping("/contactUs")
 	public String viewContact(ModelAndView modelAndView, HttpSession session,Model model) {
 	   // System.out.println("came here");
