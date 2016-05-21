@@ -7,6 +7,8 @@ import netgloo.models.UserDao;
 
 import java.nio.charset.StandardCharsets;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,14 +22,25 @@ import org.springframework.web.servlet.ModelAndView;
  *
  * @author netgloo
  */
+
 @Controller
 public class ResumeController {
 	
 	
-
+	/*@RequestMapping(value = "/apply/edit", method = RequestMethod.GET)
+	public String ResumeEdit(ModelAndView modelAndView, Model model, HttpSession session,String resumeId) {
+		if(resumeId!=null)
+			
+		
+//		id = Integer.parseInt(id_str);
+		System.out.println("id_int:"+ id);
+		Resume resumeobj = resumeDao.findById((long) id);
+		model.addAttribute("resume", resumeobj);
+		return "applyEdit";
+	}
+	*/
 	@RequestMapping(value="/apply", method=RequestMethod.POST)
-	@ResponseBody
-	public String employeeResume(ModelAndView modelandview,String name, String birthDate,String gender,String jobTitle,String degree,String reshteTahsili,String sabeghe,String zamineKari,String phone_number,String email,String HowDidYouMeetUs,String description,String resume) {
+	public String employeeResume(HttpSession session,Model model,String jobTitle,String sabeghe,String takhasos,String description,String resume_file) {
 		
 		//System.out.println("password="+ password);
 
@@ -35,11 +48,23 @@ public class ResumeController {
     	try {
     		/*byte[] bytes = name.getBytes(StandardCharsets.ISO_8859_1);
             name = new String(bytes, StandardCharsets.UTF_8);*/
-            System.out.println("name="+ name);
-    		resumeobj = new Resume(name,birthDate,gender,jobTitle,degree,reshteTahsili,sabeghe,zamineKari,phone_number,email,HowDidYouMeetUs,description,resume);
+            //System.out.println("name="+ name);
+    		int id = 1;
+    		String id_str = "1";
+    		if(session.getAttribute("userId") != null)
+    			id_str = session.getAttribute("userId").toString();
+    		
+    		System.out.println(""
+    				+ ""
+    				+ ""
+    				+ "id_str:"+ id_str);
+    		int owner_id = Integer.parseInt(id_str);
+    		resumeobj = new Resume(owner_id,jobTitle,sabeghe,takhasos,description,resume_file,"jobSeeker");
       		resumeDao.save(resumeobj);
+      		model.addAttribute("successMessage", "رزومه شما با موفقیت ثبت شد.");
     	}
     	catch (Exception ex) {
+    		model.addAttribute("errorMessage", "در ثبت رزومه شما خطایی رخ داد");
     		return "Error creating the Resume: " + ex.toString();
     	}
     	//System.out.println(user.phone);
@@ -48,13 +73,23 @@ public class ResumeController {
 	
 	
 	@RequestMapping(value="/applyTeamResume", method=RequestMethod.POST)
-	public String teamResume(Model model, ModelAndView modelandview,String name, String teamNumber,String beginnigDate,String sabeghe,String takhasos,String zamineKari,String phone_number,String email,String HowDidYouMeetUs,String description,String resume) {
-		System.out.println("name="+ name);
+	public String teamResume(HttpSession session,Model model, ModelAndView modelandview,int teamNumber,String sabeghe,String takhasos,String description,String resume_file) {
+		//System.out.println("name="+ name);
 		//System.out.println("password="+ password);
 
 		Resume resumeobj = null;
     	try {
-    		resumeobj = new Resume(name, teamNumber, beginnigDate,sabeghe,takhasos,zamineKari,phone_number,email,HowDidYouMeetUs,description,resume);
+    		int id = 1;
+    		String id_str = "1";
+    		if(session.getAttribute("userId") != null)
+    			id_str = session.getAttribute("userId").toString();
+    		
+    		System.out.println(""
+    				+ ""
+    				+ ""
+    				+ "id_str:"+ id_str);
+    		int owner_id = Integer.parseInt(id_str);
+    		resumeobj = new Resume(owner_id,teamNumber,sabeghe,takhasos,description,resume_file,"team");
       		resumeDao.save(resumeobj);
       		model.addAttribute("successMessage", "رزومه شما با موفقیت ثبت شد.");
     	}
