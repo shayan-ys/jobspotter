@@ -29,7 +29,12 @@ public class UserController {
 
 		   try {
 			      User user = userDao.findByEmail(email);
-			     
+			     if(user==null)
+			     {
+			    	 session.setAttribute("errorMessage", "ایمیل رو ثبت نکردی گاگول .");
+			     }
+			    	 
+			    	 
 			      if( password.equals(user.password) )
 			      {
 			    	  System.out.println("email="+ email);
@@ -49,6 +54,7 @@ public class UserController {
 			    	  System.out.println("password entered="+ password);
 			    	  System.out.println("password real="+ user.password);
 			    	  System.out.println("login failed");
+			    	  session.setAttribute("errorMessage", "پسورد غلطه خاک بر سر .");
 			    	  return "password or email is incorrect";
 			      }
 			    }
@@ -67,6 +73,9 @@ public class UserController {
 	      if(user!=null)
 	      {
 	    	  session.setAttribute("registerError", "email is taken");
+	    	  session.setAttribute("errorMessage", "این ایمیل توسط شخص دیگری ثبت شده است.");
+	    	  session.setAttribute("userId", "false");
+	    	  session.setAttribute("userType", "false");
 	    	 return "registerJobseeker";
 	    	  
 	      }
@@ -82,6 +91,9 @@ public class UserController {
     	  userId += user.getId();
     	  System.out.println("get attribute: "+ userId.toString());
     	  session.setAttribute("userId", userId.toString());
+    	  session.setAttribute("successMessage", "ثبت نام با موفقیت انجام شد");
+    	  session.setAttribute("userType", "jobSeeker");
+    	  
     	}
     	catch (Exception ex) {
     		return "Error creating the user: " + ex.toString();
@@ -102,6 +114,10 @@ public class UserController {
 	      if(user!=null)
 	      {
 	    	  session.setAttribute("registerError", "email is taken");
+	    	  session.setAttribute("errorMessage", "این ایمیل توسط شخص دیگری ثبت شده است.");
+	    	  session.setAttribute("userId", "false");
+	    	  session.setAttribute("userType", "false");
+	    	  
 	    	 return "registerJobseeker";
 	    	  
 	      }
@@ -116,6 +132,8 @@ public class UserController {
     	  userId += user.getId();
     	  System.out.println("get attribute: "+ userId.toString());
     	  session.setAttribute("userId", userId.toString());
+    	  session.setAttribute("successMessage", "ثبت نام با موفقیت انجام شد");
+    	  session.setAttribute("userType", "jobOwner");
     	}
     	catch (Exception ex) {
     		return "Error creating the user: " + ex.toString();
@@ -126,7 +144,6 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/registerTeams", method=RequestMethod.POST)
-	@ResponseBody
 	public String registerTeams(HttpSession session, String email, String password,String ostan,String city,String name,String zamineKari) {
 		System.out.println("email="+ email);
 		System.out.println("password="+ password);
@@ -135,6 +152,10 @@ public class UserController {
 	      if(user!=null)
 	      {
 	    	  session.setAttribute("registerError", "email is taken");
+	    	  
+	    	  session.setAttribute("errorMessage", "این ایمیل توسط شخص دیگری ثبت شده است.");
+	    	  session.setAttribute("userId", "false");
+	    	  session.setAttribute("userType", "false");
 	    	 return "registerJobseeker";
 	    	  
 	      }
@@ -149,6 +170,9 @@ public class UserController {
     	  userId += user.getId();
     	  System.out.println("get attribute: "+ userId.toString());
     	  session.setAttribute("userId", userId.toString());
+    	  session.setAttribute("successMessage", "ثبت نام با موفقیت انجام شد");
+    	  session.setAttribute("userType", "team");
+    	  
     	}
     	catch (Exception ex) {
     		return "Error creating the user: " + ex.toString();

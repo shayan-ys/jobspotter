@@ -17,7 +17,8 @@ public class JSPController {
 		  {
 			  
 			  userId = session.getAttribute("userId").toString();
-			  userType = session.getAttribute("userType").toString();
+			  if(session.getAttribute("userType")!=null)
+				  userType = session.getAttribute("userType").toString();
 			  
 		  }
 		  System.out.println("userId= "+ userType);
@@ -77,4 +78,17 @@ public class JSPController {
 	    return "applyTeamResume";
 	}
     
+	@RequestMapping("/employersOutsourceAdverts")
+	public String viewOutsourceAd(ModelAndView modelAndView, Model model, HttpSession session) {
+	   // System.out.println("came here");
+		  model = this.checkLogin(session, model);
+	    return "employersOutsourceAdverts";
+	}
+	
+	@RequestMapping("/employersHiringAdverts")
+	public String viewHiringAd(ModelAndView modelAndView, Model model, HttpSession session) {
+	   // System.out.println("came here");
+		  model = this.checkLogin(session, model);
+	    return "employersHiringAdverts";
+	}
 }

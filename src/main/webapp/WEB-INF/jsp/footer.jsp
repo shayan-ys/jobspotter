@@ -72,6 +72,9 @@
   	  });
   	} // function uploadFile
     $(document).ready(function(){
+    	$("#errorModal").modal("show");
+    	$("#successModal").modal("show");
+    	
       $("#menuToggle").on("click", function(){
         if($(this).closest('.hover').hasClass('open'))
           $(this).closest('.hover').removeClass('open');
