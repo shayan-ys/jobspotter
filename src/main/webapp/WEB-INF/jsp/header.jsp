@@ -208,8 +208,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات کارفرمایان <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="employers_hiringAdverts.html">درج آگهی استخدام</a></li>
-                <li><a href="employers_outsourceAdverts.html">درج آگهی برون‌سپاری</a></li>
+                <li><a href="/employersHiringAdverts">درج آگهی استخدام</a></li>
+                <li><a href="/employersOutsourceAdverts">درج آگهی برون‌سپاری</a></li>
                 <li><a href="search_resume.html">جستجو در رزومه‌ها</a></li>
               </ul>
             </li>
