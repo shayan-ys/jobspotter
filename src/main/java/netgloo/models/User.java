@@ -54,11 +54,12 @@ public class User {
   public String mozooKhabar;
   
   // team profile
-  public String site;
   
   public String address;
   
   public String zamineKari;
+  
+  public String site;
   
   
   public String type; //jobSeeker , jobOwner , team
@@ -152,6 +153,13 @@ public class User {
   
   public String getMozoo_khabar() {
 	  return mozooKhabar;
+  }
+  
+  public String getSite() {
+	  return site;
+  }
+  public String getZamineKari() {
+	  return zamineKari;
   }
 
 } // class User
