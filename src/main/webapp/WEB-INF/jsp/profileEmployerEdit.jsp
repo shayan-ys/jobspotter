@@ -26,7 +26,7 @@
 	<div class="col-md-8 col-sm-8 main-col">
 	<div class="content-well">
 
-   <form action="profile/employer/edit" method="POST" class="form-job form-horizontal" role="form" id="new_job" enctype="multipart/form-data"  accept-charset="UTF-8"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uVDUUAo13Ms1qadbA8IXvd099SZgtjxMtHhkgYuc0DsrSrRvQ6byO8fLWfISChumtbqxNlFB2+PyAjb/eFd/lA==" /><div id="a_comment_body_hp_1459844241"><style type="text/css" media="screen" scoped="scoped">#a_comment_body_hp_1459844241 { display:none; }</style><label for="a_comment_body">Do not fill in this field</label><input type="text" name="a_comment_body" id="a_comment_body" /></div>
+   <form action="/profile/employer/edit" method="POST" class="form-job form-horizontal" role="form" id="new_job" enctype="multipart/form-data"  accept-charset="UTF-8"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uVDUUAo13Ms1qadbA8IXvd099SZgtjxMtHhkgYuc0DsrSrRvQ6byO8fLWfISChumtbqxNlFB2+PyAjb/eFd/lA==" /><div id="a_comment_body_hp_1459844241"><style type="text/css" media="screen" scoped="scoped">#a_comment_body_hp_1459844241 { display:none; }</style><label for="a_comment_body">Do not fill in this field</label><input type="text" name="a_comment_body" id="a_comment_body" /></div>
 
   <div class="form-group">
     <label class="col-sm-3 control-label" for="profile_name">نام شرکت</label>
@@ -76,7 +76,13 @@
 				</div>
 			</div>
 		</div>
-
+		
+<div class="form-group">
+    <label class="col-sm-3 control-label" for="profile_tel">آدرس</label>
+    <div class="col-sm-9">
+        <input class="form-control" type="text" name="address" id="profile_tel" value="${user.address}" />
+    </div>
+  </div>
   
 
   <div class="form-group">
@@ -119,7 +125,7 @@
               </div>
             </div> -->
 
-	<div class="form-group">
+   	<div class="form-group">
               <label class="col-sm-3 control-label"></label>
               <div class="col-sm-9">
                   <div class="col-md-6" style="margin-top:7px; margin-right: -15px;">

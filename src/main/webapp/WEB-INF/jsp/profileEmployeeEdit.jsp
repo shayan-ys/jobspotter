@@ -71,7 +71,7 @@
 		</div>
 
 		<div class="form-group">
-			<label class="col-sm-3 control-label" for="profile_location">آدرس</label>
+			<label class="col-sm-3 control-label" for="profile_location"></label>
 			<div class="col-sm-9">
 				<div class="row">
 					<div class="col-sm-1">
@@ -89,6 +89,8 @@
 				</div>
 			</div>
 		</div>
+
+
 
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="profile_description">توضیحات</label>
