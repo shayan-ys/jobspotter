@@ -17,7 +17,8 @@ public class JSPController {
 		  {
 			  
 			  userId = session.getAttribute("userId").toString();
-			  userType = session.getAttribute("userType").toString();
+			  if(session.getAttribute("userType")!=null)
+				  userType = session.getAttribute("userType").toString();
 			  
 		  }
 		  System.out.println("userId= "+ userType);

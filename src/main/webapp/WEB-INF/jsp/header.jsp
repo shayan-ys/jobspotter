@@ -45,11 +45,71 @@
     <![endif]-->
     </head>
     <body>
-<p> error = ${ registerError} </p>
-<p> ${ successMessage } </p>
-<p> ${ errorMessage } </p>
+<!--  	<p> error = ${ registerError} </p>
+	<p> ${ successMessage } </p>
+	<p> ${ errorMessage } </p> -->
 
+
+  <%
+        double accounts[];
+        accounts = new double[100];
+        accounts[3] = 119.63;
+
+        out.println("Account 3 holds $" + accounts[3]);
+     %>
         <!--header-->
+        
+       
+        <c:if test="${errorMessage!=null}">
+        
+               <!-- message modal -->
+        <div id="errorModal" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">خطا</h4>
+              </div>
+              <div class="modal-body">
+               	${ errorMessage }
+              </div>
+           
+              
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.end of message model -->
+        <%
+        session.setAttribute("errorMessage", null);
+        %>
+        </c:if>
+        
+        
+        
+          <c:if test="${successMessage!=null}">
+        
+               <!-- message modal -->
+        <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+              </div>
+              <div class="modal-body">
+               	${ successMessage }
+              </div>
+           
+              
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.end of message model -->
+        <%
+        session.setAttribute("successMessage", null);
+        %>
+        </c:if>
+        
+        
+        
         <!-- Modals -->
         <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
           <div class="modal-dialog">
