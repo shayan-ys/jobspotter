@@ -48,7 +48,7 @@
   <div class="form-group">
     <label class="col-sm-3 control-label" for="profile_Email">ایمیل</label>
 		<div class="col-sm-9">
-	    	<input class="form-control" type="email" name="email" id="profile_Email" value="${user.email}" />
+	    	<input class="form-control" type="email" name="email" id="profile_Email" value="${user.email}" disabled />
 		</div>
   </div>
 
