@@ -1,5 +1,6 @@
 package netgloo.controllers;
 
+import netgloo.models.Authentication;
 import netgloo.models.User;
 import netgloo.models.UserDao;
 
@@ -70,6 +71,8 @@ public class UserController {
 		System.out.println("password="+ password);
 
 		 User user = userDao.findByEmail(email);
+		//Authentication auth = null;
+		//User user = auth.isEmailFree(email);
 	      if(user!=null)
 	      {
 	    	  session.setAttribute("registerError", "email is taken");

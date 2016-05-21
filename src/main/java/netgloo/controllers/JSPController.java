@@ -13,14 +13,15 @@ public class JSPController {
 	public Model checkLogin(HttpSession session, Model model){
 		String userId="false";
 		String userType="false";
-		  if( session.getAttribute("userId") != null )
-		  {
-			  
-			  userId = session.getAttribute("userId").toString();
-			  if(session.getAttribute("userType")!=null)
-				  userType = session.getAttribute("userType").toString();
-			  
-		  }
+		  
+		if(session.getAttribute("userId") == null)
+			session.setAttribute("userId", "false");
+		if(session.getAttribute("userType")==null)
+			session.setAttribute("userType", "false");
+		
+		userId = session.getAttribute("userId").toString();
+		userType = session.getAttribute("userType").toString();
+		
 		  System.out.println("userId= "+ userType);
 		  model.addAttribute("userId", userId);
 		  model.addAttribute("userType", userType);
@@ -80,9 +81,19 @@ public class JSPController {
     
 	@RequestMapping("/employersOutsourceAdverts")
 	public String viewOutsourceAd(ModelAndView modelAndView, Model model, HttpSession session) {
-	   // System.out.println("came here");
 		  model = this.checkLogin(session, model);
-	    return "employersOutsourceAdverts";
+			 
+			//	  if(session.getAttribute("userId") == null)
+				//	  session.setAttribute("userId" , "false");
+				  
+				  String userId = session.getAttribute("userId").toString();
+				  if(userId.equals("false"))
+				  {
+					  session.setAttribute("errorMessage", "اول لاگین کن احمق"); 
+					  return "redirect:/";
+				  }
+				  else
+					  return "employersOutsourceAdverts";
 	}
 	
 	@RequestMapping("/employersHiringAdverts")

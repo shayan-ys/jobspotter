@@ -49,14 +49,6 @@
 	<p> ${ successMessage } </p>
 	<p> ${ errorMessage } </p> -->
 
-
-  <%
-        double accounts[];
-        accounts = new double[100];
-        accounts[3] = 119.63;
-
-        out.println("Account 3 holds $" + accounts[3]);
-     %>
         <!--header-->
         
        
