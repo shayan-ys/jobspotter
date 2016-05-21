@@ -33,38 +33,38 @@ public class User {
   
   // The user's name
 
-  public String name;
+  public String name = "";
 
-  public String reshte;
+  public String reshte = "";
   
-  public String phone;
+  public String phone = "";
   
-  public String gender;
+  public String gender = "";
   
-  public String ostan;
+  public String ostan = "";
   
-  public String city;
+  public String city = "";
   
-  public String tozihat;
+  public String tozihat = "";
   
-  public String degree;
+  public String degree = "";
   
-  public String picture;
+  public String picture = "";
   
-  public String mozooKhabar;
+  public String mozooKhabar = "";
   
   // team profile
   
-  public String address;
+  public String address = "";
   
-  public String zamineKari;
+  public String zamineKari = "";
   
-  public String site;
+  public String site = "";
   
-  public String team_id;
+  public String team_id = "";
   
   
-  public String type; //jobSeeker , jobOwner , team
+  public String type = ""; //jobSeeker , jobOwner , team
    
   //karfarma profile hichi ezafe tar azina nadasht!
   
