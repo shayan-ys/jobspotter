@@ -1,8 +1,12 @@
 package netgloo.models;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 /**
  * A DAO for the entity User is simply created by extending the CrudRepository
@@ -23,4 +27,22 @@ public interface ResumeDao extends CrudRepository<Resume, Long> {
    */
   public Resume findById(long id);
 
+  @Query(value = "SELECT * FROM Resumes as t WHERE "
+	         + "(t.description LIKE CONCAT('%',:desc,'%')"
+	         + " OR t.job_title LIKE CONCAT('%',:job_title,'%'))"
+	         + "AND t.takhasos LIKE CONCAT('%',:takhasos,'%')"
+	         + "AND t.type LIKE CONCAT('%',:type,'%')"
+	         + "AND t.sabeghe LIKE CONCAT('%',:sabeghe,'%')"
+	         + "AND t.time_type LIKE CONCAT('%',:time_type,'%')"
+	         + "AND t.availability LIKE CONCAT('%',:availability,'%')"
+	         , nativeQuery= true)
+	 public List<Resume> search(
+	         @Param("job_title") String job_title, 
+	         @Param("desc") String desc, 
+	         @Param("takhasos") String takhasos,
+	         @Param("type") String type,
+	         @Param("sabeghe") String sabeghe,
+	         @Param("time_type") String time_type,
+	         @Param("availability") String availability
+	         );
 } // class UserDao

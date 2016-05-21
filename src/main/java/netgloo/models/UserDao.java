@@ -29,8 +29,23 @@ public interface UserDao extends CrudRepository<User, Long> {
   public User findByEmail(String email);
   public User findById(Long id);
   
-  @Modifying
-  @Query("SELECT p FROM User p WHERE p.city = :city")
-  public List<User> search(@Param("city") String city);
+//  @Modifying
+//  @Query("SELECT p FROM User p WHERE p.team_id = :teamId")
+//  public List<User> findByTeamId(@Param("teamId") String teamId);
+  
+  @Query(value = "SELECT * FROM Users as t WHERE "
+	         + "    t.city LIKE CONCAT('%',:city,'%')"
+	         + "AND t.ostan LIKE CONCAT('%',:ostan,'%')"
+	         + "AND t.type LIKE CONCAT('%',:userType,'%')"
+	         + "AND t.reshte LIKE CONCAT('%',:reshte_fardi,'%')"
+	         + "AND t.zamine_kari LIKE CONCAT('%',:zamine_kari_team,'%')"
+	         , nativeQuery= true)
+	public List<User> search(
+			@Param("city") String city,
+			@Param("ostan") String ostan,
+			@Param("userType") String userType,
+			@Param("reshte_fardi") String reshte_fardi,
+			@Param("zamine_kari_team") String zamine_kari_team
+			);
 
 } // class UserDao

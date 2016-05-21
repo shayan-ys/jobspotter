@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * An entity User composed by three fields (id, email, name).
  * The Entity annotation indicates that this class is a JPA entity.
@@ -30,23 +32,21 @@ public class Resume {
   @NotNull
   public int owner_id;
   
-  public String type;
+  public String type = "";
 
-  public String jobTitle;
+  public String jobTitle = "";
  
-  public String sabeghe;
+  public String sabeghe = "";
   
-  public String description;
+  public String description = "";
   
-  public String resume_file;  
+  public String resume_file = "";
   
-  public int teamNumber;
+  public String takhasos = "";
   
-  public String takhasos;
+  public String time_type = "";
   
-  
-  
-  
+  public String availability = "";
   
   
   
@@ -70,9 +70,8 @@ public class Resume {
 
   }
   
-  public Resume(int owner_id,int teamNumber,String sabeghe,String takhasos,String description,String resume_file,String type) {
+  public Resume(int owner_id,String sabeghe,String takhasos,String description,String resume_file,String type) {
 	    this.owner_id=owner_id;
-	  	this.teamNumber = teamNumber;
 	    this.sabeghe = sabeghe;
 	    this.takhasos=takhasos;
 	    this.description=description;
@@ -111,6 +110,11 @@ public class Resume {
   }
   
   public int getTeamNumber(){
-	  return this.teamNumber;
+//	  return userDao.findByTeamId(""+ this.id).size();
+	  return 1;
   }
+  
+//  @Autowired
+//  private UserDao userDao;
+  
 } // class Resume
