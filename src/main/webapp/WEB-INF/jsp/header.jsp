@@ -46,6 +46,9 @@
     </head>
     <body>
 <p> error = ${ registerError} </p>
+<p> ${ successMessage } </p>
+<p> ${ errorMessage } </p>
+
         <!--header-->
         <!-- Modals -->
         <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">

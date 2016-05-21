@@ -29,7 +29,7 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="profile_fname">نام و نام خانوادگی</label>
 			<div class="col-sm-9">
-				<input class="form-control" type="text" name="text" id="profile_fname" value="${user.name}" />
+				<input class="form-control" type="text" name="name" id="profile_fname" value="${user.name}" />
 			</div>
 		</div>
 
@@ -59,7 +59,7 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="profile_Email">ایمیل</label>
 			<div class="col-sm-9">
-				<input class="form-control" type="email" name="email" id="profile_Email" value="${user.email}" />
+				<input class="form-control" type="email" name="email" id="profile_Email" value="${user.email}" disabled />
 			</div>
 		</div>
 
@@ -71,7 +71,7 @@
 		</div>
 
 		<div class="form-group">
-			<label class="col-sm-3 control-label" for="profile_location">آدرس</label>
+			<label class="col-sm-3 control-label" for="profile_location"></label>
 			<div class="col-sm-9">
 				<div class="row">
 					<div class="col-sm-1">
@@ -89,6 +89,8 @@
 				</div>
 			</div>
 		</div>
+
+
 
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="profile_description">توضیحات</label>
@@ -123,7 +125,7 @@
 					<label class="control-label" style="text-align: right;">   از کدام آگهی ها می خواهید باخبر شوید؟اخبار مربوطه به ایمیل شما ارسال می گردد.</label>
 				</div>
 				<div class="col-md-6 left" style="margin-top:15px;">
-					<input name="mozoo_khabar" class="form-control" placeholder="موضوع خود را انتخاب نمایید..." list="categories" name="categories" value="${user.mozoo_khabar}" multiple>
+					<input name="mozooKhabar" class="form-control" placeholder="موضوع خود را انتخاب نمایید..." list="categories" name="categories" value="${user.mozoo_khabar}" multiple>
 					<datalist id="categories">
 						<option value="تمایل ندارم" selected>
 						<option value="مهندسی نرم افزار یا سخت افزار">

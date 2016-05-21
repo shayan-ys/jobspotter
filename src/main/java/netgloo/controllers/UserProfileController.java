@@ -16,29 +16,129 @@ import netgloo.models.UserDao;
 @RequestMapping("/profile")
 public class UserProfileController {
 	
-	@RequestMapping(value = "/employee/edit", method = RequestMethod.GET)
-	public String EmployeeEdit(ModelAndView modelAndView, Model model, HttpSession session) {
+	
+	@RequestMapping(value = "/team/edit", method = RequestMethod.GET)
+	public String teamEdit(Model model, HttpSession session) {
 		int id = 1;
 		String id_str = "1";
 		if(session.getAttribute("userId") != null)
 			id_str = session.getAttribute("userId").toString();
 		
-		System.out.println("id_str:"+ id_str);
 		id = Integer.parseInt(id_str);
+
+		User user = userDao.findById((long) id);
+		model.addAttribute("user", user);
+		return "profileTeamEdit";
+	}
+	
+	@RequestMapping(value = "/team/edit", method = RequestMethod.POST)
+	public String teamEditPost(ModelAndView modelAndView,String name,String site,String email,String phone,String ostan,String city,String address,String zamineKari,String tozihat,String mozooKhabar,Model model, HttpSession session) {
+	
 		
-//		id = Integer.parseInt(id_str);
-		System.out.println("id_int:"+ id);
+		int id = 1;
+		String id_str = "1";
+		if(session.getAttribute("userId") != null)
+			id_str = session.getAttribute("userId").toString();
 		
-		modelAndView.addObject("User");
+		id = Integer.parseInt(id_str);
+		User user = userDao.findById((long) id);
+		
+		user.name = name;
+		user.site = site;
+	
+		user.phone = phone;
+		user.ostan = ostan;
+		user.city = city;
+		user.address = address;
+		user.zamineKari = zamineKari;
+		user.tozihat = tozihat;
+		user.mozooKhabar = mozooKhabar;
+		userDao.save(user);
+		
+		return teamEdit(model, session);
+	}
+	
+	@RequestMapping(value = "/employee/edit", method = RequestMethod.GET)
+	public String EmployeeEdit(Model model, HttpSession session) {
+		int id = 1;
+		String id_str = "1";
+		if(session.getAttribute("userId") != null)
+			id_str = session.getAttribute("userId").toString();
+		
+		id = Integer.parseInt(id_str);
 		User user = userDao.findById((long) id);
 		model.addAttribute("user", user);
 		return "profileEmployeeEdit";
 	}
 	
 	@RequestMapping(value = "/employee/edit", method = RequestMethod.POST)
-	public String EmployeeEditPost() {
-		return "profileEmployeeEdit";
+	public String EmployeeEditPost(HttpSession session, Model model, String name, String reshte,String gender, String email, String phone, String ostan, String city, String tozihat,String resume, String mozooKhabar) {
+		
+		
+		int id = 1;
+		String id_str = "1";
+		if(session.getAttribute("userId") != null)
+			id_str = session.getAttribute("userId").toString();
+		
+		id = Integer.parseInt(id_str);
+		User user = userDao.findById((long) id);
+		
+		user.name = name;
+		user.reshte = reshte;
+		user.gender = gender;
+		user.phone = phone;
+		user.ostan = ostan;
+		user.city = city;
+		user.tozihat = tozihat;
+		user.resume = resume;
+		user.mozooKhabar = mozooKhabar;
+		userDao.save(user);
+		
+	
+		return EmployeeEdit(model, session);
 	}
+	
+	
+	@RequestMapping(value = "/employer/edit", method = RequestMethod.GET)
+	public String EmployerEdit( Model model, HttpSession session) {
+		int id = 1;
+		String id_str = "1";
+		if(session.getAttribute("userId") != null)
+			id_str = session.getAttribute("userId").toString();
+		
+		id = Integer.parseInt(id_str);
+		User user = userDao.findById((long) id);
+		model.addAttribute("user", user);
+		
+		return "profileEmployerEdit";
+	}
+	
+	@RequestMapping(value = "/employer/edit", method = RequestMethod.POST)
+	public String EmployerEditPost(HttpSession session, Model model, String name, String site, String email, String phone, String ostan, String city,String address,String zamineKari ,String tozihat ) {
+		
+		int id = 1;
+		String id_str = "1";
+		if(session.getAttribute("userId") != null)
+			id_str = session.getAttribute("userId").toString();
+		
+		id = Integer.parseInt(id_str);
+		User user = userDao.findById((long) id);
+		
+		user.name = name;
+		user.site = site;
+	
+		user.phone = phone;
+		user.ostan = ostan;
+		user.city = city;
+		user.address = address;
+		user.zamineKari = zamineKari;
+		user.tozihat = tozihat;
+		//user.mozooKhabar = mozooKhabar;
+		userDao.save(user);
+		
+		return EmployerEdit(model, session);
+	}
+	
 	
 	// ------------------------
 	// PRIVATE FIELDS
