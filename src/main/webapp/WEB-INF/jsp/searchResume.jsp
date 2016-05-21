@@ -84,7 +84,7 @@
             </div>
             <div class="row search-result">
                 <div class="jobs-list">
-                  <c:forEach var="found_resume" items="${found_resumes}">
+                  <c:forEach var="found_resume" items="${found_resumes}" varStatus="status">
                   <div class="job featured">
                     <div class="row">
                       <div class="details col-sm-10 col-xs-8">
@@ -94,70 +94,23 @@
                           </a>
                         </div>
                         <div class="details">
-                          <div class="title"><a href="/jobs/255562-senior-devops-engineer-at-symphony-communication-services-llc">الهام فاطمی</a></div>
-                          <div class="company">کارشناس گرافیک</div>
-                          <div class="location">ایران٫ تهران٫ بلوار کشاورز</div>
+                          	<div class="title"><a href="/jobs/255562-senior-devops-engineer-at-symphony-communication-services-llc">
+								<p class="user_name">نام کاربر: ${found_users[status.index].name}</p>
+								<p class="resume_jobTitle">عنوان شغلی: ${found_resume.jobTitle}</p>
+							</a></div>
+                          <div class="company">${found_users[status.index].reshte}</div>
+                          <div class="location">${found_users[status.index].address}</div>
                         </div>
                       </div>
                       <div class="date col-sm-2 col-xs-4">
                         <div>4 آذر</div>
 						<div style="margin-top: 25px;">
-							<a href="viewResume.html" class="btn btn-success">مشاهده رزومه</a>
+							<a href="#" class="btn btn-success">مشاهده رزومه</a>
 						</div>
                       </div>
                     </div>
                   </div>
                   </c:forEach>
-                  <div class="job">
-                    <div class="row">
-                      <div class="details col-sm-10 col-xs-8">
-                        <div class="details">
-                          <div class="title">
-                            <a href="/jobs/260403-senior-java-software-engineer-at-icrossing">
-                              علی احمدی
-                          </a>
-                        </div>
-                          <div class="company">متخصص شبکه</div>
-                          <div class="location">صنعتی مخابرات</div>
-                        </div>
-                      </div>
-                      <div class="date col-sm-2 col-xs-4">
-                        <div> 7 آذر</div>
-						<div style="margin-top: 25px;">
-							<a href="viewResume.html" class="btn btn-success">مشاهده رزومه</a>
-						</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="job">
-                    <div class="row">
-                      <div class="details col-sm-10 col-xs-8">
-                        <div class="pull-left hidden-xs logo">
-                          <a href="/jobs/260387-ux-designer-at-smartbear">
-                            <img border="0" src="http://logok.org/wp-content/uploads/2014/04/Apple-Logo-rainbow.png" alt="apple" width="50" class="img-responsive">
-                          </a>
-                        </div>
-                        <div class="details">
-                          <div class="title"><a href="/jobs/260387-ux-designer-at-smartbear">بهرام کریمی</a></div>
-                          <div class="company">مهندس صنعتی</div>
-                          <div class="location">ایالات متحده٫ کالیفرنیا</div>
-                        </div>
-                      </div>
-                      <div class="date col-sm-2 col-xs-4">
-                        <div> 7 آذر</div>
-						<div style="margin-top: 25px;">
-							<a href="viewResume.html" class="btn btn-success">مشاهده رزومه</a>
-						</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="loading">
-                  <span class="loading-icon">
-                    درحال بارگزاری
-                  </br>
-                    <i class="glyphicon glyphicon-refresh gly-spin"></i>
-                  </span>
                 </div>
             </div>
           </div>

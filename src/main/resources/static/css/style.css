@@ -94,7 +94,7 @@ body {
 .search-wrapper .province-cities .form-group:last-child { padding-left: 0; padding-right: 7px; }
 .search-wrapper .btn-search {margin-top: 20px; margin-bottom: 20px;}
 
-.search-wrapper .search-result { margin-bottom: 30px; position: relative; height: 0; overflow: hidden;}
+.search-wrapper .search-result { margin-bottom: 30px; position: relative; height: 100%; overflow: hidden;}
 .search-wrapper.result .search-result {height: auto;
   /* transitions */
   -webkit-transition: all 300ms ease-out 0s;

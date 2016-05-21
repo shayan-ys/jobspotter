@@ -2,6 +2,7 @@ package netgloo.controllers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -33,17 +34,26 @@ public class SearchController {
 	public String searchResume(Model model, String keyword, String ostan, String city, String zamine_kari, String time_type, String jobAvailablity, String gender, String sabeghe) {
 //		Search ser = new Search();
 //		List<Resume> resumes = ser.resumeAdvanced("test", null, null, null, null, null, null, null);
-		List<Map<User,Resume>> resumes = resumeAdvanced(keyword, ostan, city, zamine_kari, time_type, jobAvailablity, gender, sabeghe);
-		System.out.println("final: ");
-		Object[] resumes_array = null;
-		for( Map<User,Resume> entry : resumes )
-		{
-			
-			System.out.println("~>");
-			
+		if(keyword != null) {
+			List<Map<User,Resume>> resumes = resumeAdvanced(keyword, ostan, city, zamine_kari, time_type, jobAvailablity, gender, sabeghe);
+			System.out.println("final: ");
+			List<Resume> resumes_array = new LinkedList<>();
+			List<User> users_array = new LinkedList<>();
+			for( Map<User,Resume> entry : resumes )
+			{
+				User user = null;
+				Resume resume = null;
+				for( Map.Entry<User,Resume> map_entry : entry.entrySet()) {
+					user = map_entry.getKey();
+					resume = map_entry.getValue();
+				}
+				resumes_array.add(resume);
+				users_array.add(user);
+			}
+	//		Object[] resumes_array = resumes.toArray();
+			model.addAttribute("found_resumes", resumes_array.toArray());
+			model.addAttribute("found_users", users_array.toArray());
 		}
-//		Object[] resumes_array = resumes.toArray();
-		model.addAttribute("found_resumes", resumes_array);
 		return "searchResume";
 	}
 
