@@ -51,6 +51,7 @@
     <script src="/js/jquery-1.12.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/province-cities.js"></script>
     <!-- google map API settings -->
     <script>
     
@@ -85,8 +86,8 @@
       $("#loginModal").on("submit", "#loginForm", function(){
     	  var email = $(this).find("#loginEmail").val();
     	  var password = $(this).find("#loginPassword").val();
-    	  alert("email= "+ email+ ", password= "+ password);
-    	  ajaxLogin(email, password);
+    	  //alert("email= "+ email+ ", password= "+ password);
+    	  //ajaxLogin(email, password);
       });
     });
     function initMap() {
