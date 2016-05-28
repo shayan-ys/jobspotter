@@ -25,7 +25,7 @@ public interface ResumeDao extends CrudRepository<Resume, Long> {
    * 
    * @param email the user email.
    */
-  public Resume findById(long id);
+  public Resume findById(int id);
 
   @Query(value = "SELECT * FROM Resumes as t WHERE "
 	         + "(t.description LIKE CONCAT('%',:desc,'%')"
