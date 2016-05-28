@@ -55,17 +55,15 @@
                       </select>
                     </div>-->
                     <div class="col-lg-2 col-md-3 col-sm-2" style="margin-top: 7px; text-align: left;">
-                      <input type="radio" name="jobAvailablity" id="job-availablity" value="available"> موجود
-                      &nbsp;
-                      <input type="radio" name="jobAvailablity" id="job-all" value="all"> همه
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-6">
                       <label>جنسیت:</label>
                       <div class="block" style="margin-top: 7px;">
-                        <input type="radio" name="gender" value="male"> آقا
-                        <input type="radio" name="gender" value="female"> خانم
+                        <input type="radio" name="gender" value="مرد"> مرد
+                        <input type="radio" name="gender" value="زن"> زن
+                        <input type="radio" name="gender" value="" /> اهمیتی ندارد
                       </div>
                     </div>
                     <div class="col-sm-6">
@@ -103,9 +101,9 @@
                         </div>
                       </div>
                       <div class="date col-sm-2 col-xs-4">
-                        <div>4 آذر</div>
+                        <div>${found_resume.timestamp}</div>
 						<div style="margin-top: 25px;">
-							<a href="#" class="btn btn-success">مشاهده رزومه</a>
+							<a href="/viewEmployeeResume?id=${found_resume.id}" class="btn btn-success">مشاهده رزومه</a>
 						</div>
                       </div>
                     </div>

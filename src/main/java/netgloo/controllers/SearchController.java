@@ -75,6 +75,7 @@ public class SearchController {
 				for( Map.Entry<User,Resume> map_entry : entry.entrySet()) {
 					user = map_entry.getKey();
 					resume = map_entry.getValue();
+					resume.jobTitle = Search.markSearchedTerm(resume.jobTitle, keyword);
 				}
 				resumes_array.add(resume);
 				users_array.add(user);

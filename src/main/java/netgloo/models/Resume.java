@@ -1,5 +1,8 @@
 package netgloo.models;
 
+import java.sql.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -50,6 +53,8 @@ public class Resume {
   
   public String category = "";
   
+  @Column(name="timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+  public Date created;
   
   
   // ------------------------

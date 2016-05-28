@@ -61,8 +61,8 @@
                     <div class="col-sm-6">
                       <label>جنسیت:</label>
                       <div class="block" style="margin-top: 7px;">
-                        <input type="radio" name="gender" value="مرد"/> آقا
-                        <input type="radio" name="gender" value="زن"/> خانم
+                        <input type="radio" name="gender" value="مرد"/> مرد
+                        <input type="radio" name="gender" value="زن"/> زن
                         <input type="radio" name="gender" value="" /> اهمیتی ندارد
                       </div>
                     </div>
@@ -97,9 +97,9 @@
                         </div>
                       </div>
                       <div class="date col-sm-2 col-xs-4">
-                        <div>4 آذر</div>
+                        <div>${found_ad.timestamp}</div>
 						<div style="margin-top: 25px;">
-							<a href="#" class="btn btn-success">مشاهده رزومه</a>
+							<a href="/viewHiringAdverts?id=${found_ad.id}" class="btn btn-success">مشاهده رزومه</a>
 						</div>
                       </div>
                     </div>
