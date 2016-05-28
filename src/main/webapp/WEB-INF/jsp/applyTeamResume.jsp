@@ -69,8 +69,7 @@
             <div class="form-group">
               <label class="col-sm-3 control-label" for="description">توضیحات</label>
               <div class="col-sm-9">
-                <textarea class="form-control"rows="10" cols="89" class="redactor" name="description" id="description">
-                </textarea>
+                <textarea class="form-control"rows="10" cols="89" class="redactor" name="description" id="description"></textarea>
               </div>
             </div>
             <div class="form-group">

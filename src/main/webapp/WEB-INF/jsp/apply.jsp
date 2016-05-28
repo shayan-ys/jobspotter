@@ -119,8 +119,7 @@
             <div class="form-group">
               <label class="col-sm-3 control-label" for="description">توضیحات</label>
               <div class="col-sm-9">
-                <textarea class="form-control"rows="10" cols="89" class="redactor" name="description" id="description">
-                </textarea>
+                <textarea class="form-control"rows="10" cols="89" class="redactor" name="description" id="description"></textarea>
               </div>
             </div>
             <div class="form-group">
@@ -137,7 +136,7 @@
 					<input type="file" id="uploadBtn" style="display: none;">
                     <label for="uploadBtn" class="btn btn-success">آپلود رزومه</label>
 					<div class="row" style="margin-left:1px; margin-top:2px;">
-					<input id="uploadFile" placeholder="فایل مورد نظر" disabled="disabled" style="width: 212px; border-radius:5px;" />
+					<input id="uploadFile" placeholder="فایل مورد نظر" name="resume_file" disabled="disabled" style="width: 212px; border-radius:5px;" />
 					</div>
 				  </div>
                 </div>
