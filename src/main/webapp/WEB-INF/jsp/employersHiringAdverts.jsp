@@ -46,19 +46,19 @@
 						<label class="col-sm-3 control-label" for="inlineRadiobuttons">نوع کار</label>
 						<div class="col-sm-9">
 							<label class="radio-inline">
-								<input type="radio" name="jobType" id="job_type1" value="1" checked="checked" />
+								<input type="radio" name="jobType" id="job_type1" value="تمام وقت" checked="checked" />
 								تمام وقت&nbsp;&nbsp;
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="jobType" id="job-type2" value="2" />
+								<input type="radio" name="jobType" id="job-type2" value="نیمه وقت" />
 								نیمه وقت&nbsp;&nbsp;
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="jobType" id="job-type3" value="3" />
+								<input type="radio" name="jobType" id="job-type3" value="ساعتی" />
 								ساعتی&nbsp;&nbsp;
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="jobType" id="job-type4" value="4" />
+								<input type="radio" name="jobType" id="job-type4" value="موقت" />
 								موقت&nbsp;&nbsp;
 							</label>
 						</div>
@@ -76,6 +76,26 @@
 									<option value="مرد">
 									<option value="مهم نیست">
 								</datalist>
+						</div>
+					</div>
+
+
+					<div class="form-group job-types required">
+						<label class="col-sm-3 control-label" for="inlineRadiobuttons">جنسیت</label>
+						<div class="col-sm-9">
+							<label class="radio-inline">
+								<input type="radio" name="jobType" id="job_type1" value="زن" checked="checked" />
+								زن&nbsp;&nbsp;
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="jobType" id="job-type2" value="مرد" />
+								مرد&nbsp;&nbsp;
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="jobType" id="job-type3" value="مهم نیست" />
+								&nbsp;&nbsp;
+							</label>
+							
 						</div>
 					</div>
 

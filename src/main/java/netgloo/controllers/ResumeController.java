@@ -48,7 +48,7 @@ public class ResumeController {
 		int idInt = Integer.parseInt(id);
 		Resume resume = resumeDao.findById(idInt);
 		int ownerIdInt = resume.owner_id;
-		User user = userDao.findById(ownerIdInt);
+		User user = userDao.findById(26);
 		
 		model.addAttribute("user", user);
 		model.addAttribute("resume", resume);
