@@ -30,7 +30,7 @@ public interface ResumeDao extends CrudRepository<Resume, Long> {
   @Query(value = "SELECT * FROM Resumes as t WHERE "
 	         + "(t.description LIKE CONCAT('%',:desc,'%')"
 	         + " OR t.job_title LIKE CONCAT('%',:job_title,'%'))"
-	         + "AND t.takhasos LIKE CONCAT('%',:takhasos,'%')"
+	         + "AND t.category LIKE CONCAT('%',:category,'%')"
 	         + "AND t.type LIKE CONCAT('%',:type,'%')"
 	         + "AND t.sabeghe LIKE CONCAT('%',:sabeghe,'%')"
 	         + "AND t.time_type LIKE CONCAT('%',:time_type,'%')"
@@ -39,7 +39,7 @@ public interface ResumeDao extends CrudRepository<Resume, Long> {
 	 public List<Resume> search(
 	         @Param("job_title") String job_title, 
 	         @Param("desc") String desc, 
-	         @Param("takhasos") String takhasos,
+	         @Param("category") String category,
 	         @Param("type") String type,
 	         @Param("sabeghe") String sabeghe,
 	         @Param("time_type") String time_type,

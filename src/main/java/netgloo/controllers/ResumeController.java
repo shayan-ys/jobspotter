@@ -40,7 +40,7 @@ public class ResumeController {
 	}
 	*/
 	@RequestMapping(value="/apply", method=RequestMethod.POST)
-	public String employeeResume(HttpSession session,Model model,String jobTitle,String sabeghe,String takhasos,String description,String resume_file) {
+	public String employeeResume(HttpSession session,Model model,String jobTitle,String category,String sabeghe,String takhasos,String description,String resume_file) {
 		
 		//System.out.println("password="+ password);
 
@@ -59,7 +59,7 @@ public class ResumeController {
     				+ ""
     				+ "id_str:"+ id_str);
     		int owner_id = Integer.parseInt(id_str);
-    		resumeobj = new Resume(owner_id,jobTitle,sabeghe,takhasos,description,resume_file,"jobSeeker");
+    		resumeobj = new Resume(owner_id,jobTitle,category,sabeghe,takhasos,description,resume_file,"jobSeeker");
       		resumeDao.save(resumeobj);
       		model.addAttribute("successMessage", "رزومه شما با موفقیت ثبت شد.");
     	}

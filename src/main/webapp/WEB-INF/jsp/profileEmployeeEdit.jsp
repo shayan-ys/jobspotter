@@ -103,9 +103,7 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label" for="profile_description">توضیحات</label>
 			<div class="col-sm-9">
-				<textarea class="form-control" rows="10" cols="89" class="redactor" name="tozihat" id="profile_description">
-				${user.tozihat}
-				</textarea>
+				<textarea class="form-control" rows="10" cols="89" class="textarea" name="tozihat" id="profile_description">${user.tozihat}</textarea>
 				</div>
 		  </div>
 

@@ -44,7 +44,26 @@
                 <input class="form-control" autocomplete="off" type="text" name="jobTitle" id="job_title" required/>
               </div>
             </div>
+			
+			<div class="form-group required">
+						<label class="col-sm-3 control-label" for="inlineRadiobuttons">
+							دسته بندی
+						</label>
+						<div class="col-sm-9 col-md-6">
+							<input class="form-control" placeholder="دسته بندی کار را انتخاب کنید..." list="categories" name="category">
+							<datalist id="categories">
+								<option value="مهندسی نرم افزار یا سخت افزار">
+								<option value="برنامه نویس">
+								<option value="مدیریتی">
+								<option value="تحلیل و طراحی">
+								<option value="موبایل">
+								<option value="شبکه">
+								<option value="سایر">
 
+							</datalist>
+						</div>
+					</div>
+			
 
            <!--  <div class="form-group">
               <label class="col-sm-3 control-label" for="degree">میزان تحصیلات</label>
@@ -73,7 +92,8 @@
                 <input class="form-control" autocomplete="off" type="text" name="takhasos" id="takhasos" />
               </div>
             </div>
-
+			
+			
 
             <!-- <div class="form-group">
               <label class="col-sm-3 control-label" for="phone_number">شماره همراه</label>

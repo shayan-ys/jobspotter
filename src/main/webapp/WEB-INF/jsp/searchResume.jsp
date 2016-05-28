@@ -45,7 +45,7 @@
                         <option value="سایر"></option>
                       </datalist>
                     </div>
-                    <div class="col-lg-4 col-md-3 col-sm-4">
+                    <!--<div class="col-lg-4 col-md-3 col-sm-4">
                       <select class="form-control" name="time_type">
                         <option value="">تمامی زمان های کاری</option>
                         <option value="1">تمام وقت</option>
@@ -53,7 +53,7 @@
                         <option value="3">آزاد</option>
                         <option value="4">موقت</option>
                       </select>
-                    </div>
+                    </div>-->
                     <div class="col-lg-2 col-md-3 col-sm-2" style="margin-top: 7px; text-align: left;">
                       <input type="radio" name="jobAvailablity" id="job-availablity" value="available"> موجود
                       &nbsp;

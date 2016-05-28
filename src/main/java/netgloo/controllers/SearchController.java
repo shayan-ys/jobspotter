@@ -39,7 +39,7 @@ public class SearchController {
 		  return "redirect:/";
 	}
 	@RequestMapping("/resume")
-	public String searchResume(Model model, String keyword, String ostan, String city, String zamine_kari, String time_type, String jobAvailablity, String gender, String sabeghe) {
+	public String searchResume(HttpSession session,Model model, String keyword, String ostan, String city, String zamine_kari, String time_type, String jobAvailablity, String gender, String sabeghe) {
 //		Search ser = new Search();
 //		List<Resume> resumes = ser.resumeAdvanced("test", null, null, null, null, null, null, null);
 		if(keyword != null) {
@@ -58,6 +58,8 @@ public class SearchController {
 				resumes_array.add(resume);
 				users_array.add(user);
 			}
+			if(resumes_array.isEmpty())
+			session.setAttribute("errorMessage", "موردی یافت نشد.");
 	//		Object[] resumes_array = resumes.toArray();
 			model.addAttribute("found_resumes", resumes_array.toArray());
 			model.addAttribute("found_users", users_array.toArray());
@@ -83,7 +85,7 @@ public class SearchController {
 					reputation == null ? "" : reputation, 
 					time_type == null ? "" : time_type, 
 					availablity == null ? "" : availablity);
-			
+					
 			System.out.println("found resumes: ");
 			for( Resume entry : foundResumes) {
 				System.out.println("resume="+ entry.getId());
