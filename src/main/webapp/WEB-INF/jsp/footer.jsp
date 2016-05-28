@@ -3,7 +3,7 @@
     Created on : May 15, 2016, 3:05:29 PM
     Author     : POONEH
 --%>
-
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <footer style="position: relative; width:100%;">
       <div class="container">
@@ -12,13 +12,20 @@
             <div class="row">
               <div class="col-sm-5">
                 <h4 class="greenText" > دسترسی سریع </h4>
-                <a class="footerlinks" href="employers_hiringAdverts.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>درج آگهی استخدام</a>
-                <a class="footerlinks" href="employers_outsourceAdverts.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>درج آگهی برون‌سپاری</a>
-                <a class="footerlinks" href="search_resume.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>جستجو در رزومه‌ها</a>
-                <a class="footerlinks" href="search_job.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>جستجوی کار</a>
-                <a class="footerlinks" href="apply.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>ثبت رزومه</a>
-                <a class="footerlinks" href="search_project.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>جستجوی پروژه</a>
-                <a class="footerlinks" href="applyTeamResume.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>ثبت رزومه تیم</a>
+                <c:if test="${userType=='jobOwner'}">
+                <a class="footerlinks" href="/employersHiringAdverts"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>درج آگهی استخدام</a>
+                <a class="footerlinks" href="/employersOutsourceAdverts"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>درج آگهی برون‌سپاری</a>
+                </c:if>
+                <a class="footerlinks" href="/search/project"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>جستجوی پروژه</a>
+                <a class="footerlinks" href="/search/resume"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>جستجو در رزومه‌ها</a>
+                <a class="footerlinks" href="/search/job"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>جستجوی کار</a>
+                <c:if test="${userType=='jobSeeker'}">
+                <a class="footerlinks" href="/apply"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>ثبت رزومه</a>
+                </c:if>
+                
+                <c:if test="${userType=='team'}">
+                <a class="footerlinks" href="/applyTeamResume"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>ثبت رزومه تیم</a>
+              	</c:if>
               </div>
               <div class="col-sm-7">
                 <h4 class="greenText" >تماس با ما</h4>
@@ -120,5 +127,10 @@
       }
       </script>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNTMndy93H2Bp-AWM_pvxhnbaBxrGYmKY&language=fa&callback=initMap"></script>
+      <script>
+      document.getElementById("uploadBtn").onchange = function () {
+		document.getElementById("uploadFile").value = this.value;
+		};
+      </script>
   </body>
 </html>

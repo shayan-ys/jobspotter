@@ -51,8 +51,7 @@
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="job_description">شرح آگهی</label>
 					<div class="col-sm-9">
-						<textarea class="form-control" rows="10" cols="89" class="redactor" name="job[description]" id="job_description">
-						</textarea>
+						<textarea class="form-control" rows="10" cols="89" class="redactor" name="job[description]" id="job_description"></textarea>
 					</div>
 				</div>
 <!--  
