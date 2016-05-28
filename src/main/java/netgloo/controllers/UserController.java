@@ -33,9 +33,11 @@ public class UserController {
 			     if(user==null)
 			     {
 			    	 session.setAttribute("errorMessage", "این ایمیل ثبت نشده است.");
+			    	  return "redirect:/";
 			     }
 			    	 
-			    	 
+			     
+			     
 			      if( password.equals(user.password) )
 			      {
 			    	  System.out.println("email="+ email);
@@ -60,6 +62,7 @@ public class UserController {
 			    	  
 			      }
 			    }
+		   
 			    catch (Exception ex) {
 			      return "User not found";
 			    }

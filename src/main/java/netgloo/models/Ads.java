@@ -1,10 +1,16 @@
 package netgloo.models;
 
+import java.sql.Date;
+
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -30,39 +36,37 @@ public class Ads {
   @NotNull
   public int owner_id;
   
-  public String adType;
+  public String adType = "";
 
-  public String jobTitle;
+  public String jobTitle = "";
   
-  public String description;
+  public String description = "";
   
-  public String ostan;
+  public String ostan = "";
   
-  public String city;
+  public String city = "";
   
-  public String jobType;
+  public String jobType = "";
   
-  public String gender;
+  public String gender = "";
   
-  public String category;
+  public String category = "";
   
-  public String salary;
+  public String salary = "";
   
-  public String takhasos;
+  public String takhasos = "";
   
-  public String deadline; //date
+  public String deadline = ""; //date
   
-  
-  
-  
+  @Column(name="timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+  public Date created;
   
   
   // ------------------------
   // PUBLIC METHODS
   // ------------------------
   public Ads() {
-	// TODO Auto-generated constructor stub
-}
+  }
 
   public Ads(int id) { 
     this.id = id;
@@ -83,20 +87,20 @@ public class Ads {
   }
   //outsource
   public Ads(int owner_id,String adType,String jobTitle,String category,String takhasos,String deadline,String description,String salary) {
-	    this.owner_id=owner_id;
-	  	this.adType = adType;
-	    this.jobTitle = jobTitle;
-	    this.takhasos=takhasos;
-	    this.category=category;
-	    this.deadline=deadline;
-	    this.description=description;
-	    this.salary=salary;
-	  }
+	this.owner_id=owner_id;
+	this.adType = adType;
+	this.jobTitle = jobTitle;
+	this.takhasos=takhasos;
+	this.category=category;
+	this.deadline=deadline;
+	this.description=description;
+	this.salary=salary;
+  }
 
   // Getter and setter methods
 
   public int getId() {
-    return id;
+	return id;
   }
 
   public void setId(int id) {
@@ -141,5 +145,9 @@ public class Ads {
   
   public String getSalary(){
 	  return this.salary;
+  }
+  
+  public Date getCreated(){
+	  return this.created;
   }
 } // class Resume

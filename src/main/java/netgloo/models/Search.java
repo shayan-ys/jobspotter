@@ -3,13 +3,22 @@ package netgloo.models;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@Controller
 public class Search {
 
-	public String markSearchedTerm(String text, String term) {
+	@RequestMapping("/test2")
+	public void test() {
+		if( adsDao == null )
+			System.out.println("ads dao is null :(");
+		else System.out.println("adsDao is NOT null :D");
+	}
+	public static String markSearchedTerm(String text, String term) {
 		return text.replaceAll(term , "<span class='marked_search'>"+ term +"</span>");
 	}
-	
+	/*
 	public List<Resume> resumeAdvanced(String keyword, String province, String city, String category, String time_type, String availablity, String gender, String reputation){
 		if(resumeDao == null)
 			System.out.println("resume dao is null");
@@ -39,11 +48,13 @@ public class Search {
 			}
 		}
 		return foundResumes;
-	}
+	}*/
 	
+//	@Autowired
+//	private ResumeDao resumeDao;
+//	
+//	@Autowired
+//	private UserDao userDao;
 	@Autowired
-	private ResumeDao resumeDao;
-	
-	@Autowired
-	private UserDao userDao;
+	AdsDao adsDao;
 }

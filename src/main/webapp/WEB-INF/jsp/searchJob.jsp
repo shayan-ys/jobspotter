@@ -14,7 +14,7 @@
             </div>
             <div class="row search-box">
               <div class="col-md-12">
-                <form method="get" accept-charset="UTF-8" action="/search/resume" id="jobs-search" role="form">
+                <form method="get" accept-charset="UTF-8" action="/search/job" id="jobs-search" role="form">
                   <div class="row">
                     <div class="col-sm-6">
                       <input type="text" placeholder="عبارت جستجو" class="form-control search-input input-stacked" name="keyword">
@@ -45,7 +45,7 @@
                         <option value="سایر"></option>
                       </datalist>
                     </div>
-                    <!--<div class="col-lg-4 col-md-3 col-sm-4">
+                    <div class="col-lg-4 col-md-3 col-sm-4">
                       <select class="form-control" name="time_type">
                         <option value="">تمامی زمان های کاری</option>
                         <option value="1">تمام وقت</option>
@@ -53,7 +53,7 @@
                         <option value="3">آزاد</option>
                         <option value="4">موقت</option>
                       </select>
-                    </div>-->
+                    </div>
                     <div class="col-lg-2 col-md-3 col-sm-2" style="margin-top: 7px; text-align: left;">
                     </div>
                   </div>
@@ -61,19 +61,15 @@
                     <div class="col-sm-6">
                       <label>جنسیت:</label>
                       <div class="block" style="margin-top: 7px;">
-                        <input type="radio" name="gender" value="مرد"> مرد
-                        <input type="radio" name="gender" value="زن"> زن
+                        <input type="radio" name="gender" value="مرد"/> مرد
+                        <input type="radio" name="gender" value="زن"/> زن
                         <input type="radio" name="gender" value="" /> اهمیتی ندارد
                       </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <label>سابقه کار</label>
-                      <input type="number" class="form-control" name="sabeghe" placeholder="سابقه کار" />
                     </div>
                     <div class="col-sm-12">
                       <button type="submit" class="btn btn-primary btn-search form-control">
                         <span class="glyphicon glyphicon-search"></span>
-                         جستجوی رزومه
+                         جستجوی کار
                       </button>
                     </div>
                   </div>
@@ -82,8 +78,8 @@
             </div>
             <div class="row search-result">
                 <div class="jobs-list">
-                  <c:forEach var="found_resume" items="${found_resumes}" varStatus="status">
-                  <div class="job featured type-${found_users[status.index].type}">
+                  <c:forEach var="found_ad" items="${found_ads}" varStatus="status">
+                  <div class="job featured">
                     <div class="row">
                       <div class="details col-sm-10 col-xs-8">
                         <div class="pull-left hidden-xs logo">
@@ -93,22 +89,17 @@
                         </div>
                         <div class="details">
                           	<div class="title"><a href="/jobs/255562-senior-devops-engineer-at-symphony-communication-services-llc">
-								<p class="user_name">${found_users[status.index].type} : ${found_users[status.index].name}</p>
-								<p class="resume_jobTitle">عنوان شغلی: ${found_resume.jobTitle}</p>
+								<p class="user_name">نام کاربر: ${found_users[status.index].name}</p>
+								<p class="resume_jobTitle">عنوان شغلی: ${found_ad.jobTitle}</p>
 							</a></div>
                           <div class="company">${found_users[status.index].reshte}</div>
                           <div class="location">${found_users[status.index].address}</div>
                         </div>
                       </div>
                       <div class="date col-sm-2 col-xs-4">
-                        <div>${found_resume.created}</div>
+                        <div>${found_ad.created}</div>
 						<div style="margin-top: 25px;">
-						<c:if test="${found_users[status.index].type=='team' }">
-							<a href="/viewTeamResume?id=${found_resume.id}" class="btn btn-success">مشاهده رزومه</a>
-						</c:if>
-						<c:if test="${found_users[status.index].type=='jobSeeker' }">
-							<a href="/viewEmployeeResume?id=${found_resume.id}" class="btn btn-success">مشاهده رزومه</a>
-						</c:if>
+							<a href="/viewHiringAdverts?id=${found_ad.id}" class="btn btn-success">مشاهده رزومه</a>
 						</div>
                       </div>
                     </div>

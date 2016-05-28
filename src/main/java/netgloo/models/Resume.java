@@ -1,5 +1,8 @@
 package netgloo.models;
 
+import java.sql.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -50,7 +53,10 @@ public class Resume {
   
   public String category = "";
   
+  public int teamNumber = 1;
   
+  @Column(name="timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+  public Date created;
   
   // ------------------------
   // PUBLIC METHODS
@@ -122,6 +128,14 @@ public class Resume {
   
   public String getCategory(){
 	  return this.category;
+  }
+  
+  public Date getCreated(){
+	  return this.created;
+  }
+  
+  public String getType() {
+	  return this.type;
   }
   
 //  @Autowired
