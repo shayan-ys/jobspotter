@@ -48,6 +48,8 @@ public class Resume {
   
   public String availability = "";
   
+  public String category = "";
+  
   
   
   // ------------------------
@@ -59,7 +61,7 @@ public class Resume {
     this.id = id;
   }
   
-  public Resume(int owner_id,String jobTitle,String sabeghe,String description,String resume_file,String takhasos,String type) {
+  public Resume(int owner_id,String jobTitle,String category,String sabeghe,String takhasos,String description,String resume_file,String type) {
     this.owner_id=owner_id;
 	this.jobTitle = jobTitle;
     this.sabeghe=sabeghe;
@@ -67,8 +69,11 @@ public class Resume {
     this.resume_file=resume_file;
     this.type=type;
     this.takhasos=takhasos;
+    this.category=category;
+    this.availability="1";
 
   }
+  
   
   public Resume(int owner_id,String sabeghe,String takhasos,String description,String resume_file,String type) {
 	    this.owner_id=owner_id;
@@ -77,6 +82,7 @@ public class Resume {
 	    this.description=description;
 	    this.resume_file=resume_file;
 	    this.type=type;
+	    this.availability="1";
 	  }
 
   // Getter and setter methods
@@ -112,6 +118,10 @@ public class Resume {
   public int getTeamNumber(){
 //	  return userDao.findByTeamId(""+ this.id).size();
 	  return 1;
+  }
+  
+  public String getCategory(){
+	  return this.category;
   }
   
 //  @Autowired

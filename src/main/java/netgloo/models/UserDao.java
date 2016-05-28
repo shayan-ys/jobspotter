@@ -27,7 +27,7 @@ public interface UserDao extends CrudRepository<User, Long> {
    * @param email the user email.
    */
   public User findByEmail(String email);
-  public User findById(Long id);
+  public User findById(int id);
   
 //  @Modifying
 //  @Query("SELECT p FROM User p WHERE p.team_id = :teamId")

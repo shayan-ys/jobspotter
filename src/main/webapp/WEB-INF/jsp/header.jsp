@@ -200,8 +200,12 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">خدمات کارفرمایان <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/employersHiringAdverts">درج آگهی استخدام</a></li>
+              
+               <c:if test="${userType=='jobOwner'}">
+                <li><a href="/employersHiringAdverts">درج آگهی استخدام</a></li>  
                 <li><a href="/employersOutsourceAdverts">درج آگهی برون‌سپاری</a></li>
+                  </c:if>
+                  
                 <li><a href="/search/resume">جستجو در رزومه‌ها</a></li>
               </ul>
             </li>

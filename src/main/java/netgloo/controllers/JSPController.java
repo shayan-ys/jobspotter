@@ -36,6 +36,8 @@ public class JSPController {
 	}
 	
 
+	
+	
 	@RequestMapping("/contactUs")
 	public String viewContact(ModelAndView modelAndView, HttpSession session,Model model) {
 	   // System.out.println("came here");
@@ -54,39 +56,39 @@ public class JSPController {
 	@RequestMapping("/registerJobseeker")
 	public String viewRegisterJobseeker(ModelAndView modelAndView, HttpSession session,Model model) {
 		model = this.checkLogin(session, model);  
-		  String userId = session.getAttribute("userId").toString();
+		 /* String userId = session.getAttribute("userId").toString();
 		  if(userId.equals("false"))
 		  {
 			  session.setAttribute("errorMessage", "لطفاً برای دسترسی به این بخش ابتدا وارد اکانت کاربری خود شوید."); 
 			  return "redirect:/";
 		  }
-		  else
+		  else*/
 	    return "registerJobseeker";
 	}
 	
 	@RequestMapping("/registerJobowners")
 	public String viewRegisterJobowners(ModelAndView modelAndView, Model model, HttpSession session) {
 		model = this.checkLogin(session, model);  
-		  String userId = session.getAttribute("userId").toString();
+		 /* String userId = session.getAttribute("userId").toString();
 		  if(userId.equals("false"))
 		  {
 			  session.setAttribute("errorMessage", "لطفاً برای دسترسی به این بخش ابتدا وارد اکانت کاربری خود شوید."); 
 			  return "redirect:/";
 		  }
-		  else
+		  else*/
 	    return "registerJobowners";
 	}
 	
 	@RequestMapping("/registerTeams")
 	public String viewRegisterTeams(ModelAndView modelAndView, Model model, HttpSession session) {
 		model = this.checkLogin(session, model);  
-		  String userId = session.getAttribute("userId").toString();
+		 /* String userId = session.getAttribute("userId").toString();
 		  if(userId.equals("false"))
 		  {
 			  session.setAttribute("errorMessage", "لطفاً برای دسترسی به این بخش ابتدا وارد اکانت کاربری خود شوید."); 
 			  return "redirect:/";
 		  }
-		  else
+		  else*/
 	    return "registerTeams";
 	}
 	

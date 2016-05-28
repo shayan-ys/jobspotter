@@ -39,8 +39,27 @@ public class ResumeController {
 		return "applyEdit";
 	}
 	*/
+	
+	
+	
+	@RequestMapping("/viewEmployeeResume")
+	public String viewEmployeeResume(HttpSession session,Model model,String id, String ownerId) {
+		  
+		int idInt = Integer.parseInt(id);
+		Resume resume = resumeDao.findById(idInt);
+		int ownerIdInt = resume.owner_id;
+		User user = userDao.findById(ownerIdInt);
+		
+		model.addAttribute("user", user);
+		model.addAttribute("resume", resume);
+		
+			System.out.println("id = "+ id);
+			System.out.println("ownerId = "+ ownerId);
+		    return "viewEmployeeResume";
+		}
+	
 	@RequestMapping(value="/apply", method=RequestMethod.POST)
-	public String employeeResume(HttpSession session,Model model,String jobTitle,String sabeghe,String takhasos,String description,String resume_file) {
+	public String employeeResume(HttpSession session,Model model,String jobTitle,String category,String sabeghe,String takhasos,String description,String resume_file) {
 		
 		//System.out.println("password="+ password);
 
@@ -59,7 +78,7 @@ public class ResumeController {
     				+ ""
     				+ "id_str:"+ id_str);
     		int owner_id = Integer.parseInt(id_str);
-    		resumeobj = new Resume(owner_id,jobTitle,sabeghe,takhasos,description,resume_file,"jobSeeker");
+    		resumeobj = new Resume(owner_id,jobTitle,category,sabeghe,takhasos,description,resume_file,"jobSeeker");
       		resumeDao.save(resumeobj);
       		model.addAttribute("successMessage", "رزومه شما با موفقیت ثبت شد.");
     	}
@@ -103,6 +122,9 @@ public class ResumeController {
 	
   @Autowired
   private ResumeDao resumeDao;
+  
+  @Autowired
+  private UserDao userDao;
   
 
   
