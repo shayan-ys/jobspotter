@@ -43,9 +43,8 @@ public class ResumeController {
 	
 	
 	@RequestMapping("/viewEmployeeResume")
-	public String viewEmployeeResume(HttpSession session, Model model, String id) {
+	public String viewEmployeeResume(HttpSession session,Model model,String id) {
 		  
-		System.out.println("id = "+ id);
 		int idInt = Integer.parseInt(id);
 		Resume resume = resumeDao.findById(idInt);
 		int ownerIdInt = resume.owner_id;
@@ -55,7 +54,24 @@ public class ResumeController {
 		model.addAttribute("resume", resume);
 		
 			System.out.println("id = "+ id);
+			
 		    return "viewEmployeeResume";
+		}
+	
+	@RequestMapping("/viewTeamResume")
+	public String viewTeamResume(HttpSession session,Model model,String id) {
+		  
+		int idInt = Integer.parseInt(id);
+		Resume resume = resumeDao.findById(idInt);
+		int ownerIdInt = resume.owner_id;
+		User user = userDao.findById(ownerIdInt);
+		
+		model.addAttribute("user", user);
+		model.addAttribute("resume", resume);
+		
+			System.out.println("id = "+ id);
+			
+		    return "viewTeamResume";
 		}
 	
 	@RequestMapping(value="/apply", method=RequestMethod.POST)

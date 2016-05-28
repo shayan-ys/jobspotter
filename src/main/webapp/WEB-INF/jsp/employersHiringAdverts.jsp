@@ -80,7 +80,10 @@
 					</div>
 
 
-					<div class="form-group job-types required">
+
+
+
+			<!-- 		<div class="form-group job-types required">
 						<label class="col-sm-3 control-label" for="inlineRadiobuttons">جنسیت</label>
 						<div class="col-sm-9">
 							<label class="radio-inline">
@@ -97,7 +100,16 @@
 							</label>
 							
 						</div>
-					</div>
+					</div> -->
+
+<div class="col-sm-6">
+                      <label>جنسیت:</label>
+                      <div class="block" style="margin-top: 7px;">
+                        <input type="radio" name="gender" value="مرد"> مرد
+                        <input type="radio" name="gender" value="زن"> زن
+                        <input type="radio" name="gender" value="" /> اهمیتی ندارد
+                      </div>
+                    </div>
 
 					<div class="form-group required">
 						<label class="col-sm-3 control-label" for="inlineRadiobuttons">

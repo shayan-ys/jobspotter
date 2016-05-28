@@ -48,17 +48,17 @@
 		</div>
 
 
-		<div class="form-group">
+		/<div class="form-group">
 			<label class="col-sm-3 control-label" for="inlineRadiobuttons">
 			جنسیت
 			</label>
 			<div class="col-sm-9 col-md-6">
 				<label class="radio-inline">
-					<input type="radio" name="gender" id="profile_gender_male" value="1" checked="checked" />
+					<input type="radio" name="gender" id="profile_gender_male" value="مرد" checked="checked" />
 					مرد&nbsp;&nbsp;
 					</label>
 					<label class="radio-inline">
-					<input type="radio" name="gender" id="profile_gender_female" value="2" />
+					<input type="radio" name="gender" id="profile_gender_female" value="زن" />
 					زن&nbsp;&nbsp;
 					</label>
 			</div>
