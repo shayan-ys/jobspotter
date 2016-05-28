@@ -53,9 +53,10 @@ public class Resume {
   
   public String category = "";
   
+  public int teamNumber = 1;
+  
   @Column(name="timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
   public Date created;
-  
   
   // ------------------------
   // PUBLIC METHODS
