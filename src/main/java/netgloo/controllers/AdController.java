@@ -41,6 +41,28 @@ public class AdController {
 		return "applyEdit";
 	}
 	*/
+	
+	
+	@RequestMapping("/viewHiringAdverts")
+	public String viewContact(ModelAndView modelAndView, HttpSession session,Model model, String id) {
+	 
+		int idInt = Integer.parseInt(id);
+		Ads ads = adsDao.findById(idInt);
+		int ownerIdInt = ads.owner_id;
+		User user = userDao.findById(ownerIdInt);
+		
+		model.addAttribute("user", user);
+		model.addAttribute("ads", ads);
+		
+			System.out.println("id = "+ id);
+			System.out.println("ownerId = "+ ownerIdInt);
+		  
+		
+		
+	    return "viewHiringAdverts";
+	}
+	
+	
 	@RequestMapping(value="/employersHiringAdverts", method=RequestMethod.POST)
 	public String employerHiring(HttpSession session,Model model,String jobTitle,String ostan,String city,String jobType,String gender,String category,String description,String salary) {
 		
@@ -105,6 +127,9 @@ public class AdController {
 	
   @Autowired
   private AdsDao adsDao;
+  
+  @Autowired
+  private UserDao userDao;
   
 
   
