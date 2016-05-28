@@ -26,7 +26,7 @@ public class UserProfileController {
 		
 		id = Integer.parseInt(id_str);
 
-		User user = userDao.findById((long) id);
+		User user = userDao.findById(  id);
 		model.addAttribute("user", user);
 		return "profileTeamEdit";
 	}
@@ -41,7 +41,7 @@ public class UserProfileController {
 			id_str = session.getAttribute("userId").toString();
 		
 		id = Integer.parseInt(id_str);
-		User user = userDao.findById((long) id);
+		User user = userDao.findById(  id);
 		
 		user.name = name;
 		user.site = site;
@@ -66,7 +66,7 @@ public class UserProfileController {
 			id_str = session.getAttribute("userId").toString();
 		
 		id = Integer.parseInt(id_str);
-		User user = userDao.findById((long) id);
+		User user = userDao.findById(id);
 		model.addAttribute("user", user);
 		return "profileEmployeeEdit";
 	}
@@ -81,7 +81,7 @@ public class UserProfileController {
 			id_str = session.getAttribute("userId").toString();
 		
 		id = Integer.parseInt(id_str);
-		User user = userDao.findById((long) id);
+		User user = userDao.findById( id);
 		
 		user.name = name;
 		user.reshte = reshte;
@@ -107,7 +107,7 @@ public class UserProfileController {
 			id_str = session.getAttribute("userId").toString();
 		
 		id = Integer.parseInt(id_str);
-		User user = userDao.findById((long) id);
+		User user = userDao.findById(id);
 		model.addAttribute("user", user);
 		
 		return "profileEmployerEdit";
@@ -122,7 +122,7 @@ public class UserProfileController {
 			id_str = session.getAttribute("userId").toString();
 		
 		id = Integer.parseInt(id_str);
-		User user = userDao.findById((long) id);
+		User user = userDao.findById( id);
 		
 		user.name = name;
 		user.site = site;
