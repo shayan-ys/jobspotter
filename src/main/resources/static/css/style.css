@@ -223,3 +223,8 @@ footer h5 .glyphicon {
   margin-bottom: 5px;
   /*text-align: center;*/
 }
+
+/********* SEARCH *********/
+.marked_search {
+    background: yellow none repeat scroll 0 0;
+}
