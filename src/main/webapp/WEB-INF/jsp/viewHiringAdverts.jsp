@@ -102,7 +102,7 @@
       <h3 class="panel-title">حقوق پیشنهادی به تومان</h3>
     </div>
     <div class="panel-body">
-     ${user.salary}
+     ${ads.salary}
     </div>
   </div>
 
@@ -113,7 +113,7 @@
       <h3 class="panel-title">توضیحات</h3>
     </div>
     <div class="panel-body">
-      ${user.description}
+      ${ads.description}
     </div>
   </div>
 

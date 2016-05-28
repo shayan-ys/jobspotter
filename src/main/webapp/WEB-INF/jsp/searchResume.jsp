@@ -101,7 +101,7 @@
                         </div>
                       </div>
                       <div class="date col-sm-2 col-xs-4">
-                        <div>${found_resume.timestamp}</div>
+                        <div>${found_resume.created}</div>
 						<div style="margin-top: 25px;">
 							<a href="/viewEmployeeResume?id=${found_resume.id}" class="btn btn-success">مشاهده رزومه</a>
 						</div>

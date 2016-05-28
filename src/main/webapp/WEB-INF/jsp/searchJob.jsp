@@ -97,7 +97,7 @@
                         </div>
                       </div>
                       <div class="date col-sm-2 col-xs-4">
-                        <div>${found_ad.timestamp}</div>
+                        <div>${found_ad.created}</div>
 						<div style="margin-top: 25px;">
 							<a href="/viewHiringAdverts?id=${found_ad.id}" class="btn btn-success">مشاهده رزومه</a>
 						</div>

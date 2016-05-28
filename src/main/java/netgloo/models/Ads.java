@@ -146,4 +146,8 @@ public class Ads {
   public String getSalary(){
 	  return this.salary;
   }
+  
+  public Date getCreated(){
+	  return this.created;
+  }
 } // class Resume

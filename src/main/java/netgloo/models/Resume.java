@@ -129,6 +129,10 @@ public class Resume {
 	  return this.category;
   }
   
+  public Date getCreated(){
+	  return this.created;
+  }
+  
 //  @Autowired
 //  private UserDao userDao;
   

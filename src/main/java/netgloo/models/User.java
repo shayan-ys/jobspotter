@@ -187,5 +187,8 @@ public class User {
 	  return team_id;
   }
   
+  public Date getCreated(){
+	  return this.created;
+  }
 
 } // class User
