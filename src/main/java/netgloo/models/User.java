@@ -190,5 +190,9 @@ public class User {
   public Date getCreated(){
 	  return this.created;
   }
+  
+  public String getType(){
+	  return this.type;
+  }
 
 } // class User

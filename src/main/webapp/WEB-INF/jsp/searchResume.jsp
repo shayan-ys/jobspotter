@@ -83,7 +83,7 @@
             <div class="row search-result">
                 <div class="jobs-list">
                   <c:forEach var="found_resume" items="${found_resumes}" varStatus="status">
-                  <div class="job featured">
+                  <div class="job featured type-${found_users[status.index].type}">
                     <div class="row">
                       <div class="details col-sm-10 col-xs-8">
                         <div class="pull-left hidden-xs logo">
@@ -93,7 +93,7 @@
                         </div>
                         <div class="details">
                           	<div class="title"><a href="/jobs/255562-senior-devops-engineer-at-symphony-communication-services-llc">
-								<p class="user_name">نام کاربر: ${found_users[status.index].name}</p>
+								<p class="user_name">${found_users[status.index].type} : ${found_users[status.index].name}</p>
 								<p class="resume_jobTitle">عنوان شغلی: ${found_resume.jobTitle}</p>
 							</a></div>
                           <div class="company">${found_users[status.index].reshte}</div>
@@ -103,7 +103,12 @@
                       <div class="date col-sm-2 col-xs-4">
                         <div>${found_resume.created}</div>
 						<div style="margin-top: 25px;">
+						<c:if test="${found_users[status.index].type=='team' }">
+							<a href="/viewTeamResume?id=${found_resume.id}" class="btn btn-success">مشاهده رزومه</a>
+						</c:if>
+						<c:if test="${found_users[status.index].type=='jobSeeker' }">
 							<a href="/viewEmployeeResume?id=${found_resume.id}" class="btn btn-success">مشاهده رزومه</a>
+						</c:if>
 						</div>
                       </div>
                     </div>

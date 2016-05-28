@@ -120,7 +120,7 @@
   <div class="form-group">
     <label class="col-sm-3 control-label" for=""></label>
     <div class="col-sm-9 left">
-      <button type="submit" class="greenItem btn btn-primary btn-lg">ارسال درخواست</button>
+      <a type="button" class="greenItem btn btn-primary btn-lg" href="mailto:${user.email}?subject=hiring request&body=Hi,I want to be part of your company" >ارسال درخواست</a>
     </div>
   </div>
 

@@ -133,6 +133,10 @@ public class Resume {
 	  return this.created;
   }
   
+  public String getType() {
+	  return this.type;
+  }
+  
 //  @Autowired
 //  private UserDao userDao;
   

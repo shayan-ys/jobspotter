@@ -101,7 +101,7 @@ public class SearchController {
 				keyword == null ? "" : keyword,
 				keyword == null ? "" : keyword,
 				category == null ? "": category, 
-				"jobSeeker", 
+				"", 
 				reputation == null ? "" : reputation, 
 				time_type == null ? "" : time_type, 
 				availablity == null ? "" : availablity);
@@ -113,7 +113,7 @@ public class SearchController {
 		List<User> foundUsers = userDao.search(
 				city == null ? "" : city,
 				province == null ? "" : province,
-				"jobSeeker",
+				"",
 				"",
 				"");
 		System.out.println("found users: ");
