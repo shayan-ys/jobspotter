@@ -6,7 +6,7 @@
 
 
 <div class="container">
-  <h1 class="pageHeader">رزومه</h1>
+  <h1 class="pageHeader">رزومه تیم</h1>
 
 <div class="row">
   <div class=" col-md-6 panel-success">
@@ -31,7 +31,7 @@
 <div class="row">
   
 
-  <div class="col-md-6 panel-success">
+  <div class="col-md-12 panel-success">
     <div class="panel-heading">
       <h3 class="panel-title">میزان سابقه کار</h3>
     </div>

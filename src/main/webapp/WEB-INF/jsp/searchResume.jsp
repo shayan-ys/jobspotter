@@ -93,7 +93,14 @@
                         </div>
                         <div class="details">
                           	<div class="title"><a href="/jobs/255562-senior-devops-engineer-at-symphony-communication-services-llc">
-								<p class="user_name">${found_users[status.index].type} : ${found_users[status.index].name}</p>
+								<p class="user_name">
+								<c:if test="${found_users[status.index].type=='team' }">
+								تیم
+								</c:if>
+								<c:if test="${found_users[status.index].type=='jobSeeker' }">
+								کارجو
+								</c:if>
+									 : ${found_users[status.index].name}</p>
 								<p class="resume_jobTitle">عنوان شغلی: ${found_resume.jobTitle}</p>
 							</a></div>
                           <div class="company">${found_users[status.index].reshte}</div>
